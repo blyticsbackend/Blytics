@@ -1,0 +1,681 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".modules.payment.PaymentFragment">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:id="@+id/txt_user_name"
+            style="@style/TextTitleStyle"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/_10sdp"
+            android:fontFamily="@font/darker_grotesque_bold"
+            android:text=""
+            android:textSize="@dimen/_15sdp"
+            android:visibility="gone"
+            app:layout_constraintEnd_toStartOf="@+id/txt_user_amount"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/txt_user_amount"
+            style="@style/TextTitleStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/darker_grotesque_bold"
+            android:text=""
+            android:textSize="@dimen/_15sdp"
+            android:visibility="gone"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.core.widget.NestedScrollView
+            android:id="@+id/top_layout"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/txt_user_name">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/main_layout"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/card_1"
+                    style="@style/cardViewBottomRadius"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:paddingStart="@dimen/_10sdp"
+                        android:paddingEnd="@dimen/_10sdp"
+                        android:paddingBottom="@dimen/_10sdp">
+
+                        <com.google.android.material.card.MaterialCardView
+                            android:id="@+id/btn_add_wallet"
+                            android:layout_width="@dimen/_70sdp"
+                            android:layout_height="@dimen/_70sdp"
+                            android:layout_marginTop="@dimen/_20sdp"
+                            app:cardBackgroundColor="@color/white"
+                            app:cardCornerRadius="10dp"
+                            app:cardElevation="5dp"
+                            app:cardUseCompatPadding="true"
+                            app:layout_constraintEnd_toStartOf="@+id/btn_wallet_bank"
+                            app:layout_constraintHorizontal_bias="0.5"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent">
+
+                            <ImageView
+                                android:id="@+id/img_add_wallet"
+                                android:layout_width="@dimen/_30sdp"
+                                android:layout_height="@dimen/_30sdp"
+                                android:layout_gravity="center"
+                                android:scaleType="fitXY"
+                                android:src="@drawable/icon_add_wallet_new" />
+                        </com.google.android.material.card.MaterialCardView>
+
+                        <com.google.android.material.card.MaterialCardView
+                            android:id="@+id/btn_wallet_bank"
+                            android:layout_width="@dimen/_70sdp"
+                            android:layout_height="@dimen/_70sdp"
+                            app:cardBackgroundColor="@color/white"
+                            app:cardCornerRadius="10dp"
+                            app:cardElevation="5dp"
+                            app:cardUseCompatPadding="true"
+                            app:layout_constraintBottom_toBottomOf="@+id/btn_add_wallet"
+                            app:layout_constraintEnd_toStartOf="@+id/btn_show_qr"
+                            app:layout_constraintHorizontal_bias="0.5"
+                            app:layout_constraintStart_toEndOf="@+id/btn_add_wallet">
+
+                            <ImageView
+                                android:id="@+id/img_wallet_bank"
+                                android:layout_width="@dimen/_30sdp"
+                                android:layout_height="@dimen/_30sdp"
+                                android:layout_gravity="center"
+                                android:scaleType="fitXY"
+                                android:src="@drawable/pay_a_contact" />
+                        </com.google.android.material.card.MaterialCardView>
+
+                        <com.google.android.material.card.MaterialCardView
+                            android:id="@+id/btn_show_qr"
+                            android:layout_width="@dimen/_70sdp"
+                            android:layout_height="@dimen/_70sdp"
+                            app:cardBackgroundColor="@color/white"
+                            app:cardCornerRadius="10dp"
+                            app:cardElevation="5dp"
+                            app:cardUseCompatPadding="true"
+                            app:layout_constraintBottom_toBottomOf="@+id/btn_wallet_bank"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintHorizontal_bias="0.5"
+                            app:layout_constraintStart_toEndOf="@+id/btn_wallet_bank">
+
+                            <ImageView
+                                android:id="@+id/img_bank_bank"
+                                android:layout_width="@dimen/_30sdp"
+                                android:layout_height="@dimen/_30sdp"
+                                android:layout_gravity="center"
+                                android:scaleType="fitXY"
+                                android:src="@drawable/img_qr"/>
+                        </com.google.android.material.card.MaterialCardView>
+
+                        <TextView
+                            android:id="@+id/lbl_wallet"
+                            style="@style/TextTitleStyle"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/_10sdp"
+                            android:fontFamily="@font/darker_grotesque_semibold"
+                            android:gravity="center"
+                            android:text="Transfer between\naccounts"
+                            android:textSize="@dimen/_13sdp"
+                            app:layout_constraintEnd_toEndOf="@+id/btn_add_wallet"
+                            app:layout_constraintStart_toStartOf="@+id/btn_add_wallet"
+                            app:layout_constraintTop_toBottomOf="@+id/btn_add_wallet" />
+
+                        <TextView
+                            android:id="@+id/lbl_wallet_bank"
+                            style="@style/TextTitleStyle"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="12dp"
+                            android:fontFamily="@font/darker_grotesque_semibold"
+                            android:text="Pay a contact"
+                            android:textSize="@dimen/_13sdp"
+                            app:layout_constraintEnd_toEndOf="@+id/btn_wallet_bank"
+                            app:layout_constraintStart_toStartOf="@+id/btn_wallet_bank"
+                            app:layout_constraintTop_toBottomOf="@+id/btn_wallet_bank" />
+
+                        <TextView
+                            android:id="@+id/lbl_show_qr"
+                            style="@style/TextTitleStyle"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/_10sdp"
+                            android:fontFamily="@font/darker_grotesque_semibold"
+                            android:text="QR pay"
+                            android:textSize="@dimen/_13sdp"
+                            app:layout_constraintEnd_toEndOf="@+id/btn_show_qr"
+                            app:layout_constraintStart_toStartOf="@+id/btn_show_qr"
+                            app:layout_constraintTop_toBottomOf="@+id/btn_show_qr" />
+
+                        <FrameLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            app:layout_constraintTop_toBottomOf="@+id/lbl_wallet">
+
+                            <FrameLayout
+                                android:id="@+id/frameLayoutBack"
+                                android:layout_width="match_parent"
+                                android:layout_height="@dimen/_160sdp"
+                                android:layout_marginTop="@dimen/_30sdp"
+                                app:layout_constraintTop_toBottomOf="@id/lbl_wallet_bank">
+
+                                <ImageView
+                                    android:id="@+id/debitImageBack"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:scaleType="fitXY"
+                                    android:src="@drawable/bg_debit_cart" />
+
+                                <androidx.constraintlayout.widget.ConstraintLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:padding="@dimen/_9sdp">
+
+                                    <TextView
+                                        android:id="@+id/lbl_current_ac_back"
+                                        android:layout_width="0dp"
+                                        android:layout_height="wrap_content"
+                                        android:fontFamily="@font/darker_grotesque_semibold"
+                                        android:text=""
+                                        android:textColor="@color/white"
+                                        android:textSize="@dimen/_15sdp"
+                                        android:visibility="visible"
+                                        app:layout_constraintEnd_toStartOf="@+id/btn_add_account_back"
+                                        app:layout_constraintStart_toStartOf="parent"
+                                        app:layout_constraintTop_toTopOf="parent" />
+
+                                    <ImageView
+                                        android:layout_width="@dimen/_15sdp"
+                                        android:layout_height="@dimen/_15sdp"
+                                        android:layout_marginEnd="@dimen/_10sdp"
+                                        android:src="@drawable/img_plus_circle_icon"
+                                        android:visibility="gone"
+                                        app:layout_constraintBottom_toBottomOf="@+id/btn_add_account_back"
+                                        app:layout_constraintEnd_toStartOf="@+id/btn_add_account_back"
+                                        app:layout_constraintTop_toTopOf="@+id/btn_add_account_back"
+                                        tools:layout_editor_absoluteY="11dp" />
+
+                                    <TextView
+                                        android:id="@+id/btn_add_account_back"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:fontFamily="@font/darker_grotesque_bold"
+                                        android:text="Add Account"
+                                        android:textColor="@color/white"
+                                        android:textSize="@dimen/_15sdp"
+                                        android:visibility="invisible"
+                                        app:layout_constraintEnd_toEndOf="parent"
+                                        app:layout_constraintTop_toTopOf="parent" />
+
+
+                                    <TextView
+                                        android:id="@+id/txt_ac_holder_name_back"
+                                        android:layout_width="0dp"
+                                        android:layout_height="0dp"
+                                        android:layout_marginTop="@dimen/_15sdp"
+                                        android:ellipsize="end"
+                                        android:fontFamily="@font/darker_grotesque_semibold"
+                                        android:maxLines="1"
+                                        android:text="Account holder name"
+                                        android:textColor="@color/white"
+                                        android:visibility="invisible"
+                                        app:layout_constraintEnd_toStartOf="@+id/btn_switch_ac_back"
+                                        app:layout_constraintStart_toStartOf="parent"
+                                        app:layout_constraintTop_toBottomOf="@id/lbl_current_ac_back" />
+
+                                    <TextView
+
+                                        android:id="@+id/txt_ac_card_amount_back"
+                                        android:layout_width="0dp"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginTop="@dimen/_5sdp"
+                                        android:fontFamily="@font/darker_grotesque_bold"
+                                        android:text="#7,90,000"
+                                        android:textColor="@color/white"
+                                        android:textSize="@dimen/_16sdp"
+                                        android:visibility="gone"
+                                        app:layout_constraintEnd_toEndOf="parent"
+                                        app:layout_constraintStart_toStartOf="parent"
+                                        app:layout_constraintTop_toBottomOf="@+id/txt_ac_holder_name_back" />
+
+
+                                    <TextView
+                                        android:id="@+id/txt_ac_card_balance_back"
+                                        android:layout_width="0dp"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginTop="@dimen/_2sdp"
+                                        android:fontFamily="@font/darker_grotesque_bold"
+                                        android:gravity="start"
+                                        android:text=""
+                                        android:textColor="@color/white"
+                                        android:textSize="@dimen/_16sdp"
+                                        app:layout_constraintBaseline_toBaselineOf="@+id/btn_switch_ac_back"
+                                        app:layout_constraintEnd_toStartOf="@+id/btn_switch_ac_back"
+                                        app:layout_constraintStart_toStartOf="parent"
+                                        app:layout_constraintTop_toBottomOf="@+id/txt_ac_card_amount_back" />
+
+
+                                    <TextView
+                                        android:id="@+id/txt_ac_card_purpose_back"
+                                        android:layout_width="0dp"
+                                        android:layout_height="0dp"
+                                        android:layout_marginTop="@dimen/_2sdp"
+                                        android:fontFamily="@font/darker_grotesque_bold"
+                                        android:gravity="center"
+                                        android:text=""
+                                        android:textColor="@color/white"
+                                        app:layout_constraintEnd_toEndOf="parent"
+                                        app:layout_constraintStart_toStartOf="parent"
+                                        app:layout_constraintTop_toBottomOf="@+id/txt_ac_card_amount_back"
+                                        app:layout_goneMarginTop="@dimen/_20sdp" />
+
+                                    <TextView
+                                        android:id="@+id/txt_card_number_back"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginTop="@dimen/_5sdp"
+                                        android:fontFamily="@font/darker_grotesque_bold"
+                                        android:gravity="center"
+                                        android:textColor="@color/white"
+                                        android:textSize="@dimen/_18sdp"
+                                        app:layout_constraintTop_toBottomOf="@id/txt_ac_card_purpose_back"
+                                        tools:text="" />
+
+
+                                    <TextView
+                                        android:id="@+id/txt_ac_number_back"
+                                        android:layout_width="0dp"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginTop="@dimen/_5sdp"
+                                        android:fontFamily="@font/darker_grotesque_semibold"
+                                        android:gravity="center"
+                                        android:text=""
+                                        android:textColor="@color/white"
+                                        android:textSize="@dimen/_10sdp"
+                                        android:visibility="gone"
+                                        app:layout_constraintEnd_toEndOf="parent"
+                                        app:layout_constraintStart_toStartOf="parent"
+                                        app:layout_constraintTop_toBottomOf="@+id/txt_card_number_back" />
+
+                                    <LinearLayout
+                                        android:layout_width="0dp"
+                                        android:layout_height="wrap_content"
+                                        android:orientation="horizontal"
+                                        app:layout_constraintBottom_toBottomOf="parent"
+                                        app:layout_constraintEnd_toStartOf="@+id/btn_manager_ac_back"
+                                        app:layout_constraintStart_toStartOf="parent">
+
+                                        <TextView
+                                            android:id="@+id/txt_card_validity_back"
+                                            android:layout_width="0dp"
+                                            android:layout_height="wrap_content"
+                                            android:layout_weight="1"
+                                            android:fontFamily="@font/darker_grotesque_semibold"
+                                            android:text="VALID THRE: 24,Mar 2022"
+                                            android:textColor="@color/white"
+                                            android:textSize="@dimen/_14sdp"
+                                            android:visibility="visible" />
+
+                                        <TextView
+                                            android:layout_width="0dp"
+                                            android:layout_height="wrap_content"
+                                            android:layout_marginEnd="@dimen/_30sdp"
+                                            android:layout_weight="1"
+                                            android:fontFamily="@font/darker_grotesque_semibold"
+                                            android:gravity="end"
+                                            android:text="CVV 343"
+                                            android:textColor="@color/white"
+                                            android:textSize="@dimen/_14sdp"
+                                            android:visibility="visible" />
+
+                                    </LinearLayout>
+
+
+                                    <TextView
+                                        android:id="@+id/btn_manager_ac_back"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:fontFamily="@font/darker_grotesque_semibold"
+                                        android:text="Manage Account"
+                                        android:textColor="@color/white"
+                                        android:textSize="@dimen/_14sdp"
+                                        android:visibility="gone"
+                                        app:layout_constraintBottom_toBottomOf="parent"
+                                        app:layout_constraintEnd_toEndOf="parent" />
+
+                                    <TextView
+                                        android:id="@+id/btn_switch_ac_back"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginTop="@dimen/_15sdp"
+                                        android:fontFamily="@font/darker_grotesque_semibold"
+                                        android:text="Switch Account "
+                                        android:textColor="@color/white"
+                                        android:textSize="@dimen/_15sdp"
+                                        android:visibility="invisible"
+                                        app:drawableEndCompat="@drawable/ic_baseline_keyboard_arrow_down_24"
+                                        app:drawableTint="@color/white"
+                                        app:layout_constraintEnd_toEndOf="parent"
+                                        app:layout_constraintTop_toBottomOf="@id/lbl_current_ac_back" />
+
+                                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                                <ImageView
+                                    android:id="@+id/img_info_end"
+                                    android:layout_width="@dimen/_20sdp"
+                                    android:layout_height="@dimen/_20sdp"
+                                    android:layout_gravity="end|bottom"
+                                    android:layout_margin="@dimen/_8sdp"
+                                    android:src="@drawable/icon_info"
+                                    app:tint="@color/white" />
+                            </FrameLayout>
+
+                            <FrameLayout
+                                android:id="@+id/frameLayoutFornt"
+                                android:layout_width="match_parent"
+                                android:layout_height="@dimen/_160sdp"
+                                android:layout_marginTop="@dimen/_30sdp"
+                                app:layout_constraintTop_toBottomOf="@id/lbl_wallet_bank">
+
+
+                                <ImageView
+                                    android:id="@+id/debitImage"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:scaleType="fitXY"
+                                    android:src="@drawable/bg_debit_cart" />
+
+                                <androidx.constraintlayout.widget.ConstraintLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:padding="@dimen/_9sdp">
+
+                                    <TextView
+                                        android:id="@+id/lbl_current_ac"
+                                        android:layout_width="0dp"
+                                        android:layout_height="wrap_content"
+                                        android:fontFamily="@font/darker_grotesque_semibold"
+                                        android:text=""
+                                        android:textColor="@color/white"
+                                        android:textSize="@dimen/_15sdp"
+                                        android:visibility="visible"
+                                        app:layout_constraintEnd_toStartOf="@+id/btn_add_account"
+                                        app:layout_constraintStart_toStartOf="parent"
+                                        app:layout_constraintTop_toTopOf="parent" />
+
+                                    <ImageView
+                                        android:layout_width="@dimen/_15sdp"
+                                        android:layout_height="@dimen/_15sdp"
+                                        android:layout_marginEnd="@dimen/_10sdp"
+                                        android:src="@drawable/img_plus_circle_icon"
+
+                                        app:layout_constraintBottom_toBottomOf="@+id/btn_add_account"
+                                        app:layout_constraintEnd_toStartOf="@+id/btn_add_account"
+                                        app:layout_constraintTop_toTopOf="@+id/btn_add_account"
+                                        tools:layout_editor_absoluteY="11dp" />
+
+                                    <TextView
+                                        android:id="@+id/btn_add_account"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:fontFamily="@font/darker_grotesque_bold"
+                                        android:gravity="center_vertical"
+                                        android:text="Add Account"
+                                        android:textColor="@color/white"
+                                        android:textSize="@dimen/_15sdp"
+                                        app:layout_constraintEnd_toEndOf="parent"
+                                        app:layout_constraintTop_toTopOf="parent" />
+
+
+                                    <TextView
+                                        android:id="@+id/txt_ac_holder_name"
+                                        android:layout_width="0dp"
+                                        android:layout_height="0dp"
+                                        android:layout_marginTop="@dimen/_15sdp"
+                                        android:ellipsize="end"
+                                        android:fontFamily="@font/darker_grotesque_semibold"
+                                        android:maxLines="1"
+                                        android:text="Account holder name"
+                                        android:textColor="@color/white"
+                                        android:textSize="@dimen/_15sdp"
+                                        android:visibility="invisible"
+                                        app:layout_constraintEnd_toStartOf="@+id/btn_switch_ac"
+                                        app:layout_constraintStart_toStartOf="parent"
+                                        app:layout_constraintTop_toBottomOf="@id/lbl_current_ac" />
+
+                                    <TextView
+
+                                        android:id="@+id/txt_ac_card_amount"
+                                        android:layout_width="0dp"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginTop="@dimen/_5sdp"
+                                        android:fontFamily="@font/darker_grotesque_bold"
+                                        android:text="#7,90,000"
+                                        android:textColor="@color/white"
+                                        android:visibility="gone"
+                                        app:layout_constraintEnd_toEndOf="parent"
+                                        app:layout_constraintStart_toStartOf="parent"
+                                        app:layout_constraintTop_toBottomOf="@+id/txt_ac_holder_name" />
+
+
+                                    <TextView
+                                        android:id="@+id/txt_ac_card_balance"
+                                        android:layout_width="0dp"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginTop="@dimen/_15sdp"
+                                        android:fontFamily="@font/darker_grotesque_bold"
+                                        android:gravity="start"
+                                        android:text=""
+                                        android:textColor="@color/white"
+                                        android:textSize="@dimen/_13sdp"
+                                        app:layout_constraintStart_toStartOf="parent"
+                                        app:layout_constraintTop_toBottomOf="@+id/lbl_current_ac" />
+
+
+                                    <TextView
+                                        android:id="@+id/txt_ac_card_purpose"
+                                        android:layout_width="0dp"
+                                        android:layout_height="0dp"
+                                        android:layout_marginTop="@dimen/_2sdp"
+                                        android:fontFamily="@font/darker_grotesque_bold"
+                                        android:gravity="center"
+                                        android:text=""
+                                        android:textColor="@color/white"
+                                        app:layout_constraintEnd_toEndOf="parent"
+                                        app:layout_constraintStart_toStartOf="parent"
+                                        app:layout_constraintTop_toBottomOf="@+id/txt_ac_card_amount"
+                                        app:layout_goneMarginTop="@dimen/_20sdp" />
+
+                                    <TextView
+                                        android:id="@+id/txt_card_number"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginTop="@dimen/_5sdp"
+                                        android:fontFamily="@font/darker_grotesque_bold"
+                                        android:gravity="center"
+                                        android:textColor="@color/white"
+                                        android:textSize="@dimen/_18sdp"
+                                        app:layout_constraintTop_toBottomOf="@id/txt_ac_card_purpose"
+                                        tools:text="" />
+
+
+                                    <TextView
+                                        android:id="@+id/txt_ac_number"
+                                        android:layout_width="0dp"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginTop="@dimen/_5sdp"
+                                        android:fontFamily="@font/darker_grotesque_semibold"
+                                        android:gravity="center"
+                                        android:text=""
+                                        android:textColor="@color/white"
+                                        android:textSize="@dimen/_10sdp"
+                                        android:visibility="invisible"
+                                        app:layout_constraintEnd_toEndOf="parent"
+                                        app:layout_constraintStart_toStartOf="parent"
+                                        app:layout_constraintTop_toBottomOf="@+id/txt_card_number" />
+
+                                    <TextView
+                                        android:id="@+id/txt_card_validity"
+                                        android:layout_width="0dp"
+                                        android:layout_height="wrap_content"
+                                        android:fontFamily="@font/darker_grotesque_semibold"
+                                        android:text="VALID THRE: 24,Mar 2022"
+                                        android:textColor="@color/white"
+                                        android:textSize="@dimen/_10sdp"
+                                        android:visibility="gone"
+                                        app:layout_constraintBottom_toBottomOf="parent"
+                                        app:layout_constraintEnd_toEndOf="parent" />
+
+
+                                    <TextView
+                                        android:id="@+id/btn_manager_ac"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:fontFamily="@font/darker_grotesque_semibold"
+                                        android:text="Manage Account"
+                                        android:textColor="@color/white"
+                                        android:textSize="@dimen/_14sdp"
+                                        android:visibility="gone"
+                                        app:layout_constraintBottom_toBottomOf="parent"
+                                        app:layout_constraintStart_toStartOf="parent" />
+
+                                    <TextView
+                                        android:id="@+id/btn_switch_ac"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginTop="@dimen/_15sdp"
+                                        android:fontFamily="@font/darker_grotesque_semibold"
+                                        android:text="Switch Account "
+                                        android:textColor="@color/white"
+                                        android:textSize="@dimen/_15sdp"
+                                        app:drawableTint="@color/white"
+                                        app:layout_constraintBottom_toBottomOf="parent"
+                                        app:layout_constraintStart_toStartOf="parent" />
+                                    <!-- app:drawableEndCompat="@drawable/ic_baseline_keyboard_arrow_down_24"
+                                           -->
+
+                                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                                <ImageView
+                                    android:id="@+id/img_info"
+                                    android:layout_width="@dimen/_20sdp"
+                                    android:layout_height="@dimen/_20sdp"
+                                    android:layout_gravity="end|bottom"
+                                    android:layout_margin="@dimen/_8sdp"
+                                    android:src="@drawable/icon_info"
+                                    app:tint="@color/white" />
+
+
+                            </FrameLayout>
+
+
+                        </FrameLayout>
+
+                        <TextView
+                            android:id="@+id/lbl_transactions"
+                            style="@style/TextTitleStyle"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/_205sdp"
+                            android:fontFamily="@font/darker_grotesque_bold"
+                            android:text="Transaction"
+                            android:textSize="@dimen/_18sdp"
+                            android:visibility="invisible"
+
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/lbl_wallet_bank"
+
+                            />
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+                </com.google.android.material.card.MaterialCardView>
+
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/card_2"
+                    style="@style/cardViewTopRadius"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginStart="@dimen/_5sdp"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:layout_marginEnd="@dimen/_5sdp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/card_1">
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <TextView
+                            android:id="@+id/txt_see_all_transaction"
+                            style="@style/TextTitleStyle"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/_5sdp"
+                            android:layout_marginEnd="@dimen/_10sdp"
+                            android:fontFamily="@font/darker_grotesque_semibold"
+                            android:text="See All"
+                            android:textColor="@color/blue_500"
+                            android:textSize="@dimen/_15sdp"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+
+                        <androidx.recyclerview.widget.RecyclerView
+                            android:id="@+id/rv_transaction"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_marginStart="@dimen/_minus5sdp"
+                            android:layout_marginTop="@dimen/_5sdp"
+                            android:layout_marginEnd="@dimen/_minus5sdp"
+                            android:orientation="vertical"
+                            android:visibility="visible"
+                            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/txt_see_all_transaction"
+                            tools:itemCount="2"
+                            tools:listitem="@layout/row_home_transaction" />
+
+                        <TextView
+                            android:id="@+id/txt_no_txn"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/_20sdp"
+                            android:layout_marginBottom="@dimen/_150sdp"
+                            android:fontFamily="@font/darker_grotesque_bold"
+                            android:gravity="center"
+                            android:text="You don't have any recent\ntransaction"
+                            android:textSize="@dimen/_18sdp"
+                            android:visibility="gone"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintTop_toTopOf="parent"
+
+                            />
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+                </com.google.android.material.card.MaterialCardView>
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </androidx.core.widget.NestedScrollView>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".IntroActivity"
+        >
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.56882256" />
+
+        <androidx.viewpager.widget.ViewPager
+            android:id="@+id/screen_viewpager"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+
+        <Button
+            android:visibility="invisible"
+            android:id="@+id/btn_back"
+            android:layout_width="@dimen/_45sdp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_20sdp"
+            android:layout_marginBottom="@dimen/_14sdp"
+            android:drawableEnd="@drawable/ic_baseline_keyboard_arrow_left_24"
+            android:drawableTint="@color/white"
+            android:textColor="@color/gray_light"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+        <Button
+            android:id="@+id/btn_next"
+            android:layout_width="@dimen/_45sdp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/_20sdp"
+            android:layout_marginBottom="@dimen/_14sdp"
+            android:drawableEnd="@drawable/ic_baseline_keyboard_arrow_right_24"
+            android:drawableTint="@color/white"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" />
+
+        <com.google.android.material.tabs.TabLayout
+            android:id="@+id/tab_indicator"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toTopOf="@id/guideline"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:tabBackground="@drawable/indicator_selector">
+
+        </com.google.android.material.tabs.TabLayout>
+
+        <Button
+            android:id="@+id/btn_get_started"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/_14sdp"
+            android:background="@drawable/btn_gradient_green"
+            android:fontFamily="@font/opensans_regular"
+            android:text="Get Started"
+            android:layout_marginEnd="@dimen/_20sdp"
+            android:visibility="invisible"
+            android:textColor="@color/white"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" />
+
+        <TextView
+            android:textSize="@dimen/_12sdp"
+            style="@style/TextTitleStyle"
+            android:id="@+id/tv_skip"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:layout_marginEnd="@dimen/_10sdp"
+            android:fontFamily="@font/opensans_regular"
+            android:text="Skip"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

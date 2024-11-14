@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/top_layout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            tools:context=".modules.signin.SignInFragment">
+
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:paddingHorizontal="@dimen/_20sdp"
+                android:paddingBottom="@dimen/_10sdp">
+
+            <androidx.appcompat.widget.LinearLayoutCompat
+                    android:id="@+id/lyt_welcome"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_20sdp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                <com.nbt.blytics.utils.CircleImageView
+                        android:id="@+id/img_user_welcome"
+                        android:layout_width="@dimen/_25sdp"
+                        android:layout_height="@dimen/_25sdp"
+                        android:visibility="gone" />
+
+                <TextView
+                        android:id="@+id/lbl_welcome_back"
+                        android:textColor="@color/white"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:fontFamily="@font/darker_grotesque_bold"
+                        android:gravity="center_horizontal"
+                        android:text="Welcome Back"
+                        android:layout_gravity="center_horizontal"
+                        android:textSize="@dimen/_17sdp" />
+            </androidx.appcompat.widget.LinearLayoutCompat>
+
+            <ImageView
+                    android:id="@+id/imageFilterView"
+                    android:layout_width="@dimen/_70sdp"
+                    android:layout_height="@dimen/_70sdp"
+                    android:layout_marginTop="@dimen/_55sdp"
+                    android:src="@drawable/logo_login_top"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/lyt_welcome" />
+
+            <TextView
+                    android:id="@+id/lbl_title"
+                    style="@style/DarkBGTextStyle"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:fontFamily="@font/darker_grotesque_bold"
+                    android:gravity="center"
+                    android:text="Log in"
+                    android:visibility="invisible"
+                    android:textSize="@dimen/_21sdp"
+                    app:layout_constraintTop_toBottomOf="@+id/imageFilterView" />
+
+            <EditText
+                    android:id="@+id/edt_email"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_30sdp"
+                    android:inputType="textEmailAddress"
+                    android:fontFamily="@font/darker_grotesque_semibold"
+                    android:hint="@string/lbl_sign_in_email_mobile"
+                    android:visibility="visible"
+                    android:textColor="@color/white"
+                    android:backgroundTint="@color/white"
+                    android:textColorHint="@color/white"
+                    android:layout_marginHorizontal="@dimen/_10sdp"
+                    app:layout_constraintTop_toBottomOf="@+id/lbl_title"/>
+
+            <EditText
+                    android:id="@+id/edt_password"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:fontFamily="@font/darker_grotesque_semibold"
+                    android:hint="@string/lbl_sing_in_password"
+                    android:textColor="@color/white"
+                    android:backgroundTint="@color/white"
+                    android:textColorHint="@color/white"
+                    android:inputType="textWebPassword"
+                    app:passwordToggleEnabled="true"
+                    app:passwordToggleDrawable="@drawable/show_password_selector"
+                    android:layout_marginHorizontal="@dimen/_10sdp"
+                    app:layout_constraintTop_toBottomOf="@+id/edt_email"/>
+
+            <TextView
+                    android:id="@+id/btn_forgot_password"
+                    style="@style/DarkBGTextStyle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_5sdp"
+                    android:fontFamily="@font/darker_grotesque_semibold"
+                    android:paddingEnd="@dimen/_8sdp"
+                    android:text="@string/lbl_forgot_password"
+                    android:textSize="@dimen/_14sdp"
+                    android:textColor="@color/white"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/edt_password" />
+
+            <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btn_login"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_42sdp"
+                    android:layout_marginTop="@dimen/_20sdp"
+                    android:text="@string/lbl_login"
+                android:backgroundTint="#9FD0E4"
+                    android:fontFamily="@font/darker_grotesque_bold"
+                    android:textSize="@dimen/_13sdp"
+                    android:layout_marginHorizontal="@dimen/_10sdp"
+                    android:textColor="@color/white"
+                    app:backgroundTint="@null"
+                    app:layout_constraintEnd_toEndOf="@+id/edt_password"
+                    app:layout_constraintStart_toStartOf="@+id/edt_password"
+                    app:layout_constraintTop_toBottomOf="@+id/btn_forgot_password" />
+
+            <TextView
+                    android:id="@+id/lbl_sign_up"
+                    style="@style/DarkBGTextStyle"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/darker_grotesque_bold"
+                    android:gravity="center"
+                    android:layout_marginBottom="@dimen/_10sdp"
+                    android:text=""
+                    android:textColor="@color/white"
+                    app:layout_constraintVertical_bias="0.9"
+                    android:textSize="@dimen/_14sdp"
+                    app:layout_constraintBottom_toBottomOf="parent" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

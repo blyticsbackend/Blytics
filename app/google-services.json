@@ -1,0 +1,37 @@
+{
+  "project_info": {
+    "project_number": "290958249709",
+    "project_id": "blytics-b0b3c",
+    "storage_bucket": "blytics-b0b3c.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:290958249709:android:4cba5dbd18cd771c8d06e4",
+        "android_client_info": {
+          "package_name": "com.nbt.blytics"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA2CQP04Xz3ba0FhM0q0FzTDrXkKAzdbkE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "290958249709-cd6f8o6l2jijlcg2pt3bco46u8r3uekd.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.nbt.youtube.Blytics121"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

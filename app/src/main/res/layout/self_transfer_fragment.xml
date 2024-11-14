@@ -1,0 +1,415 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".modules.selftransfer.SelfTransferFragment">
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+                <ViewFlipper
+                    android:id="@+id/account_flipper"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:paddingHorizontal="@dimen/_20sdp"
+                        tools:context=".modules.actobank.ActoBankFragment">
+
+                        <com.google.android.material.card.MaterialCardView
+                            android:id="@+id/card_main"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/_20sdp"
+                            app:cardCornerRadius="10dp"
+                            app:cardElevation="0dp"
+                            app:cardUseCompatPadding="true"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent">
+
+                            <androidx.appcompat.widget.LinearLayoutCompat
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:orientation="vertical"
+                                android:padding="@dimen/_15sdp">
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:fontFamily="@font/darker_grotesque_bold"
+                                    android:paddingHorizontal="@dimen/_5sdp"
+                                    android:text="From"
+                                    android:textColor="@color/b_blue_text"
+                                    android:textSize="@dimen/_15sdp" />
+
+                                <FrameLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="@dimen/_32sdp">
+
+                                    <EditText
+                                        android:id="@+id/edt_from_ac"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:clickable="false"
+                                        android:cursorVisible="false"
+                                        android:drawableEnd="@drawable/ic_baseline_keyboard_arrow_right_24"
+                                        android:editable="false"
+                                        android:focusable="false"
+                                        android:fontFamily="@font/darker_grotesque_semibold"
+                                        android:hint="From"
+                                        android:inputType="number"
+                                        android:paddingHorizontal="@dimen/_5sdp"
+                                        android:textSize="@dimen/_14sdp" />
+
+                                    <View
+                                        android:id="@+id/btnPickFromAc"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content" />
+                                </FrameLayout>
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="@dimen/_10sdp"
+                                    android:fontFamily="@font/darker_grotesque_bold"
+                                    android:paddingHorizontal="@dimen/_5sdp"
+                                    android:text="To"
+                                    android:textColor="@color/b_blue_text"
+                                    android:textSize="@dimen/_15sdp" />
+
+                                <FrameLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="@dimen/_32sdp">
+
+                                    <EditText
+                                        android:id="@+id/edt_to_ac"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:clickable="false"
+                                        android:cursorVisible="false"
+                                        android:drawableEnd="@drawable/ic_baseline_keyboard_arrow_right_24"
+                                        android:editable="false"
+                                        android:focusable="false"
+                                        android:fontFamily="@font/darker_grotesque_semibold"
+                                        android:hint="To"
+                                        android:inputType="number"
+                                        android:paddingHorizontal="@dimen/_5sdp"
+                                        android:textSize="@dimen/_14sdp" />
+
+                                    <View
+                                        android:id="@+id/btnPickToAc"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content" />
+                                </FrameLayout>
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="@dimen/_10sdp"
+                                    android:fontFamily="@font/darker_grotesque_bold"
+                                    android:paddingHorizontal="@dimen/_5sdp"
+                                    android:text="Amount"
+                                    android:textColor="@color/b_blue_text"
+                                    android:textSize="@dimen/_15sdp" />
+
+                                <EditText
+                                    android:id="@+id/edt_amount"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:fontFamily="@font/darker_grotesque_semibold"
+                                    android:hint="Amount"
+                                    android:inputType="numberDecimal"
+                                    android:textSize="@dimen/_14sdp" />
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="@dimen/_10sdp"
+                                    android:fontFamily="@font/darker_grotesque_bold"
+                                    android:paddingHorizontal="@dimen/_5sdp"
+                                    android:text="Reference"
+                                    android:textColor="@color/b_blue_text"
+                                    android:textSize="@dimen/_15sdp" />
+
+                                <EditText
+                                    android:id="@+id/edt_reference"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:fontFamily="@font/darker_grotesque_semibold"
+                                    android:hint="Reference"
+                                    android:inputType="text"
+                                    android:textSize="@dimen/_14sdp" />
+                            </androidx.appcompat.widget.LinearLayoutCompat>
+                        </com.google.android.material.card.MaterialCardView>
+
+                        <com.google.android.material.button.MaterialButton
+                            android:id="@+id/btn_send"
+                            android:layout_width="match_parent"
+                            android:layout_height="@dimen/_42sdp"
+                            android:layout_marginHorizontal="@dimen/_10sdp"
+                            android:layout_marginTop="@dimen/_25sdp"
+                            android:fontFamily="@font/darker_grotesque_bold"
+                            android:text="Process"
+                            android:textColor="@color/white"
+                            android:textSize="@dimen/_14sdp"
+                            app:backgroundTint="@null"
+                            app:layout_constraintTop_toBottomOf="@+id/card_main" />
+
+                        <com.google.android.material.card.MaterialCardView
+                            android:id="@+id/card_schedule"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/_25sdp"
+                            app:cardCornerRadius="10dp"
+                            app:cardElevation="0dp"
+                            app:cardUseCompatPadding="true"
+                            app:layout_constraintEnd_toEndOf="@+id/btn_send"
+                            app:layout_constraintStart_toStartOf="@+id/btn_send"
+                            app:layout_constraintTop_toBottomOf="@+id/btn_send">
+
+                            <androidx.constraintlayout.widget.ConstraintLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:padding="@dimen/_15sdp">
+
+                                <TextView
+                                    android:id="@+id/textView2"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:fontFamily="@font/darker_grotesque_bold"
+                                    android:text="Scedual This Payment"
+                                    android:textColor="@color/b_blue_text"
+                                    android:textSize="@dimen/_15sdp"
+                                    app:layout_constraintStart_toStartOf="parent"
+                                    app:layout_constraintTop_toTopOf="parent" />
+
+                                <com.google.android.material.radiobutton.MaterialRadioButton
+                                    android:id="@+id/radioButton"
+                                    android:layout_width="@dimen/_24sdp"
+                                    android:layout_height="@dimen/_24sdp"
+                                    android:visibility="gone"
+                                    app:layout_constraintBottom_toBottomOf="@+id/textView2"
+                                    app:layout_constraintStart_toEndOf="@+id/textView2"
+                                    app:layout_constraintTop_toTopOf="@+id/textView2" />
+
+                                <RadioButton
+                                    android:id="@+id/today"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:checked="true"
+                                    android:fontFamily="@font/darker_grotesque_bold"
+                                    android:text="Now"
+                                    android:textColor="@color/b_blue_text"
+                                    android:textSize="@dimen/_15sdp"
+                                    android:visibility="visible"
+                                    app:layout_constraintStart_toStartOf="@+id/textView2"
+                                    app:layout_constraintTop_toBottomOf="@+id/textView2"
+                                    app:layout_goneMarginTop="5dp" />
+
+                                <TextView
+                                    android:id="@+id/textView7"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:drawableRight="@drawable/calendar_month"
+                                    android:fontFamily="@font/darker_grotesque_bold"
+                                    android:text="Change Date?"
+                                    android:textSize="@dimen/_15sdp"
+                                    android:visibility="visible"
+                                    app:layout_constraintBottom_toBottomOf="@+id/today"
+                                    app:layout_constraintEnd_toEndOf="parent"
+                                    app:layout_constraintTop_toTopOf="@+id/today" />
+
+                                <DatePicker
+                                    android:id="@+id/datePicker"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:visibility="gone"
+                                    app:layout_constraintBottom_toBottomOf="@+id/textView7"
+                                    app:layout_constraintEnd_toEndOf="parent"
+                                    app:layout_constraintStart_toStartOf="parent" />
+                            </androidx.constraintlayout.widget.ConstraintLayout>
+                        </com.google.android.material.card.MaterialCardView>
+
+                        <com.google.android.material.card.MaterialCardView
+                            android:id="@+id/card_schedule_message"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/_25sdp"
+                            app:cardCornerRadius="10dp"
+                            app:cardElevation="0dp"
+                            android:layout_marginBottom="@dimen/_25sdp"
+                            app:cardUseCompatPadding="true"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="@+id/card_schedule"
+                            app:layout_constraintStart_toStartOf="@+id/card_schedule"
+                            app:layout_constraintTop_toBottomOf="@+id/card_schedule">
+
+                            <androidx.constraintlayout.widget.ConstraintLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent">
+
+                                <com.google.android.material.imageview.ShapeableImageView
+                                    android:id="@+id/backImage"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="0dp"
+                                    android:scaleType="centerCrop"
+                                    android:src="@drawable/message_background"
+                                    android:visibility="visible"
+                                    app:layout_constraintBottom_toBottomOf="@+id/extraMoney"
+                                    app:layout_constraintEnd_toEndOf="parent"
+                                    app:layout_constraintStart_toStartOf="@+id/extraMoney"
+                                    app:layout_constraintTop_toTopOf="@+id/extraMoney"
+                                    app:shapeAppearance="@style/ShapeAppearance.Material3.Corner.Medium" />
+
+                                <ImageView
+                                    android:id="@+id/icon"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginEnd="@dimen/_10sdp"
+                                    android:src="@drawable/pay_contact"
+                                    app:layout_constraintBottom_toBottomOf="@+id/extraMoney"
+                                    app:layout_constraintEnd_toEndOf="parent"
+                                    app:layout_constraintTop_toTopOf="@+id/extraMoney" />
+
+                                <TextView
+                                    android:id="@+id/extraMoney"
+                                    style="@style/TextTitleStyle"
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:background="@android:color/transparent"
+                                    android:fontFamily="@font/darker_grotesque_semibold"
+                                    android:paddingStart="@dimen/_10sdp"
+                                    android:paddingTop="@dimen/_10sdp"
+                                    android:paddingBottom="@dimen/_10sdp"
+                                    android:text="@string/ChargesText"
+                                    android:textSize="@dimen/_12sdp"
+                                    android:visibility="visible"
+                                    app:layout_constraintEnd_toStartOf="@+id/icon"
+                                    app:layout_constraintStart_toStartOf="parent"
+                                    app:layout_constraintTop_toTopOf="parent"
+                                    app:layout_goneMarginEnd="@dimen/_50sdp" />
+                            </androidx.constraintlayout.widget.ConstraintLayout>
+                        </com.google.android.material.card.MaterialCardView>
+                        <!--
+                                <com.google.android.material.textfield.TextInputLayout
+                                        android:id="@+id/lyt_bank_number"
+                                        style="@style/LightBGTextInputLayoutStyle"
+                                        android:layout_width="match_parent"
+                                        app:layout_constraintStart_toStartOf="parent"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginTop="@dimen/_10sdp"
+                                        android:fontFamily="@font/opensans_regular"
+                                        app:layout_constraintTop_toTopOf="parent"
+                                        android:hint="Bank Number">
+
+                                    <com.google.android.material.textfield.TextInputEditText
+                                            android:id="@+id/edt_bank_number"
+                                            style="@style/LightGBTextInputEditText"
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content"
+                                            android:fontFamily="@font/opensans_regular"
+                                            android:inputType="number" />
+                                </com.google.android.material.textfield.TextInputLayout>
+
+
+                                <com.google.android.material.textfield.TextInputLayout
+                                        android:id="@+id/lyt_bank_code"
+                                        style="@style/LightBGTextInputLayoutStyle"
+                                        android:layout_width="match_parent"
+                                        app:layout_constraintStart_toStartOf="parent"
+                                        app:layout_constraintTop_toBottomOf="@+id/lyt_bank_number"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginTop="@dimen/_10sdp"
+                                        android:fontFamily="@font/opensans_regular"
+                                        android:hint="Bank Code">
+
+                                    <com.google.android.material.textfield.TextInputEditText
+                                            android:id="@+id/edt_bank_code"
+                                            style="@style/LightGBTextInputEditText"
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content"
+                                            android:fontFamily="@font/opensans_regular"
+                                            android:inputType="text" />
+                                </com.google.android.material.textfield.TextInputLayout>
+
+
+                                <com.google.android.material.textfield.TextInputLayout
+                                        android:id="@+id/lyt_acc_holder"
+                                        style="@style/LightBGTextInputLayoutStyle"
+                                        android:layout_width="match_parent"
+                                        app:layout_constraintStart_toStartOf="parent"
+                                        app:layout_constraintTop_toBottomOf="@+id/lyt_bank_code"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginTop="@dimen/_10sdp"
+                                        android:fontFamily="@font/opensans_regular"
+                                        android:hint="Account Holder">
+
+                                    <com.google.android.material.textfield.TextInputEditText
+                                            android:id="@+id/edt_acc_holder"
+                                            style="@style/LightGBTextInputEditText"
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content"
+                                            android:fontFamily="@font/opensans_regular"
+                                            android:inputType="text" />
+                                </com.google.android.material.textfield.TextInputLayout>
+
+
+                                <com.google.android.material.textfield.TextInputLayout
+                                        android:id="@+id/lyt_amount"
+                                        style="@style/LightBGTextInputLayoutStyle"
+                                        android:layout_width="match_parent"
+                                        app:layout_constraintStart_toStartOf="parent"
+                                        app:layout_constraintTop_toBottomOf="@+id/lyt_acc_holder"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginTop="@dimen/_10sdp"
+                                        android:fontFamily="@font/opensans_regular"
+                                        android:hint="Amount">
+
+                                    <com.google.android.material.textfield.TextInputEditText
+                                            android:id="@+id/edt_amount"
+                                            style="@style/LightGBTextInputEditText"
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content"
+                                            android:fontFamily="@font/opensans_regular"
+                                            android:inputType="numberDecimal" />
+                                </com.google.android.material.textfield.TextInputLayout>
+
+
+                                <com.google.android.material.button.MaterialButton
+                                        android:id="@+id/btn_submit"
+                                        android:layout_width="@dimen/_150sdp"
+                                        android:layout_height="@dimen/_42sdp"
+                                        android:layout_marginHorizontal="@dimen/_30sdp"
+                                        android:layout_marginTop="@dimen/_35sdp"
+                                        app:layout_constraintTop_toBottomOf="@+id/lyt_amount"
+                                        android:text="Send"
+                                        app:layout_constraintEnd_toEndOf="parent"
+                                        app:layout_constraintStart_toStartOf="parent"
+                                        android:textColor="@color/white"
+                                        app:backgroundTint="@null" />
+
+                        -->
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/allAccountRecycler"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical" />
+                </ViewFlipper>
+            </androidx.appcompat.widget.LinearLayoutCompat>
+        </ScrollView>
+    </FrameLayout>
+</layout>

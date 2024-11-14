@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools">
+
+    <ScrollView
+            android:id="@+id/top_layout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingStart="@dimen/_20sdp"
+                android:paddingTop="@dimen/_30sdp"
+                android:paddingEnd="@dimen/_20sdp"
+                android:paddingBottom="@dimen/_10sdp">
+
+
+            <ImageView
+                    android:id="@+id/imageFilterView"
+                    android:layout_width="@dimen/_80sdp"
+                    android:layout_height="@dimen/_100sdp"
+                    android:contentDescription="@string/image"
+                    android:paddingStart="@dimen/_10sdp"
+                    android:src="@drawable/logo"
+                    android:visibility="gone"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    tools:ignore="RtlSymmetry" />
+
+            <TextView
+                    android:id="@+id/lbl_title"
+                    style="@style/TextTitleStyle"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:fontFamily="@font/darker_grotesque_bold"
+                    android:gravity="center"
+                    android:textSize="@dimen/_21sdp"
+                    app:layout_constraintTop_toBottomOf="@+id/imageFilterView" />
+
+
+            <TextView
+                    android:id="@+id/lbl_msg"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_10sdp"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:layout_marginEnd="@dimen/_10sdp"
+                    android:fontFamily="@font/darker_grotesque_semibold"
+                    android:gravity="center"
+                    android:minLines="2"
+                    android:text="Enter 6-digit Code we have sent to"
+                    android:textSize="@dimen/_15sdp"
+                    app:layout_constraintTop_toBottomOf="@+id/lbl_title" />
+
+            <androidx.appcompat.widget.LinearLayoutCompat
+                    android:id="@+id/layout_otp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:layout_marginTop="@dimen/_20sdp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/lbl_msg">
+
+                <TextView
+                        android:id="@+id/lbl_otp"
+                        style="@style/TextTitleStyle"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/opensans_regular"
+                        android:text="Enter OTP"
+                        android:visibility="gone"
+                        android:textSize="@dimen/_11sdp"
+                        app:layout_constraintTop_toBottomOf="@+id/lbl_title" />
+
+                <!--     <com.nbt.blytics.otphelper.OtpView
+                         android:id="@+id/otp_view"
+                         android:layout_width="wrap_content"
+                         android:layout_height="wrap_content"
+                         android:layout_gravity="center_horizontal"
+                         android:layout_marginTop="@dimen/_5sdp"
+                         android:gravity="center"
+                         android:inputType="number"
+                         android:itemBackground="@color/blue_500"
+                         android:textColor="@android:color/white"
+                         app:OtpItemCount="6"
+                         app:OtpLineColor="@color/blue_700"
+                         app:OtpViewType="line" />-->
+
+                <com.nbt.blytics.otphelpernew.OtpTextView
+                        android:id="@+id/otp_view"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_5sdp"
+                        android:gravity="center"
+                        app:hide_otp="false"
+                        android:focusableInTouchMode="true"
+                        android:inputType="number"
+                        android:textColor="@android:color/white"
+                        android:layout_gravity="center"
+                        app:otp_box_background="@color/blue_500"
+                        app:height="@dimen/_30sdp"
+                        app:width="@dimen/_30sdp"
+                        app:bar_enabled="true"
+                        app:bar_height="2dp"
+                        app:bar_active_color="@color/blue_700"
+                        app:length="6"
+                        app:otp_text_size="24dp" />
+
+
+            </androidx.appcompat.widget.LinearLayoutCompat>
+
+
+            <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btn_continue"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_42sdp"
+                    android:layout_marginHorizontal="@dimen/_30sdp"
+                    android:layout_marginTop="@dimen/_20sdp"
+                    android:text="Continue"
+                    android:textSize="@dimen/_13sdp"
+                    android:fontFamily="@font/darker_grotesque_bold"
+                    android:textColor="@color/white"
+                    app:backgroundTint="@null"
+                    app:layout_constraintTop_toBottomOf="@+id/layout_otp" />
+
+            <TextView
+                    android:id="@+id/txt_resend_msg"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_20sdp"
+                    android:fontFamily="@font/opensans_regular"
+                    android:text=""
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/btn_continue" />
+
+
+            <TextView
+                    android:id="@+id/btn_resend_code"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_20sdp"
+                    android:fontFamily="@font/opensans_bold"
+                    android:text="Resend OTP"
+                    android:visibility="gone"
+                    app:layout_constraintBaseline_toBaselineOf="@+id/txt_resend_msg"
+                    app:layout_constraintStart_toEndOf="@+id/txt_resend_msg"
+                    app:layout_constraintTop_toBottomOf="@+id/btn_continue" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
+</layout>

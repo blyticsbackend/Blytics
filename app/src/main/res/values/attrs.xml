@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="OtpViewTheme">
+        <attr name="otpViewStyle" format="reference" />
+    </declare-styleable>
+
+    <declare-styleable name="OtpView">
+        <attr name="OtpItemCount" format="integer" />
+        <attr name="OtpItemWidth" format="dimension" />
+        <attr name="OtpItemHeight" format="dimension" />
+        <attr name="OtpItemRadius" format="dimension" />
+        <attr name="OtpItemSpacing" format="dimension" />
+        <attr name="OtpLineWidth" format="dimension" />
+        <attr name="OtpLineColor" format="reference|color" />
+        <attr name="OtpViewType" format="enum">
+            <enum name="rectangle" value="0" />
+            <enum name="line" value="1" />
+            <enum name="none" value="2" />
+        </attr>
+        <attr name="android:cursorVisible" />
+        <attr name="android:textAllCaps" />
+        <attr name="OtpCursorWidth" format="dimension" />
+        <attr name="OtpCursorColor" format="reference|color" />
+        <attr name="android:itemBackground" />
+        <attr name="OtpHideLineWhenFilled" format="boolean" />
+        <attr name="OtpState_filled" format="boolean" />
+        <attr name="OtpRtlTextDirection" format="boolean" />
+        <attr name="OtpMaskingChar" format="string" />
+    </declare-styleable>
+
+
+    <declare-styleable name="OtpTextView">
+        <attr name="android:textColor" />
+        <attr name="otp" format="string" />
+        <attr name="hide_otp" format="boolean" />
+        <attr name="hide_otp_drawable" format="reference" />
+        <attr name="length" format="integer" />
+        <attr name="width" format="dimension" />
+        <attr name="height" format="dimension" />
+        <attr name="box_margin" format="dimension" />
+        <attr name="box_margin_left" format="dimension" />
+        <attr name="box_margin_right" format="dimension" />
+        <attr name="box_margin_top" format="dimension" />
+        <attr name="box_margin_bottom" format="dimension" />
+        <attr name="bar_height" format="dimension" />
+        <attr name="bar_enabled" format="boolean" />
+        <attr name="otp_box_background" format="reference" />
+        <attr name="otp_box_background_active" format="reference" />
+        <attr name="otp_box_background_inactive" format="reference" />
+        <attr name="otp_box_background_success" format="reference" />
+        <attr name="otp_box_background_error" format="reference" />
+        <attr name="bar_margin" format="dimension" />
+        <attr name="bar_margin_bottom" format="dimension" />
+        <attr name="bar_margin_right" format="dimension" />
+        <attr name="bar_margin_left" format="dimension" />
+        <attr name="bar_margin_top" format="dimension" />
+        <attr name="otp_text_size" format="dimension" />
+        <attr name="bar_active_color" format="color" />
+        <attr name="bar_inactive_color" format="color" />
+        <attr name="bar_error_color" format="color" />
+        <attr name="bar_success_color" format="color" />
+        <attr name="text_typeface" format="string" />
+    </declare-styleable>
+    <!-- BottomDrawerDialog Start-->
+
+
+    <declare-styleable name="BottomDrawer">
+        <attr name="should_draw_under_status_bar" format="boolean" />
+        <attr name="should_draw_content_under_handle_view" format="boolean" />
+        <attr name="bottom_sheet_corner_radius" format="dimension" />
+        <attr name="bottom_sheet_extra_padding" format="dimension" />
+        <attr name="bottom_drawer_background" format="reference" />
+    </declare-styleable>
+    <declare-styleable name="BottomDrawerDialog">
+        <attr name="is_cancelable_on_touch_outside" format="boolean" />
+    </declare-styleable>
+
+    <!-- BottomDrawerDialog End-->
+
+    <declare-styleable name="CircularProgressBar">
+        <attr name="cpb_progress" format="integer" />
+        <attr name="cpb_progress_max" format="integer" />
+        <attr name="cpb_indeterminate_mode" format="boolean" />
+        <attr name="cpb_progressbar_color" format="color" />
+        <attr name="cpb_progressbar_color_start" format="color" />
+        <attr name="cpb_progressbar_color_end" format="color" />
+        <attr name="cpb_progressbar_color_direction">
+            <flag name="left_to_right" value="1" />
+            <flag name="right_to_left" value="2" />
+            <flag name="top_to_bottom" value="3" />
+            <flag name="bottom_to_top" value="4" />
+        </attr>
+        <attr name="cpb_background_progressbar_color" format="color" />
+        <attr name="cpb_background_progressbar_color_start" format="color" />
+        <attr name="cpb_background_progressbar_color_end" format="color" />
+        <attr name="cpb_background_progressbar_color_direction">
+            <flag name="left_to_right" value="1" />
+            <flag name="right_to_left" value="2" />
+            <flag name="top_to_bottom" value="3" />
+            <flag name="bottom_to_top" value="4" />
+        </attr>
+        <attr name="cpb_progressbar_width" format="dimension" />
+        <attr name="cpb_background_progressbar_width" format="dimension" />
+        <attr name="cpb_round_border" format="boolean" />
+        <attr name="cpb_start_angle" format="float" />
+        <attr name="cpb_progress_direction">
+            <flag name="to_right" value="1" />
+            <flag name="to_left" value="2" />
+        </attr>
+    </declare-styleable>
+
+</resources>

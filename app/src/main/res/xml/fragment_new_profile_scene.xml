@@ -1,0 +1,1384 @@
+<?xml version="1.0" encoding="utf-8"?>
+<MotionScene xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <Transition
+        app:constraintSetEnd="@+id/end"
+        app:constraintSetStart="@id/start"
+        app:duration="3000">
+        <OnSwipe
+            app:dragDirection="dragDown"
+            app:onTouchUp="autoComplete"
+            app:touchAnchorId="@id/pillCard1"
+            app:touchRegionId="@id/pillCard1" />
+    </Transition>
+
+    <Transition
+        app:constraintSetEnd="@+id/end2"
+        app:constraintSetStart="@id/end"
+        app:duration="3000">
+        <OnSwipe
+            app:dragDirection="dragDown"
+            app:onTouchUp="autoComplete"
+            app:touchAnchorId="@id/pillCard2"
+            app:touchRegionId="@id/pillCard2" />
+    </Transition>
+
+    <Transition
+        app:constraintSetEnd="@+id/end3"
+        app:constraintSetStart="@id/end2"
+        app:duration="3000">
+        <OnSwipe
+            app:dragDirection="dragDown"
+            app:onTouchUp="autoComplete"
+            app:touchAnchorId="@id/pillCard3"
+            app:touchRegionId="@id/pillCard3" />
+    </Transition>
+
+
+    <Transition
+        app:constraintSetEnd="@+id/end4"
+        app:constraintSetStart="@id/end3"
+        app:duration="3000">
+        <OnSwipe
+            app:dragDirection="dragDown"
+            app:onTouchUp="autoComplete"
+            app:touchAnchorId="@id/pillCard4"
+            app:touchRegionId="@id/pillCard4" />
+    </Transition>
+
+    <Transition
+        app:constraintSetEnd="@+id/end5"
+        app:constraintSetStart="@id/end4"
+        app:duration="3000">
+        <OnSwipe
+            app:dragDirection="dragDown"
+            app:onTouchUp="autoComplete"
+            app:touchAnchorId="@id/pillCard5"
+            app:touchRegionId="@id/pillCard5" />
+    </Transition>
+
+
+    <Transition
+        app:constraintSetEnd="@+id/end6"
+        app:constraintSetStart="@id/end5"
+        app:duration="3000">
+        <OnSwipe
+            app:dragDirection="dragDown"
+            app:onTouchUp="autoComplete"
+            app:touchAnchorId="@id/pillCard6"
+            app:touchRegionId="@id/pillCard6" />
+    </Transition>
+
+
+    <Transition
+        app:constraintSetEnd="@+id/end7"
+        app:constraintSetStart="@id/end6"
+        app:duration="3000">
+        <OnSwipe
+            app:dragDirection="dragDown"
+            app:onTouchUp="autoComplete"
+            app:touchAnchorId="@id/pillCard7"
+            app:touchRegionId="@id/pillCard7" />
+    </Transition>
+
+    <Transition
+        app:constraintSetEnd="@+id/end8"
+        app:constraintSetStart="@id/end7"
+        app:duration="3000">
+        <OnSwipe
+            app:dragDirection="dragDown"
+            app:onTouchUp="autoComplete"
+            app:touchAnchorId="@id/pillCard8"
+            app:touchRegionId="@id/pillCard8" />
+    </Transition>
+
+
+    <ConstraintSet android:id="@+id/start">
+        <Constraint android:id="@+id/pillCard1">
+            <Layout
+                android:layout_width="0dp"
+                android:layout_height="@dimen/_120sdp"
+                app:cardCornerRadius="8dp"
+                android:layout_marginStart="0dp"
+                android:layout_marginEnd="0dp"
+                android:layout_marginTop="@dimen/_100sdp"
+                app:layout_constraintEnd_toEndOf="@+id/guideline_vertical_end"
+             app:layout_constraintStart_toStartOf="@+id/guideline_vertical_start"
+                app:layout_constraintTop_toTopOf="parent" />
+            <CustomAttribute
+                app:attributeName="cardElevation"
+                app:customDimension="9dp" />
+        </Constraint>
+
+        <Constraint android:id="@+id/pillCard2">
+            <Layout
+                android:layout_width="0dp"
+                android:layout_height="@dimen/_120sdp"
+                app:cardCornerRadius="8dp"
+
+                android:layout_marginStart="@dimen/_4sdp"
+                android:layout_marginEnd="@dimen/_4sdp"
+                android:layout_marginTop="@dimen/_80sdp"
+                app:layout_constraintEnd_toEndOf="@+id/guideline_vertical_end"
+             app:layout_constraintStart_toStartOf="@+id/guideline_vertical_start"
+                app:layout_constraintTop_toTopOf="parent" />
+            <CustomAttribute
+                app:attributeName="cardElevation"
+                app:customDimension="8dp" />
+
+        </Constraint>
+
+        <Constraint android:id="@+id/pillCard3">
+            <Layout
+                android:layout_width="0dp"
+                android:layout_height="@dimen/_120sdp"
+                app:cardCornerRadius="8dp"
+                android:layout_marginStart="@dimen/_8sdp"
+                android:layout_marginEnd="@dimen/_8sdp"
+                android:layout_marginTop="@dimen/_70sdp"
+                app:layout_constraintEnd_toEndOf="@+id/guideline_vertical_end"
+             app:layout_constraintStart_toStartOf="@+id/guideline_vertical_start"
+                app:layout_constraintTop_toTopOf="parent" />
+            <CustomAttribute
+                app:attributeName="cardElevation"
+                app:customDimension="7dp" />
+        </Constraint>
+        <Constraint android:id="@+id/pillCard4">
+            <Layout
+                android:layout_width="0dp"
+                android:layout_height="@dimen/_120sdp"
+                app:cardCornerRadius="8dp"
+                android:layout_marginStart="@dimen/_12sdp"
+                android:layout_marginEnd="@dimen/_12sdp"
+                android:layout_marginTop="@dimen/_60sdp"
+                app:layout_constraintEnd_toEndOf="@+id/guideline_vertical_end"
+             app:layout_constraintStart_toStartOf="@+id/guideline_vertical_start"
+                app:layout_constraintTop_toTopOf="parent" />
+            <CustomAttribute
+                app:attributeName="cardElevation"
+                app:customDimension="6dp" />
+        </Constraint>
+        <Constraint android:id="@+id/pillCard5">
+            <Layout
+                android:layout_width="0dp"
+                android:layout_height="@dimen/_120sdp"
+                app:cardCornerRadius="8dp"
+                android:layout_marginStart="@dimen/_16sdp"
+                android:layout_marginEnd="@dimen/_16sdp"
+                android:layout_marginTop="@dimen/_50sdp"
+                app:layout_constraintEnd_toEndOf="@+id/guideline_vertical_end"
+             app:layout_constraintStart_toStartOf="@+id/guideline_vertical_start"
+                app:layout_constraintTop_toTopOf="parent" />
+            <CustomAttribute
+                app:attributeName="cardElevation"
+                app:customDimension="5dp" />
+        </Constraint>
+        <Constraint android:id="@+id/pillCard6">
+            <Layout
+                android:layout_width="0dp"
+                android:layout_height="@dimen/_120sdp"
+                app:cardCornerRadius="8dp"
+                android:layout_marginStart="@dimen/_20sdp"
+                android:layout_marginEnd="@dimen/_20sdp"
+                android:layout_marginTop="@dimen/_40sdp"
+                app:layout_constraintEnd_toEndOf="@+id/guideline_vertical_end"
+             app:layout_constraintStart_toStartOf="@+id/guideline_vertical_start"
+                app:layout_constraintTop_toTopOf="parent" />
+            <CustomAttribute
+                app:attributeName="cardElevation"
+                app:customDimension="4dp" />
+        </Constraint>
+        <Constraint android:id="@+id/pillCard7">
+            <Layout
+                android:layout_width="0dp"
+                android:layout_height="@dimen/_120sdp"
+                app:cardCornerRadius="8dp"
+                android:layout_marginStart="@dimen/_24sdp"
+                android:layout_marginEnd="@dimen/_24sdp"
+                android:layout_marginTop="@dimen/_30sdp"
+                app:layout_constraintEnd_toEndOf="@+id/guideline_vertical_end"
+             app:layout_constraintStart_toStartOf="@+id/guideline_vertical_start"
+                app:layout_constraintTop_toTopOf="parent" />
+            <CustomAttribute
+                app:attributeName="cardElevation"
+                app:customDimension="3dp" />
+        </Constraint>
+        <Constraint android:id="@+id/pillCard8">
+            <Layout
+                android:layout_width="0dp"
+                android:layout_height="@dimen/_120sdp"
+                app:cardCornerRadius="8dp"
+                android:layout_marginStart="@dimen/_28sdp"
+                android:layout_marginEnd="@dimen/_28sdp"
+                android:layout_marginTop="@dimen/_20sdp"
+                app:layout_constraintEnd_toEndOf="@+id/guideline_vertical_end"
+             app:layout_constraintStart_toStartOf="@+id/guideline_vertical_start"
+                app:layout_constraintTop_toTopOf="parent" />
+            <CustomAttribute
+                app:attributeName="cardElevation"
+                app:customDimension="2dp" />
+        </Constraint>
+        <Constraint android:id="@+id/pillCard9">
+            <Layout
+                android:layout_width="0dp"
+                android:layout_height="@dimen/_120sdp"
+                app:cardCornerRadius="8dp"
+                android:layout_marginStart="@dimen/_32sdp"
+                android:layout_marginEnd="@dimen/_32sdp"
+                android:layout_marginTop="@dimen/_10sdp"
+                app:layout_constraintEnd_toEndOf="@+id/guideline_vertical_end"
+                app:layout_constraintStart_toStartOf="@+id/guideline_vertical_start"
+                app:layout_constraintTop_toTopOf="parent" />
+            <CustomAttribute
+                app:attributeName="cardElevation"
+                app:customDimension="1dp" />
+        </Constraint>
+    </ConstraintSet>
+
+    <ConstraintSet android:id="@+id/end">
+        <Constraint android:id="@+id/pillCard1">
+            <Layout
+                android:layout_width="0dp"
+                android:layout_height="@dimen/_120sdp"
+                android:layout_marginBottom="@dimen/_20sdp"
+                app:layout_constraintBottom_toBottomOf="@+id/guideline"
+                app:layout_constraintEnd_toEndOf="@+id/guideline_vertical_end"
+                app:layout_constraintStart_toStartOf="@+id/guideline_vertical_start" />
+            <CustomAttribute
+                app:attributeName="cardElevation"
+                app:customDimension="9dp" />
+
+        </Constraint>
+        <Constraint android:id="@+id/pillCard2">
+            <Layout
+                android:layout_width="0dp"
+               android:layout_height="@dimen/_120sdp"
+                android:layout_marginTop="@dimen/_90sdp"
+                android:layout_marginEnd="0dp"
+                android:layout_marginStart="0dp"
+
+                app:cardCornerRadius="0dp"
+                app:layout_constraintEnd_toEndOf="@+id/guideline_vertical_end"
+             app:layout_constraintStart_toStartOf="@+id/guideline_vertical_start"
+                app:layout_constraintTop_toTopOf="parent" />
+            <CustomAttribute
+                app:attributeName="cardElevation"
+                app:customDimension="8dp" />
+        </Constraint>
+        <Constraint android:id="@+id/pillCard3">
+            <Layout
+                android:layout_width="0dp"
+               android:layout_height="@dimen/_120sdp"
+                android:layout_marginStart="@dimen/_4sdp"
+                android:layout_marginTop="@dimen/_70sdp"
+                android:layout_marginEnd="@dimen/_4sdp"
+
+                app:cardCornerRadius="0dp"
+                app:layout_constraintEnd_toEndOf="@+id/guideline_vertical_end"
+             app:layout_constraintStart_toStartOf="@+id/guideline_vertical_start"
+                app:layout_constraintTop_toTopOf="parent" />
+            <CustomAttribute
+                app:attributeName="cardElevation"
+                app:customDimension="7dp" />
+        </Constraint>
+        <Constraint android:id="@+id/pillCard4">
+            <Layout
+                android:layout_width="0dp"
+               android:layout_height="@dimen/_120sdp"
+                android:layout_marginStart="@dimen/_8sdp"
+                android:layout_marginTop="@dimen/_60sdp"
+                android:layout_marginEnd="@dimen/_8sdp"
+
+                app:cardCornerRadius="0dp"
+                app:layout_constraintEnd_toEndOf="@+id/guideline_vertical_end"
+             app:layout_constraintStart_toStartOf="@+id/guideline_vertical_start"
+                app:layout_constraintTop_toTopOf="parent" />
+            <CustomAttribute
+                app:attributeName="cardElevation"
+                app:customDimension="6dp" />
+        </Constraint>
+        <Constraint android:id="@+id/pillCard5">
+            <Layout
+                android:layout_width="0dp"
+               android:layout_height="@dimen/_120sdp"
+                android:layout_marginStart="@dimen/_12sdp"
+                android:layout_marginTop="@dimen/_50sdp"
+                android:layout_marginEnd="@dimen/_12sdp"
+
+                app:cardCornerRadius="0dp"
+                app:layout_constraintEnd_toEndOf="@+id/guideline_vertical_end"
+             app:layout_constraintStart_toStartOf="@+id/guideline_vertical_start"
+                app:layout_constraintTop_toTopOf="parent" />
+            <CustomAttribute
+                app:attributeName="cardElevation"
+                app:customDimension="5dp" />
+        </Constraint>
+        <Constraint android:id="@+id/pillCard6">
+            <Layout
+                android:layout_width="0dp"
+               android:layout_height="@dimen/_120sdp"
+                android:layout_marginStart="@dimen/_16sdp"
+                android:layout_marginTop="@dimen/_40sdp"
+                android:layout_marginEnd="@dimen/_16sdp"
+
+                app:cardCornerRadius="0dp"
+                app:layout_constraintEnd_toEndOf="@+id/guideline_vertical_end"
+             app:layout_constraintStart_toStartOf="@+id/guideline_vertical_start"
+                app:layout_constraintTop_toTopOf="parent" />
+            <CustomAttribute
+                app:attributeName="cardElevation"
+                app:customDimension="4dp" />
+        </Constraint>
+        <Constraint android:id="@+id/pillCard7">
+            <Layout
+                android:layout_width="0dp"
+               android:layout_height="@dimen/_120sdp"
+                android:layout_marginStart="@dimen/_20sdp"
+                android:layout_marginTop="@dimen/_30sdp"
+                android:layout_marginEnd="@dimen/_20sdp"
+
+                app:cardCornerRadius="0dp"
+                app:layout_constraintEnd_toEndOf="@+id/guideline_vertical_end"
+             app:layout_constraintStart_toStartOf="@+id/guideline_vertical_start"
+                app:layout_constraintTop_toTopOf="parent" />
+            <CustomAttribute
+                app:attributeName="cardElevation"
+                app:customDimension="3dp" />
+        </Constraint>
+        <Constraint android:id="@+id/pillCard8">
+            <Layout
+                android:layout_width="0dp"
+               android:layout_height="@dimen/_120sdp"
+                android:layout_marginStart="@dimen/_24sdp"
+                android:layout_marginTop="@dimen/_20sdp"
+                android:layout_marginEnd="@dimen/_24sdp"
+
+                app:cardCornerRadius="0dp"
+                app:layout_constraintEnd_toEndOf="@+id/guideline_vertical_end"
+             app:layout_constraintStart_toStartOf="@+id/guideline_vertical_start"
+                app:layout_constraintTop_toTopOf="parent"
+
+                />
+            <CustomAttribute
+                app:attributeName="cardElevation"
+                app:customDimension="2dp" />
+        </Constraint>
+
+
+
+        <Constraint android:id="@+id/pillCard9">
+            <Layout
+                android:layout_width="0dp"
+                android:layout_height="@dimen/_120sdp"
+                android:layout_marginStart="@dimen/_24sdp"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:layout_marginEnd="@dimen/_28sdp"
+
+                app:cardCornerRadius="0dp"
+                app:layout_constraintEnd_toEndOf="@+id/guideline_vertical_end"
+                app:layout_constraintStart_toStartOf="@+id/guideline_vertical_start"
+                app:layout_constraintTop_toTopOf="parent"
+
+                />
+            <CustomAttribute
+                app:attributeName="cardElevation"
+                app:customDimension="1dp" />
+        </Constraint>
+
+
+
+    </ConstraintSet>
+
+    <ConstraintSet android:id="@+id/end2">
+        <Constraint android:id="@+id/pillCard1">
+            <Layout
+                android:layout_width="0dp"
+               android:layout_height="@dimen/_120sdp"
+                app:cardCornerRadius="0dp"
+                android:layout_marginBottom="@dimen/_10sdp"
+                app:layout_constraintBottom_toBottomOf="@+id/guideline"
+                app:layout_constraintEnd_toEndOf="@+id/guideline_vertical_end"
+             app:layout_constraintStart_toStartOf="@+id/guideline_vertical_start" />
+            <CustomAttribute
+                app:attributeName="cardElevation"
+                app:customDimension="9dp" />
+        </Constraint>
+        <Constraint android:id="@+id/pillCard2">
+            <Layout
+                android:layout_width="0dp"
+                android:layout_height="@dimen/_120sdp"
+                android:layout_marginBottom="@dimen/_30sdp"
+                app:cardCornerRadius="0dp"
+                app:layout_constraintBottom_toBottomOf="@+id/guideline"
+                app:layout_constraintEnd_toEndOf="@+id/guideline_vertical_end"
+             app:layout_constraintStart_toStartOf="@+id/guideline_vertical_start" />
+            <CustomAttribute
+                app:attributeName="cardElevation"
+                app:customDimension="7dp" />
+        </Constraint>
+
+        <Constraint android:id="@+id/pillCard3">
+            <Layout
+                android:layout_width="0dp"
+                android:layout_height="@dimen/_120sdp"
+                android:layout_marginStart="0dp"
+                android:layout_marginTop="@dimen/_80sdp"
+                android:layout_marginEnd="0dp"
+
+                app:cardCornerRadius="0dp"
+                app:layout_constraintEnd_toEndOf="@+id/guideline_vertical_end"
+                app:layout_constraintStart_toStartOf="@+id/guideline_vertical_start"
+                app:layout_constraintTop_toTopOf="parent" />
+            <CustomAttribute
+                app:attributeName="cardElevation"
+                app:customDimension="7dp" />
+        </Constraint>
+        <Constraint android:id="@+id/pillCard4">
+            <Layout
+                android:layout_width="0dp"
+                android:layout_height="@dimen/_120sdp"
+                android:layout_marginStart="@dimen/_4sdp"
+                android:layout_marginTop="@dimen/_60sdp"
+                android:layout_marginEnd="@dimen/_4sdp"
+
+                app:cardCornerRadius="0dp"
+                app:layout_constraintEnd_toEndOf="@+id/guideline_vertical_end"
+                app:layout_constraintStart_toStartOf="@+id/guideline_vertical_start"
+                app:layout_constraintTop_toTopOf="parent" />
+            <CustomAttribute
+                app:attributeName="cardElevation"
+                app:customDimension="6dp" />
+        </Constraint>
+        <Constraint android:id="@+id/pillCard5">
+            <Layout
+                android:layout_width="0dp"
+                android:layout_height="@dimen/_120sdp"
+                android:layout_marginStart="@dimen/_8sdp"
+                android:layout_marginTop="@dimen/_50sdp"
+                android:layout_marginEnd="@dimen/_8sdp"
+
+                app:cardCornerRadius="0dp"
+                app:layout_constraintEnd_toEndOf="@+id/guideline_vertical_end"
+                app:layout_constraintStart_toStartOf="@+id/guideline_vertical_start"
+                app:layout_constraintTop_toTopOf="parent" />
+            <CustomAttribute
+                app:attributeName="cardElevation"
+                app:customDimension="5dp" />
+        </Constraint>
+        <Constraint android:id="@+id/pillCard6">
+            <Layout
+                android:layout_width="0dp"
+                android:layout_height="@dimen/_120sdp"
+                android:layout_marginStart="@dimen/_12sdp"
+                android:layout_marginTop="@dimen/_40sdp"
+                android:layout_marginEnd="@dimen/_12sdp"
+
+                app:cardCornerRadius="0dp"
+                app:layout_constraintEnd_toEndOf="@+id/guideline_vertical_end"
+                app:layout_constraintStart_toStartOf="@+id/guideline_vertical_start"
+                app:layout_constraintTop_toTopOf="parent" />
+            <CustomAttribute
+                app:attributeName="cardElevation"
+                app:customDimension="4dp" />
+        </Constraint>
+        <Constraint android:id="@+id/pillCard7">
+            <Layout
+                android:layout_width="0dp"
+                android:layout_height="@dimen/_120sdp"
+                android:layout_marginStart="@dimen/_16sdp"
+                android:layout_marginTop="@dimen/_30sdp"
+                android:layout_marginEnd="@dimen/_16sdp"
+
+                app:cardCornerRadius="0dp"
+                app:layout_constraintEnd_toEndOf="@+id/guideline_vertical_end"
+                app:layout_constraintStart_toStartOf="@+id/guideline_vertical_start"
+                app:layout_constraintTop_toTopOf="parent" />
+            <CustomAttribute
+                app:attributeName="cardElevation"
+                app:customDimension="3dp" />
+        </Constraint>
+        <Constraint android:id="@+id/pillCard8">
+            <Layout
+                android:layout_width="0dp"
+                android:layout_height="@dimen/_120sdp"
+                android:layout_marginStart="@dimen/_20sdp"
+                android:layout_marginTop="@dimen/_20sdp"
+                android:layout_marginEnd="@dimen/_20sdp"
+
+                app:cardCornerRadius="0dp"
+                app:layout_constraintEnd_toEndOf="@+id/guideline_vertical_end"
+                app:layout_constraintStart_toStartOf="@+id/guideline_vertical_start"
+                app:layout_constraintTop_toTopOf="parent"
+
+                />
+            <CustomAttribute
+                app:attributeName="cardElevation"
+                app:customDimension="2dp" />
+        </Constraint>
+        <Constraint android:id="@+id/pillCard9">
+            <Layout
+                android:layout_width="0dp"
+                android:layout_height="@dimen/_120sdp"
+                android:layout_marginStart="@dimen/_24sdp"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:layout_marginEnd="@dimen/_24sdp"
+
+                app:cardCornerRadius="0dp"
+                app:layout_constraintEnd_toEndOf="@+id/guideline_vertical_end"
+                app:layout_constraintStart_toStartOf="@+id/guideline_vertical_start"
+                app:layout_constraintTop_toTopOf="parent"
+
+                />
+            <CustomAttribute
+                app:attributeName="cardElevation"
+                app:customDimension="1dp" />
+        </Constraint>
+
+
+    </ConstraintSet>
+
+    <ConstraintSet android:id="@+id/end3">
+
+        <Constraint android:id="@+id/pillCard1">
+            <Layout
+                android:layout_width="0dp"
+               android:layout_height="@dimen/_120sdp"
+                android:layout_marginBottom="@dimen/_10sdp"
+
+                app:cardCornerRadius="0dp"
+                app:layout_constraintBottom_toBottomOf="@+id/guideline"
+                app:layout_constraintEnd_toEndOf="@+id/guideline_vertical_end"
+             app:layout_constraintStart_toStartOf="@+id/guideline_vertical_start" />
+            <CustomAttribute
+                app:attributeName="cardElevation"
+                app:customDimension="8dp" />
+
+        </Constraint>
+        <Constraint android:id="@+id/pillCard2">
+            <Layout
+                android:layout_width="0dp"
+               android:layout_height="@dimen/_120sdp"
+                android:layout_marginBottom="@dimen/_20sdp"
+                app:cardCornerRadius="0dp"
+                app:layout_constraintBottom_toBottomOf="@+id/guideline"
+                app:layout_constraintEnd_toEndOf="@+id/guideline_vertical_end"
+             app:layout_constraintStart_toStartOf="@+id/guideline_vertical_start" />
+            <CustomAttribute
+                app:attributeName="cardElevation"
+                app:customDimension="7dp" />
+        </Constraint>
+        <Constraint android:id="@+id/pillCard3">
+            <Layout
+                android:layout_width="0dp"
+               android:layout_height="@dimen/_120sdp"
+                android:layout_marginBottom="@dimen/_40sdp"
+                app:cardCornerRadius="0dp"
+                app:layout_constraintBottom_toBottomOf="@+id/guideline"
+                app:layout_constraintEnd_toEndOf="@+id/guideline_vertical_end"
+             app:layout_constraintStart_toStartOf="@+id/guideline_vertical_start" />
+            <CustomAttribute
+                app:attributeName="cardElevation"
+                app:customDimension="6dp" />
+        </Constraint>
+        <Constraint android:id="@+id/pillCard4">
+            <Layout
+                android:layout_width="0dp"
+                android:layout_height="@dimen/_120sdp"
+                android:layout_marginStart="0dp"
+                android:layout_marginTop="@dimen/_70sdp"
+                android:layout_marginEnd="0dp"
+
+                app:cardCornerRadius="0dp"
+                app:layout_constraintEnd_toEndOf="@+id/guideline_vertical_end"
+                app:layout_constraintStart_toStartOf="@+id/guideline_vertical_start"
+                app:layout_constraintTop_toTopOf="parent" />
+            <CustomAttribute
+                app:attributeName="cardElevation"
+                app:customDimension="6dp" />
+        </Constraint>
+        <Constraint android:id="@+id/pillCard5">
+            <Layout
+                android:layout_width="0dp"
+                android:layout_height="@dimen/_120sdp"
+                android:layout_marginStart="@dimen/_4sdp"
+                android:layout_marginTop="@dimen/_50sdp"
+                android:layout_marginEnd="@dimen/_4sdp"
+
+                app:cardCornerRadius="0dp"
+                app:layout_constraintEnd_toEndOf="@+id/guideline_vertical_end"
+                app:layout_constraintStart_toStartOf="@+id/guideline_vertical_start"
+                app:layout_constraintTop_toTopOf="parent" />
+            <CustomAttribute
+                app:attributeName="cardElevation"
+                app:customDimension="5dp" />
+        </Constraint>
+        <Constraint android:id="@+id/pillCard6">
+            <Layout
+                android:layout_width="0dp"
+                android:layout_height="@dimen/_120sdp"
+                android:layout_marginStart="@dimen/_8sdp"
+                android:layout_marginTop="@dimen/_40sdp"
+                android:layout_marginEnd="@dimen/_8sdp"
+
+                app:cardCornerRadius="0dp"
+                app:layout_constraintEnd_toEndOf="@+id/guideline_vertical_end"
+                app:layout_constraintStart_toStartOf="@+id/guideline_vertical_start"
+                app:layout_constraintTop_toTopOf="parent" />
+            <CustomAttribute
+                app:attributeName="cardElevation"
+                app:customDimension="4dp" />
+        </Constraint>
+        <Constraint android:id="@+id/pillCard7">
+            <Layout
+                android:layout_width="0dp"
+                android:layout_height="@dimen/_120sdp"
+                android:layout_marginStart="@dimen/_12sdp"
+                android:layout_marginTop="@dimen/_30sdp"
+                android:layout_marginEnd="@dimen/_12sdp"
+
+                app:cardCornerRadius="0dp"
+                app:layout_constraintEnd_toEndOf="@+id/guideline_vertical_end"
+                app:layout_constraintStart_toStartOf="@+id/guideline_vertical_start"
+                app:layout_constraintTop_toTopOf="parent" />
+            <CustomAttribute
+                app:attributeName="cardElevation"
+                app:customDimension="3dp" />
+        </Constraint>
+        <Constraint android:id="@+id/pillCard8">
+            <Layout
+                android:layout_width="0dp"
+                android:layout_height="@dimen/_120sdp"
+                android:layout_marginStart="@dimen/_16sdp"
+                android:layout_marginTop="@dimen/_20sdp"
+                android:layout_marginEnd="@dimen/_16sdp"
+
+                app:cardCornerRadius="0dp"
+                app:layout_constraintEnd_toEndOf="@+id/guideline_vertical_end"
+                app:layout_constraintStart_toStartOf="@+id/guideline_vertical_start"
+                app:layout_constraintTop_toTopOf="parent"
+
+                />
+            <CustomAttribute
+                app:attributeName="cardElevation"
+                app:customDimension="2dp" />
+        </Constraint>
+        <Constraint android:id="@+id/pillCard9">
+            <Layout
+                android:layout_width="0dp"
+                android:layout_height="@dimen/_120sdp"
+                android:layout_marginStart="@dimen/_24sdp"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:layout_marginEnd="@dimen/_24sdp"
+
+                app:cardCornerRadius="0dp"
+                app:layout_constraintEnd_toEndOf="@+id/guideline_vertical_end"
+                app:layout_constraintStart_toStartOf="@+id/guideline_vertical_start"
+                app:layout_constraintTop_toTopOf="parent"
+
+                />
+            <CustomAttribute
+                app:attributeName="cardElevation"
+                app:customDimension="1dp" />
+        </Constraint>
+
+
+    </ConstraintSet>
+
+    <ConstraintSet android:id="@+id/end4">
+
+        <Constraint android:id="@+id/pillCard1">
+            <Layout
+                android:layout_width="0dp"
+               android:layout_height="@dimen/_120sdp"
+                android:layout_marginBottom="@dimen/_10sdp"
+
+                app:cardCornerRadius="0dp"
+                app:layout_constraintBottom_toBottomOf="@+id/guideline"
+                app:layout_constraintEnd_toEndOf="@+id/guideline_vertical_end"
+             app:layout_constraintStart_toStartOf="@+id/guideline_vertical_start" />
+            <CustomAttribute
+                app:attributeName="cardElevation"
+                app:customDimension="8dp" />
+
+        </Constraint>
+        <Constraint android:id="@+id/pillCard2">
+            <Layout
+                android:layout_width="0dp"
+               android:layout_height="@dimen/_120sdp"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="@dimen/_20sdp"
+
+                app:cardCornerRadius="0dp"
+                app:layout_constraintBottom_toBottomOf="@+id/guideline"
+                app:layout_constraintEnd_toEndOf="@+id/guideline_vertical_end"
+             app:layout_constraintStart_toStartOf="@+id/guideline_vertical_start" />
+            <CustomAttribute
+                app:attributeName="cardElevation"
+                app:customDimension="7dp" />
+        </Constraint>
+        <Constraint android:id="@+id/pillCard3">
+            <Layout
+                android:layout_width="0dp"
+               android:layout_height="@dimen/_120sdp"
+                android:layout_marginBottom="@dimen/_30sdp"
+
+                app:cardCornerRadius="0dp"
+                app:layout_constraintBottom_toBottomOf="@+id/guideline"
+                app:layout_constraintEnd_toEndOf="@+id/guideline_vertical_end"
+             app:layout_constraintStart_toStartOf="@+id/guideline_vertical_start" />
+            <CustomAttribute
+                app:attributeName="cardElevation"
+                app:customDimension="6dp" />
+        </Constraint>
+        <Constraint android:id="@+id/pillCard4">
+            <Layout
+                android:layout_width="0dp"
+               android:layout_height="@dimen/_120sdp"
+                android:layout_marginBottom="@dimen/_50sdp"
+
+                app:cardCornerRadius="0dp"
+                app:layout_constraintBottom_toBottomOf="@+id/guideline"
+                app:layout_constraintEnd_toEndOf="@+id/guideline_vertical_end"
+             app:layout_constraintStart_toStartOf="@+id/guideline_vertical_start" />
+            <CustomAttribute
+                app:attributeName="cardElevation"
+                app:customDimension="5dp" />
+        </Constraint>
+
+        <Constraint android:id="@+id/pillCard5">
+            <Layout
+                android:layout_width="0dp"
+                android:layout_height="@dimen/_120sdp"
+                android:layout_marginStart="0dp"
+                android:layout_marginTop="@dimen/_60sdp"
+                android:layout_marginEnd="0dp"
+
+                app:cardCornerRadius="0dp"
+                app:layout_constraintEnd_toEndOf="@+id/guideline_vertical_end"
+                app:layout_constraintStart_toStartOf="@+id/guideline_vertical_start"
+                app:layout_constraintTop_toTopOf="parent" />
+            <CustomAttribute
+                app:attributeName="cardElevation"
+                app:customDimension="5dp" />
+        </Constraint>
+        <Constraint android:id="@+id/pillCard6">
+            <Layout
+                android:layout_width="0dp"
+                android:layout_height="@dimen/_120sdp"
+                android:layout_marginStart="@dimen/_4sdp"
+                android:layout_marginTop="@dimen/_40sdp"
+                android:layout_marginEnd="@dimen/_4sdp"
+
+                app:cardCornerRadius="0dp"
+                app:layout_constraintEnd_toEndOf="@+id/guideline_vertical_end"
+                app:layout_constraintStart_toStartOf="@+id/guideline_vertical_start"
+                app:layout_constraintTop_toTopOf="parent" />
+            <CustomAttribute
+                app:attributeName="cardElevation"
+                app:customDimension="4dp" />
+        </Constraint>
+        <Constraint android:id="@+id/pillCard7">
+            <Layout
+                android:layout_width="0dp"
+                android:layout_height="@dimen/_120sdp"
+                android:layout_marginStart="@dimen/_8sdp"
+                android:layout_marginTop="@dimen/_30sdp"
+                android:layout_marginEnd="@dimen/_8sdp"
+
+                app:cardCornerRadius="0dp"
+                app:layout_constraintEnd_toEndOf="@+id/guideline_vertical_end"
+                app:layout_constraintStart_toStartOf="@+id/guideline_vertical_start"
+                app:layout_constraintTop_toTopOf="parent" />
+            <CustomAttribute
+                app:attributeName="cardElevation"
+                app:customDimension="3dp" />
+        </Constraint>
+        <Constraint android:id="@+id/pillCard8">
+            <Layout
+                android:layout_width="0dp"
+                android:layout_height="@dimen/_120sdp"
+                android:layout_marginStart="@dimen/_12sdp"
+                android:layout_marginTop="@dimen/_20sdp"
+                android:layout_marginEnd="@dimen/_12sdp"
+
+                app:cardCornerRadius="0dp"
+                app:layout_constraintEnd_toEndOf="@+id/guideline_vertical_end"
+                app:layout_constraintStart_toStartOf="@+id/guideline_vertical_start"
+                app:layout_constraintTop_toTopOf="parent"
+
+                />
+            <CustomAttribute
+                app:attributeName="cardElevation"
+                app:customDimension="2dp" />
+        </Constraint>
+        <Constraint android:id="@+id/pillCard9">
+            <Layout
+                android:layout_width="0dp"
+                android:layout_height="@dimen/_120sdp"
+                android:layout_marginStart="@dimen/_16sdp"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:layout_marginEnd="@dimen/_16sdp"
+
+                app:cardCornerRadius="0dp"
+                app:layout_constraintEnd_toEndOf="@+id/guideline_vertical_end"
+                app:layout_constraintStart_toStartOf="@+id/guideline_vertical_start"
+                app:layout_constraintTop_toTopOf="parent"
+
+                />
+            <CustomAttribute
+                app:attributeName="cardElevation"
+                app:customDimension="1dp" />
+        </Constraint>
+
+    </ConstraintSet>
+    <ConstraintSet android:id="@+id/end5">
+
+        <Constraint android:id="@+id/pillCard1">
+            <Layout
+                android:layout_width="0dp"
+               android:layout_height="@dimen/_120sdp"
+                android:layout_marginBottom="@dimen/_10sdp"
+
+                app:cardCornerRadius="0dp"
+                app:layout_constraintBottom_toBottomOf="@+id/guideline"
+                app:layout_constraintEnd_toEndOf="@+id/guideline_vertical_end"
+             app:layout_constraintStart_toStartOf="@+id/guideline_vertical_start" />
+            <CustomAttribute
+                app:attributeName="cardElevation"
+                app:customDimension="8dp" />
+
+        </Constraint>
+        <Constraint android:id="@+id/pillCard2">
+            <Layout
+                android:layout_width="0dp"
+               android:layout_height="@dimen/_120sdp"
+                android:layout_marginBottom="@dimen/_20sdp"
+
+                app:cardCornerRadius="0dp"
+                app:layout_constraintBottom_toBottomOf="@+id/guideline"
+                app:layout_constraintEnd_toEndOf="@+id/guideline_vertical_end"
+             app:layout_constraintStart_toStartOf="@+id/guideline_vertical_start" />
+            <CustomAttribute
+                app:attributeName="cardElevation"
+                app:customDimension="7dp" />
+        </Constraint>
+        <Constraint android:id="@+id/pillCard3">
+            <Layout
+                android:layout_width="0dp"
+               android:layout_height="@dimen/_120sdp"
+                android:layout_marginBottom="@dimen/_30sdp"
+
+                app:cardCornerRadius="0dp"
+                app:layout_constraintBottom_toBottomOf="@+id/guideline"
+                app:layout_constraintEnd_toEndOf="@+id/guideline_vertical_end"
+             app:layout_constraintStart_toStartOf="@+id/guideline_vertical_start" />
+            <CustomAttribute
+                app:attributeName="cardElevation"
+                app:customDimension="6dp" />
+        </Constraint>
+        <Constraint android:id="@+id/pillCard4">
+            <Layout
+                android:layout_width="0dp"
+               android:layout_height="@dimen/_120sdp"
+                android:layout_marginBottom="@dimen/_40sdp"
+
+                app:cardCornerRadius="0dp"
+                app:layout_constraintBottom_toBottomOf="@+id/guideline"
+                app:layout_constraintEnd_toEndOf="@+id/guideline_vertical_end"
+             app:layout_constraintStart_toStartOf="@+id/guideline_vertical_start" />
+            <CustomAttribute
+                app:attributeName="cardElevation"
+                app:customDimension="5dp" />
+        </Constraint>
+        <Constraint android:id="@+id/pillCard5">
+            <Layout
+                android:layout_width="0dp"
+               android:layout_height="@dimen/_120sdp"
+                android:layout_marginBottom="@dimen/_60sdp"
+
+                app:cardCornerRadius="0dp"
+                app:layout_constraintBottom_toBottomOf="@+id/guideline"
+                app:layout_constraintEnd_toEndOf="@+id/guideline_vertical_end"
+             app:layout_constraintStart_toStartOf="@+id/guideline_vertical_start" />
+            <CustomAttribute
+                app:attributeName="cardElevation"
+                app:customDimension="4dp" />
+        </Constraint>
+
+        <Constraint android:id="@+id/pillCard6">
+            <Layout
+                android:layout_width="0dp"
+                android:layout_height="@dimen/_120sdp"
+                android:layout_marginStart="0dp"
+                android:layout_marginTop="@dimen/_50sdp"
+                android:layout_marginEnd="0dp"
+
+                app:cardCornerRadius="0dp"
+                app:layout_constraintEnd_toEndOf="@+id/guideline_vertical_end"
+                app:layout_constraintStart_toStartOf="@+id/guideline_vertical_start"
+                app:layout_constraintTop_toTopOf="parent" />
+            <CustomAttribute
+                app:attributeName="cardElevation"
+                app:customDimension="4dp" />
+        </Constraint>
+        <Constraint android:id="@+id/pillCard7">
+            <Layout
+                android:layout_width="0dp"
+                android:layout_height="@dimen/_120sdp"
+                android:layout_marginStart="@dimen/_4sdp"
+                android:layout_marginTop="@dimen/_30sdp"
+                android:layout_marginEnd="@dimen/_4sdp"
+
+                app:cardCornerRadius="0dp"
+                app:layout_constraintEnd_toEndOf="@+id/guideline_vertical_end"
+                app:layout_constraintStart_toStartOf="@+id/guideline_vertical_start"
+                app:layout_constraintTop_toTopOf="parent" />
+            <CustomAttribute
+                app:attributeName="cardElevation"
+                app:customDimension="3dp" />
+        </Constraint>
+        <Constraint android:id="@+id/pillCard8">
+            <Layout
+                android:layout_width="0dp"
+                android:layout_height="@dimen/_120sdp"
+                android:layout_marginStart="@dimen/_8sdp"
+                android:layout_marginTop="@dimen/_20sdp"
+                android:layout_marginEnd="@dimen/_8sdp"
+
+                app:cardCornerRadius="0dp"
+                app:layout_constraintEnd_toEndOf="@+id/guideline_vertical_end"
+                app:layout_constraintStart_toStartOf="@+id/guideline_vertical_start"
+                app:layout_constraintTop_toTopOf="parent"
+
+                />
+            <CustomAttribute
+                app:attributeName="cardElevation"
+                app:customDimension="2dp" />
+        </Constraint>
+        <Constraint android:id="@+id/pillCard9">
+            <Layout
+                android:layout_width="0dp"
+                android:layout_height="@dimen/_120sdp"
+                android:layout_marginStart="@dimen/_12sdp"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:layout_marginEnd="@dimen/_12sdp"
+
+                app:cardCornerRadius="0dp"
+                app:layout_constraintEnd_toEndOf="@+id/guideline_vertical_end"
+                app:layout_constraintStart_toStartOf="@+id/guideline_vertical_start"
+                app:layout_constraintTop_toTopOf="parent"
+
+                />
+            <CustomAttribute
+                app:attributeName="cardElevation"
+                app:customDimension="1dp" />
+        </Constraint>
+    </ConstraintSet>
+
+    <ConstraintSet android:id="@+id/end6">
+
+        <Constraint android:id="@+id/pillCard1">
+            <Layout
+                android:layout_width="0dp"
+               android:layout_height="@dimen/_120sdp"
+                android:layout_marginBottom="@dimen/_10sdp"
+
+                app:cardCornerRadius="0dp"
+                app:layout_constraintBottom_toBottomOf="@+id/guideline"
+                app:layout_constraintEnd_toEndOf="@+id/guideline_vertical_end"
+             app:layout_constraintStart_toStartOf="@+id/guideline_vertical_start" />
+            <CustomAttribute
+                app:attributeName="cardElevation"
+                app:customDimension="8dp" />
+
+        </Constraint>
+        <Constraint android:id="@+id/pillCard2">
+            <Layout
+                android:layout_width="0dp"
+               android:layout_height="@dimen/_120sdp"
+                android:layout_marginBottom="@dimen/_20sdp"
+                app:cardCornerRadius="0dp"
+                app:layout_constraintBottom_toBottomOf="@+id/guideline"
+                app:layout_constraintEnd_toEndOf="@+id/guideline_vertical_end"
+             app:layout_constraintStart_toStartOf="@+id/guideline_vertical_start" />
+            <CustomAttribute
+                app:attributeName="cardElevation"
+                app:customDimension="7dp" />
+        </Constraint>
+        <Constraint android:id="@+id/pillCard3">
+            <Layout
+                android:layout_width="0dp"
+               android:layout_height="@dimen/_120sdp"
+                android:layout_marginBottom="@dimen/_30sdp"
+
+                app:cardCornerRadius="0dp"
+                app:layout_constraintBottom_toBottomOf="@+id/guideline"
+                app:layout_constraintEnd_toEndOf="@+id/guideline_vertical_end"
+             app:layout_constraintStart_toStartOf="@+id/guideline_vertical_start" />
+            <CustomAttribute
+                app:attributeName="cardElevation"
+                app:customDimension="6dp" />
+        </Constraint>
+        <Constraint android:id="@+id/pillCard4">
+            <Layout
+                android:layout_width="0dp"
+               android:layout_height="@dimen/_120sdp"
+                android:layout_marginBottom="@dimen/_40sdp"
+
+                app:cardCornerRadius="0dp"
+                app:layout_constraintBottom_toBottomOf="@+id/guideline"
+                app:layout_constraintEnd_toEndOf="@+id/guideline_vertical_end"
+             app:layout_constraintStart_toStartOf="@+id/guideline_vertical_start" />
+            <CustomAttribute
+                app:attributeName="cardElevation"
+                app:customDimension="5dp" />
+        </Constraint>
+        <Constraint android:id="@+id/pillCard5">
+            <Layout
+                android:layout_width="0dp"
+               android:layout_height="@dimen/_120sdp"
+                android:layout_marginBottom="@dimen/_50sdp"
+
+                app:cardCornerRadius="4dp"
+                app:layout_constraintBottom_toBottomOf="@+id/guideline"
+                app:layout_constraintEnd_toEndOf="@+id/guideline_vertical_end"
+             app:layout_constraintStart_toStartOf="@+id/guideline_vertical_start" />
+            <CustomAttribute
+                app:attributeName="cardElevation"
+                app:customDimension="4dp" />
+        </Constraint>
+        <Constraint android:id="@+id/pillCard6">
+            <Layout
+                android:layout_width="0dp"
+               android:layout_height="@dimen/_120sdp"
+                android:layout_marginBottom="@dimen/_70sdp"
+
+                app:cardCornerRadius="0dp"
+                app:layout_constraintBottom_toBottomOf="@+id/guideline"
+                app:layout_constraintEnd_toEndOf="@+id/guideline_vertical_end"
+             app:layout_constraintStart_toStartOf="@+id/guideline_vertical_start" />
+            <CustomAttribute
+                app:attributeName="cardElevation"
+                app:customDimension="3dp" />
+        </Constraint>
+
+        <Constraint android:id="@+id/pillCard7">
+            <Layout
+                android:layout_width="0dp"
+                android:layout_height="@dimen/_120sdp"
+                android:layout_marginStart="0dp"
+                android:layout_marginTop="@dimen/_40sdp"
+                android:layout_marginEnd="0dp"
+
+                app:cardCornerRadius="0dp"
+                app:layout_constraintEnd_toEndOf="@+id/guideline_vertical_end"
+                app:layout_constraintStart_toStartOf="@+id/guideline_vertical_start"
+                app:layout_constraintTop_toTopOf="parent" />
+            <CustomAttribute
+                app:attributeName="cardElevation"
+                app:customDimension="3dp" />
+        </Constraint>
+        <Constraint android:id="@+id/pillCard8">
+            <Layout
+                android:layout_width="0dp"
+                android:layout_height="@dimen/_120sdp"
+                android:layout_marginStart="@dimen/_4sdp"
+                android:layout_marginTop="@dimen/_20sdp"
+                android:layout_marginEnd="@dimen/_4sdp"
+
+                app:cardCornerRadius="0dp"
+                app:layout_constraintEnd_toEndOf="@+id/guideline_vertical_end"
+                app:layout_constraintStart_toStartOf="@+id/guideline_vertical_start"
+                app:layout_constraintTop_toTopOf="parent"
+
+                />
+            <CustomAttribute
+                app:attributeName="cardElevation"
+                app:customDimension="2dp" />
+        </Constraint>
+        <Constraint android:id="@+id/pillCard9">
+            <Layout
+                android:layout_width="0dp"
+                android:layout_height="@dimen/_120sdp"
+                android:layout_marginStart="@dimen/_8sdp"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:layout_marginEnd="@dimen/_8sdp"
+
+                app:cardCornerRadius="0dp"
+                app:layout_constraintEnd_toEndOf="@+id/guideline_vertical_end"
+                app:layout_constraintStart_toStartOf="@+id/guideline_vertical_start"
+                app:layout_constraintTop_toTopOf="parent"
+
+                />
+            <CustomAttribute
+                app:attributeName="cardElevation"
+                app:customDimension="1dp" />
+        </Constraint>
+    </ConstraintSet>
+    <ConstraintSet android:id="@+id/end7">
+
+        <Constraint android:id="@+id/pillCard1">
+            <Layout
+                android:layout_width="0dp"
+               android:layout_height="@dimen/_120sdp"
+                android:layout_marginBottom="@dimen/_10sdp"
+                app:cardCornerRadius="0dp"
+                app:layout_constraintBottom_toBottomOf="@+id/guideline"
+                app:layout_constraintEnd_toEndOf="@+id/guideline_vertical_end"
+             app:layout_constraintStart_toStartOf="@+id/guideline_vertical_start" />
+            <CustomAttribute
+                app:attributeName="cardElevation"
+                app:customDimension="8dp" />
+
+        </Constraint>
+        <Constraint android:id="@+id/pillCard2">
+            <Layout
+                android:layout_width="0dp"
+               android:layout_height="@dimen/_120sdp"
+                android:layout_marginBottom="@dimen/_20sdp"
+                app:cardCornerRadius="0dp"
+                app:layout_constraintBottom_toBottomOf="@+id/guideline"
+                app:layout_constraintEnd_toEndOf="@+id/guideline_vertical_end"
+             app:layout_constraintStart_toStartOf="@+id/guideline_vertical_start" />
+            <CustomAttribute
+                app:attributeName="cardElevation"
+                app:customDimension="7dp" />
+        </Constraint>
+        <Constraint android:id="@+id/pillCard3">
+            <Layout
+                android:layout_width="0dp"
+               android:layout_height="@dimen/_120sdp"
+                android:layout_marginBottom="@dimen/_30sdp"
+                app:cardCornerRadius="0dp"
+                app:layout_constraintBottom_toBottomOf="@+id/guideline"
+                app:layout_constraintEnd_toEndOf="@+id/guideline_vertical_end"
+             app:layout_constraintStart_toStartOf="@+id/guideline_vertical_start" />
+            <CustomAttribute
+                app:attributeName="cardElevation"
+                app:customDimension="6dp" />
+        </Constraint>
+
+
+        <Constraint android:id="@+id/pillCard4">
+            <Layout
+                android:layout_width="0dp"
+               android:layout_height="@dimen/_120sdp"
+                android:layout_marginBottom="@dimen/_40sdp"
+                app:cardCornerRadius="0dp"
+                app:layout_constraintBottom_toBottomOf="@+id/guideline"
+                app:layout_constraintEnd_toEndOf="@+id/guideline_vertical_end"
+             app:layout_constraintStart_toStartOf="@+id/guideline_vertical_start" />
+            <CustomAttribute
+                app:attributeName="cardElevation"
+                app:customDimension="5dp" />
+        </Constraint>
+
+        <Constraint android:id="@+id/pillCard5">
+            <Layout
+                android:layout_width="0dp"
+               android:layout_height="@dimen/_120sdp"
+                android:layout_marginBottom="@dimen/_50sdp"
+                app:cardCornerRadius="4dp"
+                app:layout_constraintBottom_toBottomOf="@+id/guideline"
+                app:layout_constraintEnd_toEndOf="@+id/guideline_vertical_end"
+             app:layout_constraintStart_toStartOf="@+id/guideline_vertical_start" />
+            <CustomAttribute
+                app:attributeName="cardElevation"
+                app:customDimension="4dp" />
+        </Constraint>
+
+        <Constraint android:id="@+id/pillCard6">
+            <Layout
+                android:layout_width="0dp"
+               android:layout_height="@dimen/_120sdp"
+                android:layout_marginBottom="@dimen/_60sdp"
+                app:cardCornerRadius="0dp"
+                app:layout_constraintBottom_toBottomOf="@+id/guideline"
+                app:layout_constraintEnd_toEndOf="@+id/guideline_vertical_end"
+             app:layout_constraintStart_toStartOf="@+id/guideline_vertical_start" />
+            <CustomAttribute
+                app:attributeName="cardElevation"
+                app:customDimension="3dp" />
+        </Constraint>
+        <Constraint android:id="@+id/pillCard7">
+            <Layout
+                android:layout_width="0dp"
+               android:layout_height="@dimen/_120sdp"
+                android:layout_marginBottom="@dimen/_80sdp"
+                app:cardCornerRadius="0dp"
+                app:layout_constraintBottom_toBottomOf="@+id/guideline"
+                app:layout_constraintEnd_toEndOf="@+id/guideline_vertical_end"
+             app:layout_constraintStart_toStartOf="@+id/guideline_vertical_start" />
+            <CustomAttribute
+                app:attributeName="cardElevation"
+                app:customDimension="2dp" />
+        </Constraint>
+        <Constraint android:id="@+id/pillCard8">
+            <Layout
+                android:layout_width="0dp"
+                android:layout_height="@dimen/_120sdp"
+                android:layout_marginStart="0dp"
+                android:layout_marginTop="@dimen/_30sdp"
+                android:layout_marginEnd="0dp"
+
+                app:cardCornerRadius="0dp"
+                app:layout_constraintEnd_toEndOf="@+id/guideline_vertical_end"
+                app:layout_constraintStart_toStartOf="@+id/guideline_vertical_start"
+                app:layout_constraintTop_toTopOf="parent"
+
+                />
+            <CustomAttribute
+                app:attributeName="cardElevation"
+                app:customDimension="2dp" />
+        </Constraint>
+        <Constraint android:id="@+id/pillCard9">
+            <Layout
+                android:layout_width="0dp"
+                android:layout_height="@dimen/_120sdp"
+                android:layout_marginStart="@dimen/_4sdp"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:layout_marginEnd="@dimen/_4sdp"
+
+                app:cardCornerRadius="0dp"
+                app:layout_constraintEnd_toEndOf="@+id/guideline_vertical_end"
+                app:layout_constraintStart_toStartOf="@+id/guideline_vertical_start"
+                app:layout_constraintTop_toTopOf="parent"
+
+                />
+            <CustomAttribute
+                app:attributeName="cardElevation"
+                app:customDimension="1dp" />
+        </Constraint>
+    </ConstraintSet>
+
+    <ConstraintSet android:id="@+id/end8">
+
+        <Constraint android:id="@+id/pillCard1">
+            <Layout
+                android:layout_width="0dp"
+                android:layout_height="@dimen/_120sdp"
+                android:layout_marginBottom="@dimen/_10sdp"
+                app:cardCornerRadius="0dp"
+                app:layout_constraintBottom_toBottomOf="@+id/guideline"
+                app:layout_constraintEnd_toEndOf="@+id/guideline_vertical_end"
+                app:layout_constraintStart_toStartOf="@+id/guideline_vertical_start" />
+            <CustomAttribute
+                app:attributeName="cardElevation"
+                app:customDimension="8dp" />
+
+        </Constraint>
+        <Constraint android:id="@+id/pillCard2">
+            <Layout
+                android:layout_width="0dp"
+                android:layout_height="@dimen/_120sdp"
+                android:layout_marginBottom="@dimen/_20sdp"
+                app:cardCornerRadius="0dp"
+                app:layout_constraintBottom_toBottomOf="@+id/guideline"
+                app:layout_constraintEnd_toEndOf="@+id/guideline_vertical_end"
+                app:layout_constraintStart_toStartOf="@+id/guideline_vertical_start" />
+            <CustomAttribute
+                app:attributeName="cardElevation"
+                app:customDimension="7dp" />
+        </Constraint>
+        <Constraint android:id="@+id/pillCard3">
+            <Layout
+                android:layout_width="0dp"
+                android:layout_height="@dimen/_120sdp"
+                android:layout_marginBottom="@dimen/_30sdp"
+                app:cardCornerRadius="0dp"
+                app:layout_constraintBottom_toBottomOf="@+id/guideline"
+                app:layout_constraintEnd_toEndOf="@+id/guideline_vertical_end"
+                app:layout_constraintStart_toStartOf="@+id/guideline_vertical_start" />
+            <CustomAttribute
+                app:attributeName="cardElevation"
+                app:customDimension="6dp" />
+        </Constraint>
+
+
+        <Constraint android:id="@+id/pillCard4">
+            <Layout
+                android:layout_width="0dp"
+                android:layout_height="@dimen/_120sdp"
+                android:layout_marginBottom="@dimen/_40sdp"
+                app:cardCornerRadius="0dp"
+                app:layout_constraintBottom_toBottomOf="@+id/guideline"
+                app:layout_constraintEnd_toEndOf="@+id/guideline_vertical_end"
+                app:layout_constraintStart_toStartOf="@+id/guideline_vertical_start" />
+            <CustomAttribute
+                app:attributeName="cardElevation"
+                app:customDimension="5dp" />
+        </Constraint>
+
+        <Constraint android:id="@+id/pillCard5">
+            <Layout
+                android:layout_width="0dp"
+                android:layout_height="@dimen/_120sdp"
+                android:layout_marginBottom="@dimen/_50sdp"
+                app:cardCornerRadius="4dp"
+                app:layout_constraintBottom_toBottomOf="@+id/guideline"
+                app:layout_constraintEnd_toEndOf="@+id/guideline_vertical_end"
+                app:layout_constraintStart_toStartOf="@+id/guideline_vertical_start" />
+            <CustomAttribute
+                app:attributeName="cardElevation"
+                app:customDimension="4dp" />
+        </Constraint>
+
+        <Constraint android:id="@+id/pillCard6">
+            <Layout
+                android:layout_width="0dp"
+                android:layout_height="@dimen/_120sdp"
+                android:layout_marginBottom="@dimen/_60sdp"
+                app:cardCornerRadius="0dp"
+                app:layout_constraintBottom_toBottomOf="@+id/guideline"
+                app:layout_constraintEnd_toEndOf="@+id/guideline_vertical_end"
+                app:layout_constraintStart_toStartOf="@+id/guideline_vertical_start" />
+            <CustomAttribute
+                app:attributeName="cardElevation"
+                app:customDimension="3dp" />
+        </Constraint>
+        <Constraint android:id="@+id/pillCard7">
+            <Layout
+                android:layout_width="0dp"
+                android:layout_height="@dimen/_120sdp"
+                android:layout_marginBottom="@dimen/_70sdp"
+                app:cardCornerRadius="0dp"
+                app:layout_constraintBottom_toBottomOf="@+id/guideline"
+                app:layout_constraintEnd_toEndOf="@+id/guideline_vertical_end"
+                app:layout_constraintStart_toStartOf="@+id/guideline_vertical_start" />
+            <CustomAttribute
+                app:attributeName="cardElevation"
+                app:customDimension="2dp" />
+        </Constraint>
+        <Constraint android:id="@+id/pillCard8">
+            <Layout
+                android:layout_width="0dp"
+                android:layout_height="@dimen/_120sdp"
+                android:layout_marginBottom="@dimen/_90sdp"
+                app:cardCornerRadius="0dp"
+                app:layout_constraintBottom_toBottomOf="@+id/guideline"
+                app:layout_constraintEnd_toEndOf="@+id/guideline_vertical_end"
+                app:layout_constraintStart_toStartOf="@+id/guideline_vertical_start" />
+            <CustomAttribute
+                app:attributeName="cardElevation"
+                app:customDimension="1dp" />
+        </Constraint>
+        <Constraint android:id="@+id/pillCard9">
+            <Layout
+                android:layout_width="0dp"
+                android:layout_height="@dimen/_120sdp"
+                android:layout_marginStart="0dp"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:layout_marginEnd="0dp"
+
+                app:cardCornerRadius="0dp"
+                app:layout_constraintEnd_toEndOf="@+id/guideline_vertical_end"
+                app:layout_constraintStart_toStartOf="@+id/guideline_vertical_start"
+                app:layout_constraintTop_toTopOf="parent"
+
+                />
+            <CustomAttribute
+                app:attributeName="cardElevation"
+                app:customDimension="1dp" />
+        </Constraint>
+    </ConstraintSet>
+</MotionScene>

@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:app="http://schemas.android.com/apk/res-auto">
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".modules.txnstatus.TranscationStatusFragment">
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:orientation="vertical">
+
+
+            <ImageView
+                android:id="@+id/img_txn_status"
+                android:layout_width="@dimen/_85sdp"
+                android:layout_gravity="center"
+                android:src="@drawable/img_txn_done"
+                android:layout_marginBottom="@dimen/_20sdp"
+                android:layout_height="@dimen/_85sdp"
+                />
+
+        <!--    <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="Done"
+                android:layout_marginTop="@dimen/_15sdp"
+                android:fontFamily="@font/opensans_regular"
+                android:textSize="@dimen/_14sdp"
+                style="@style/TextTitleStyle"/>-->
+
+
+            <TextView
+                android:id="@+id/txt_txn_message"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:visibility="visible"
+                android:text="Payment successful"
+                android:layout_marginTop="@dimen/_15sdp"
+                style="@style/TextTitleStyle"
+                android:fontFamily="@font/opensans_regular"
+                android:textSize="@dimen/_14sdp"
+               />
+
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_20sdp"
+                android:layout_marginHorizontal="@dimen/_20sdp"
+                android:orientation="horizontal">
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btn_go_home"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="@dimen/_42sdp"
+                    android:text="HOME"
+                    android:layout_marginEnd="@dimen/_5sdp"
+                    android:visibility="gone"
+                    android:textColor="@color/white"
+                    app:backgroundTint="@null"
+
+                    />
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btn_go_txn_history"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="@dimen/_42sdp"
+                    android:text="Details"
+                    android:layout_marginEnd="@dimen/_5sdp"
+                    android:visibility="gone"
+                    android:textColor="@color/white"
+                    app:backgroundTint="@null"
+
+                    />
+
+            </androidx.appcompat.widget.LinearLayoutCompat>
+
+
+
+
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
+    <ImageView
+        android:id="@+id/img_home"
+        android:layout_marginTop="@dimen/_5sdp"
+        android:layout_marginEnd="@dimen/_5sdp"
+        android:layout_width="@dimen/_25sdp"
+        android:layout_height="@dimen/_25sdp"
+        android:src="@drawable/ic_baseline_cancel_24"
+        android:layout_gravity="top|end"
+        />
+</FrameLayout>
+</layout>

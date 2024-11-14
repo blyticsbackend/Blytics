@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="purple_200">#FFBB86FC</color>
+    <color name="purple_500">#FF6200EE</color>
+    <color name="purple_700">#FF3700B3</color>
+    <color name="teal_200">#FF03DAC5</color>
+    <color name="teal_700">#FF018786</color>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name="white_400">#f7f7f7</color>
+    <color name="gray_bg">#E6EAF0</color>
+    <color name="white_transparent">#00FFFFFF</color>
+    <color name="b_light_200">#8BB4C6</color>
+    <color name="b_light_100">#BDD7EE</color>
+    <color name="b_light_300">#48A4CC</color>
+    <color name="b_blue_600">#203864</color>
+    <color name="b_title_bg">#D2E2F0</color>
+    <color name="b_blue_text">#4472C4</color>
+    <color name="b_bg_color_light">#F4F4F4</color>
+    <color name="b_bg_color_dark">#242424</color>
+    <color name="b_currency_blue">#1F3864</color>
+    <color name="new_bg_light">#3a7b86</color>
+    <color name="new_button_light">#397B87</color>
+    <color name="lbl_txt_blue">#0070C0</color>
+    <color name="card_green_bg">#397A85</color>
+    <color name="b_color">#397B87</color>
+    <color name="blue_700">#164A86</color>
+    <color name="blue_500">#4FB1D6</color>
+    <color name="gray_light">#E1E1E1</color>
+    <color name="gray_dark">#757575</color>
+    <color name="transparent">#00000000</color>
+    <color name="blue_dark">#11417f</color>
+    <color name="blue_light">#4fb1d6</color>
+    <color name="blue_light_100">#DDF4F1</color>
+    <!-- <color name="orange_dark">#fb5e3d</color>   -->
+    <color name="orange_dark">#FB5E3D</color>
+    <color name="orange_light">#FB5E3D</color>
+    <!--    <color name="orange_light">#ea7033</color>-->
+    <!--  <color name="orange_new">#FB5E3D</color>-->
+    <color name="night_black">#282828</color>
+    <color name="light_red">#F41F1F</color>
+    <color name="bottom_drawer_outside_background">#80000000</color>
+    <color name="bottom_drawer_outside_background_night">#80ffffff</color>
+    <color name="yellow">#CEBE2B</color>
+    <color name="app_green_dark">#57A768</color>
+    <color name="app_green_light">#6CBE80</color>
+    <color name="bottom_drawer_background">#FFFFFF</color>
+    <color name="bottom_drawer_background_night">#000000</color>
+    <color name="bottom_drawer_handle_view_color">#E0E0E0</color>
+    <color name="black_light">#605B5B</color>
+    <color name="red">#d32f2f</color>
+    <color name="grey">#a9a9a9</color>
+    <!--    Happy Theme-->
+    <color name="yellow_700">#ffbd39</color>
+    <color name="yellow_500">#fffcf5</color>
+</resources>

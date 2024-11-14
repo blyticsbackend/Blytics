@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<resources>
+
+    <!--OTP Dimens Start-->
+    <dimen name="otp_view_item_size">40dp</dimen>
+    <dimen name="otp_view_item_radius">5dp</dimen>
+    <dimen name="otp_view_item_spacing">5dp</dimen>
+    <dimen name="otp_view_item_line_width">2dp</dimen>
+    <dimen name="otp_view_cursor_width">2dp</dimen>
+    <!--  OTP Dimens End-->
+
+
+
+<!--BottomDrawer Dialog Dimens Start -->
+    <dimen name="bottom_sheet_handle_thickness">6dp</dimen>
+    <dimen name="bottom_sheet_corner_radius">10dp</dimen>
+    <dimen name="bottom_sheet_extra_padding">4dp</dimen>
+<!--BottomDrawer Dialog Dimens End -->
+
+    <dimen name="bottom_sheet_handle_width">30dp</dimen>
+    <dimen name="bottom_sheet_handle_height">5dp</dimen>
+    <dimen name="bottom_sheet_handle_top_margin">8dp</dimen>
+
+    <dimen name="sample_bottom_sheet_handle_width">36dp</dimen>
+    <dimen name="sample_bottom_sheet_handle_height">12dp</dimen>
+    <dimen name="sample_bottom_sheet_handle_top_margin">8dp</dimen>
+
+    <dimen name="rotate_sample_bottom_sheet_handle_width">35dp</dimen>
+    <dimen name="rotate_sample_bottom_sheet_handle_height">35dp</dimen>
+    <dimen name="rotate_sample_bottom_sheet_handle_margin">14dp</dimen>
+
+
+    <dimen name="default_stroke_width">7dp</dimen>
+    <dimen name="default_background_stroke_width">3dp</dimen>
+</resources>

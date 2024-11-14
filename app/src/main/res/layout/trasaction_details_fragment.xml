@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:id="@+id/top_layout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+            android:paddingHorizontal="@dimen/_10sdp"
+            tools:context=".modules.transactiondetails.TransactionDetailsFragment">
+
+            <ImageView
+                android:id="@+id/btn_down_transaction"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_20sdp"
+                android:layout_marginHorizontal="@dimen/_70sdp"
+                android:scaleType="fitXY"
+                android:src="@drawable/img_down_transaction"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/lbl_transactions"
+                style="@style/TextTitleStyle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:fontFamily="@font/opensans_bold"
+                android:gravity="start"
+                android:text="Transaction"
+                android:textSize="@dimen/_14sdp"
+                android:visibility="gone"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/btn_down_transaction" />
+
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/cardView"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content"
+                    app:cardCornerRadius="10dp"
+                    app:cardElevation="5dp"
+                    app:cardUseCompatPadding="true"
+                    app:layout_constraintTop_toBottomOf="@+id/lbl_transactions"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_2sdp"
+                        android:orientation="horizontal"
+                        app:elevation="3dp">
+
+                        <EditText
+                                android:id="@+id/searchKeyword"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="@dimen/_4sdp"
+                                android:layout_marginEnd="@dimen/_4sdp"
+                                android:background="@null"
+                                android:drawableStart="@drawable/search"
+                                android:hint="Search"
+                                android:imeOptions="actionSearch"
+                                android:inputType="text"
+                                android:padding="@dimen/_8sdp"
+                                android:paddingStart="@dimen/_40sdp"
+                                android:textSize="@dimen/_12sdp" />
+
+                        <ImageView
+                            android:id="@+id/searchButton"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentStart="true"
+                            android:layout_marginStart="@dimen/_10sdp"
+                            android:layout_marginTop="@dimen/_10sdp"
+                            android:background="@null"
+                            android:visibility="gone"
+                            android:src="@drawable/search"
+                            android:textColor="@color/white"
+                            app:tint="@color/black" />
+
+                        <ImageView
+                                android:id="@+id/searchClear"
+                                android:layout_width="20dp"
+                                android:layout_height="20dp"
+                                android:layout_alignParentTop="true"
+                                android:layout_alignParentEnd="true"
+                                android:layout_alignParentRight="true"
+                                android:layout_marginTop="8dp"
+                                android:layout_marginEnd="12dp"
+                                android:layout_marginRight="12dp"
+                                android:background="@null"
+                                android:src="@drawable/ic_baseline_close_24"
+                        />
+
+
+                    </RelativeLayout>
+                </com.google.android.material.card.MaterialCardView>
+                <ImageView
+                    android:id="@+id/img_filter_list"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:src="@drawable/ic_baseline_filter_list_24"/>
+
+
+            </androidx.appcompat.widget.LinearLayoutCompat>
+
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rv_transaction"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                    android:layout_weight="1"
+                      android:layout_marginBottom="@dimen/_20sdp"
+                    tools:listitem="@layout/row_home_transaction" />
+
+
+
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
+        <ProgressBar
+            android:id="@+id/progess"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+                android:id="@+id/txt_no_txn"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:fontFamily="@font/opensans_bold"
+                android:text="You don't have any recent\ntransaction"
+                android:textSize="@dimen/_15sdp"
+                android:visibility="gone"
+                android:layout_marginTop="@dimen/_30sdp"
+                app:layout_constraintBottom_toBottomOf="parent"
+               app:layout_constraintTop_toTopOf="parent"
+                />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

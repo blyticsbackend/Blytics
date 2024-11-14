@@ -1,0 +1,434 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools">
+
+    <ScrollView
+            android:id="@+id/main_lyt"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/_15sdp"
+                tools:context=".modules.payment.manageac.ManageFragment">
+
+            <TextView
+                    android:id="@+id/txt_withdraw"
+                    style="@style/TextTitleStyle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/darker_grotesque_bold"
+                    android:text="Withdraw Date"
+                    android:textSize="@dimen/_14sdp"
+                    app:layout_constraintBottom_toBottomOf="@+id/layout_frame_withdraw"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="@+id/layout_frame_withdraw" />
+
+            <FrameLayout
+                    android:id="@+id/layout_frame_withdraw"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_5sdp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@+id/guideline_center"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                <!--        <com.google.android.material.textfield.TextInputLayout
+                            android:id="@+id/layout_withdraw"
+                            style="@style/LightBGTextInputLayoutStyle"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:paddingStart="0dp"
+                            android:paddingEnd="0dp"
+                            android:fontFamily="@font/opensans_regular"
+                            android:hint="DD/MM/YYYY">-->
+
+                <EditText
+                        android:id="@+id/edt_with_draw_date"
+                        style="@style/LightGBTextInputEditText"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="DD/MM/YYYY"
+                        android:layout_gravity="center"
+                        android:cursorVisible="false"
+                        android:focusable="false"
+                        android:inputType="textPersonName" />
+                <!-- </com.google.android.material.textfield.TextInputLayout>-->
+
+                <View
+                        android:id="@+id/btnWithDrawDate"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/_45sdp" />
+            </FrameLayout>
+
+            <View
+                    android:id="@+id/view"
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginTop="@dimen/_5sdp"
+                    android:background="@color/gray_light"
+                    app:layout_constraintTop_toBottomOf="@+id/layout_frame_withdraw" />
+
+            <TextView
+                    android:id="@+id/txt_active"
+                    style="@style/TextTitleStyle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/darker_grotesque_bold"
+                    android:text="Active"
+                    android:visibility="gone"
+                    android:textSize="@dimen/_14sdp"
+                    app:layout_constraintBottom_toBottomOf="@+id/btn_sw_deactive"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="@+id/btn_sw_deactive" />
+
+            <Switch
+                    android:id="@+id/btn_sw_deactive"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:layout_marginEnd="@dimen/_5sdp"
+                    android:visibility="gone"
+
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/view" />
+
+            <View
+                    android:id="@+id/view2"
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:visibility="gone"
+
+                    android:background="@color/gray_light"
+                    app:layout_constraintTop_toBottomOf="@+id/btn_sw_deactive" />
+
+            <TextView
+                    android:id="@+id/txt_expire"
+                    style="@style/TextTitleStyle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/darker_grotesque_bold"
+                    android:text="Expire"
+                    android:visibility="gone"
+
+                    android:textSize="@dimen/_14sdp"
+                    app:layout_constraintBottom_toBottomOf="@+id/btn_sw_expire"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="@+id/btn_sw_expire" />
+
+            <Switch
+                    android:id="@+id/btn_sw_expire"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:visibility="gone"
+
+                    android:layout_marginEnd="@dimen/_5sdp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/view2" />
+
+            <View
+                    android:id="@+id/view3"
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:visibility="gone"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:background="@color/gray_light"
+                    app:layout_constraintTop_toBottomOf="@+id/btn_sw_expire" />
+
+            <TextView
+                    android:id="@+id/txt_default"
+                    style="@style/TextTitleStyle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/darker_grotesque_bold"
+                    android:text="Make this a/c default"
+                    android:textSize="@dimen/_14sdp"
+                    app:layout_constraintBottom_toBottomOf="@+id/btn_sw_default"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="@+id/btn_sw_default" />
+
+            <Switch
+                    android:id="@+id/btn_sw_default"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:layout_marginEnd="@dimen/_5sdp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/view3" />
+
+            <androidx.constraintlayout.widget.Guideline
+                    android:id="@+id/guideline_center"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    app:layout_constraintGuide_percent="0.42" />
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/inner_lyt"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintTop_toBottomOf="@+id/btn_sw_default">
+
+                <androidx.constraintlayout.widget.Guideline
+                        android:id="@+id/guideline_center_inner"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        app:layout_constraintGuide_percent="0.42" />
+
+                <TextView
+                        android:id="@+id/lbl_title"
+                        style="@style/TextTitleStyle"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_20sdp"
+                        android:fontFamily="@font/darker_grotesque_bold"
+                        android:text="Start Tracker"
+                        android:textSize="@dimen/_17sdp"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+
+                <TextView
+                        style="@style/TextTitleStyle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/darker_grotesque_bold"
+                        android:text="Amount Save"
+                        android:textSize="@dimen/_14sdp"
+                        app:layout_constraintBottom_toBottomOf="@+id/edt_amount_save"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="@+id/edt_amount_save" />
+
+                <!--        <com.google.android.material.textfield.TextInputLayout
+                            android:id="@+id/lyt_amount_save"
+                            style="@style/LightBGTextInputLayoutStyle"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/_15sdp"
+                            android:fontFamily="@font/opensans_regular"
+                            android:paddingStart="0dp"
+                            android:paddingEnd="0dp"
+                            android:hint="Target Amount"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="@id/guideline_center_inner"
+                            app:layout_constraintTop_toBottomOf="@id/lbl_title">-->
+
+                <EditText
+                        android:id="@+id/edt_amount_save"
+                        style="@style/LightGBTextInputEditText"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:hint="Target Amount"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="@id/guideline_center_inner"
+                        app:layout_constraintTop_toBottomOf="@id/lbl_title"
+                        android:inputType="numberDecimal" />
+                <!--     </com.google.android.material.textfield.TextInputLayout>
+     -->
+                <TextView
+                        android:id="@+id/textView"
+                        style="@style/TextTitleStyle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/darker_grotesque_bold"
+                        android:text="Saving Basis"
+                        android:textSize="@dimen/_14sdp"
+                        app:layout_constraintBottom_toBottomOf="@+id/lyt_saving"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="@+id/lyt_saving" />
+
+                <androidx.appcompat.widget.LinearLayoutCompat
+                        android:id="@+id/lyt_saving"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_10sdp"
+                        android:gravity="end"
+                        android:orientation="horizontal"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toEndOf="@+id/guideline_center_inner"
+                        app:layout_constraintTop_toBottomOf="@id/edt_amount_save">
+
+                    <TextView
+                            android:id="@+id/btn_daily"
+                            style="@style/TextTitleStyle"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/border_light_grey"
+                            android:fontFamily="@font/opensans_regular"
+                            android:paddingHorizontal="@dimen/_8sdp"
+                            android:paddingVertical="@dimen/_8sdp"
+                            android:text="Daily"
+                            android:layout_marginEnd="@dimen/_5sdp"
+                            android:textSize="@dimen/_11sdp" />
+
+                    <TextView
+                            android:id="@+id/btn_weekly"
+                            style="@style/TextTitleStyle"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/border_light_grey"
+                            android:fontFamily="@font/opensans_regular"
+                            android:paddingHorizontal="@dimen/_8sdp"
+                            android:paddingVertical="@dimen/_8sdp"
+                            android:text="Weekly"
+                            android:layout_marginEnd="@dimen/_5sdp"
+                            android:textSize="@dimen/_11sdp" />
+
+                    <TextView
+                            android:id="@+id/btn_monthly"
+                            style="@style/TextTitleStyle"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/border_light_grey"
+                            android:fontFamily="@font/opensans_regular"
+                            android:paddingHorizontal="@dimen/_8sdp"
+                            android:paddingVertical="@dimen/_8sdp"
+                            android:text="Monthly"
+                            android:textSize="@dimen/_11sdp" />
+
+                </androidx.appcompat.widget.LinearLayoutCompat>
+
+                <TextView
+                        style="@style/TextTitleStyle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/darker_grotesque_bold"
+                        android:text="Start Date"
+                        android:textSize="@dimen/_14sdp"
+                        app:layout_constraintBottom_toBottomOf="@+id/layout_frame_date_start"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="@+id/layout_frame_date_start" />
+
+                <FrameLayout
+                        android:id="@+id/layout_frame_date_start"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_10sdp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toEndOf="@+id/guideline_center_inner"
+                        app:layout_constraintTop_toBottomOf="@+id/lyt_saving">
+
+                    <!-- <com.google.android.material.textfield.TextInputLayout
+                         android:id="@+id/layout_date_start"
+                         style="@style/LightBGTextInputLayoutStyle"
+                         android:layout_width="match_parent"
+                         android:layout_height="wrap_content"
+                         android:fontFamily="@font/opensans_regular"
+                         android:paddingStart="0dp"
+                         android:paddingEnd="0dp"
+                         android:hint="DD/MM/YYYY">-->
+
+                    <EditText
+                            android:id="@+id/edt_date_start"
+                            style="@style/LightGBTextInputEditText"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:cursorVisible="false"
+                            android:focusable="false"
+                            android:layout_gravity="center"
+                            android:hint="DD/MM/YYYY" />
+                    <!-- </com.google.android.material.textfield.TextInputLayout>
+ -->
+                    <View
+                            android:id="@+id/btnDateStart"
+                            android:layout_width="match_parent"
+                            android:layout_height="@dimen/_45sdp" />
+                </FrameLayout>
+
+                <TextView
+                        style="@style/TextTitleStyle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/darker_grotesque_bold"
+                        android:text="End Date"
+                        android:textSize="@dimen/_14sdp"
+                        app:layout_constraintBottom_toBottomOf="@+id/layout_frame_date_end"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="@+id/layout_frame_date_end" />
+
+                <FrameLayout
+                        android:id="@+id/layout_frame_date_end"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_5sdp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toEndOf="@+id/guideline_center_inner"
+                        app:layout_constraintTop_toBottomOf="@+id/layout_frame_date_start">
+
+                    <!--     <com.google.android.material.textfield.TextInputLayout
+                             android:id="@+id/layout_date_end"
+                             style="@style/LightBGTextInputLayoutStyle"
+                             android:layout_width="match_parent"
+                             android:layout_height="wrap_content"
+                             android:paddingStart="0dp"
+                             android:paddingEnd="0dp"
+                             android:fontFamily="@font/opensans_regular"
+                             android:hint="DD/MM/YYYY">
+     -->
+                    <EditText
+                            android:id="@+id/edt_date_end"
+                            style="@style/LightGBTextInputEditText"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:cursorVisible="false"
+                            android:focusable="false"
+                            android:layout_gravity="center"
+                            android:hint="DD/MM/YYYY"
+                            android:inputType="textPersonName" />
+                    <!--  </com.google.android.material.textfield.TextInputLayout>
+  -->
+                    <View
+                            android:id="@+id/btnDateEnd"
+                            android:layout_width="match_parent"
+                            android:layout_height="@dimen/_45sdp" />
+                </FrameLayout>
+
+                <com.google.android.material.button.MaterialButton
+                        android:id="@+id/txt_update"
+                        android:layout_width="@dimen/_150sdp"
+                        android:layout_height="@dimen/_42sdp"
+                        android:layout_marginHorizontal="@dimen/_30sdp"
+                        android:layout_marginTop="@dimen/_20sdp"
+                        android:text="Update"
+                        android:layout_marginBottom="@dimen/_10sdp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        android:textColor="@color/white"
+                        app:backgroundTint="@null"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/layout_frame_date_end" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <TextView
+                    android:id="@+id/lbl_start_tracker"
+                    style="@style/TextTitleStyle"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_32sdp"
+                    android:fontFamily="@font/opensans_bold"
+                    android:gravity="start"
+                    android:text="Start Tracker"
+                    android:textSize="@dimen/_13sdp"
+                    android:visibility="gone"
+                    app:layout_constraintTop_toBottomOf="@+id/inner_lyt" />
+
+
+            <ProgressBar
+                    android:id="@+id/profile_status_bar"
+                    style="?android:attr/progressBarStyleHorizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_10sdp"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:indeterminate="false"
+                    android:progressDrawable="@drawable/custom_progressbar"
+                    android:visibility="gone"
+                    app:layout_constraintTop_toBottomOf="@+id/lbl_start_tracker" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
+</layout>

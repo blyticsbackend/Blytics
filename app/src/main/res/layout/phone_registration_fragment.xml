@@ -1,0 +1,280 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/top_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/login_background_shape_white"
+        android:paddingStart="@dimen/_20sdp"
+        android:paddingEnd="@dimen/_20sdp"
+        android:paddingBottom="@dimen/_10sdp"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:context=".modules.phoneregistation.PhoneRegistrationFragment">
+
+
+        <ImageView
+            android:id="@+id/imageFilterView"
+            android:layout_width="@dimen/_80sdp"
+            android:layout_height="@dimen/_100sdp"
+            android:contentDescription="@string/image"
+            android:paddingStart="@dimen/_10sdp"
+            android:src="@drawable/logo"
+            android:visibility="gone"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:ignore="RtlSymmetry" />
+
+        <androidx.appcompat.widget.SwitchCompat
+            android:id="@+id/switch_blytics"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/darker_grotesque_bold"
+            android:text="Is Blytics User"
+            android:textSize="@dimen/_15sdp"
+            android:visibility="gone"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/imageFilterView" />
+
+        <TextView
+            android:id="@+id/lbl_title"
+            style="@style/TextTitleStyle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:fontFamily="@font/darker_grotesque_bold"
+            android:gravity="center"
+            android:text="Register your phone number"
+            android:textSize="@dimen/_21sdp"
+            android:visibility="gone"
+            app:layout_constraintTop_toBottomOf="@+id/switch_blytics" />
+
+        <TextView
+            android:id="@+id/lbl_msg"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_8sdp"
+            android:layout_marginTop="@dimen/_100sdp"
+            android:layout_marginEnd="@dimen/_8sdp"
+            android:fontFamily="@font/darker_grotesque_semibold"
+            android:gravity="center"
+            android:text=""
+            android:textColor="@color/b_blue_text"
+            android:textSize="@dimen/_15sdp"
+            android:visibility="invisible"
+            app:layout_constraintTop_toBottomOf="@+id/lbl_title" />
+
+        <FrameLayout
+            android:id="@+id/layout_frame_country_code"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_25sdp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/lbl_msg">
+
+            <EditText
+                android:id="@+id/edt_country_code"
+                android:layout_width="@dimen/_70sdp"
+                android:layout_height="wrap_content"
+                android:clickable="false"
+                android:editable="false"
+                android:focusable="false"
+                android:fontFamily="@font/darker_grotesque_semibold"
+                android:inputType="number"
+                android:textSize="@dimen/_14sdp" />
+
+            <View
+                android:id="@+id/btn_country_code_picker"
+                android:layout_width="@dimen/_70sdp"
+                android:layout_height="@dimen/_40sdp" />
+        </FrameLayout>
+
+        <EditText
+            android:id="@+id/edt_phone_number"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_25sdp"
+            android:fontFamily="@font/darker_grotesque_semibold"
+            android:hint="Enter Your Phone Number"
+            android:inputType="number"
+            android:paddingStart="@dimen/_4sdp"
+            android:paddingEnd="@dimen/_4sdp"
+            android:textSize="@dimen/_14sdp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/layout_frame_country_code"
+            app:layout_constraintTop_toBottomOf="@+id/lbl_msg" />
+
+
+        <!--  <com.google.android.material.textfield.TextInputLayout
+              android:id="@+id/layout_phone"
+              style="@style/LightBGTextInputLayoutStyle"
+              android:layout_width="0dp"
+              android:layout_height="wrap_content"
+              android:layout_marginTop="@dimen/_25sdp"
+              android:fontFamily="@font/opensans_regular"
+              android:hint="Enter Your Phone Number"
+              app:layout_constraintEnd_toEndOf="parent"
+              android:paddingStart="@dimen/_4sdp"
+              android:paddingEnd="@dimen/_4sdp"
+              app:layout_constraintStart_toEndOf="@+id/layout_frame_country_code"
+              app:layout_constraintTop_toBottomOf="@+id/lbl_msg">
+
+              <com.google.android.material.textfield.TextInputEditText
+                  android:id="@+id/edt_phone_number"
+                  style="@style/LightGBTextInputEditText"
+                  android:layout_width="match_parent"
+                  android:layout_height="wrap_content"
+                  android:inputType="number"
+
+                  />
+          </com.google.android.material.textfield.TextInputLayout>
+-->
+
+
+        <CheckBox
+            android:id="@+id/chk_integrate_whatsapp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/darker_grotesque_semibold"
+            android:text="Integrate with Whatsapp"
+            android:textSize="@dimen/_12sdp"
+            android:visibility="invisible"
+            app:layout_constraintStart_toStartOf="@+id/layout_frame_country_code"
+            app:layout_constraintTop_toBottomOf="@+id/edt_phone_number" />
+
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btn_continue"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/_42sdp"
+            android:layout_marginTop="@dimen/_20sdp"
+            android:text="Continue"
+            android:textColor="@color/white"
+            app:backgroundTint="@null"
+            app:layout_constraintEnd_toEndOf="@+id/edt_phone_number"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="@+id/layout_frame_country_code"
+            app:layout_constraintTop_toBottomOf="@+id/chk_integrate_whatsapp" />
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/card_3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/_5sdp"
+            android:layout_marginTop="@dimen/_20sdp"
+            android:visibility="gone"
+            app:cardCornerRadius="10dp"
+            app:cardElevation="0dp"
+            app:cardUseCompatPadding="true"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/lyt_btns">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <com.google.android.material.imageview.ShapeableImageView
+                    android:id="@+id/backImage2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="0dp"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/message_background"
+                    app:layout_constraintBottom_toBottomOf="@+id/extraMoney2"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="@+id/extraMoney2"
+                    app:shapeAppearance="@style/ShapeAppearance.Material3.Corner.Medium" />
+
+                <ImageView
+                    android:id="@+id/worningImg"
+                    android:layout_width="wrap_content"
+                    android:layout_height="0dp"
+                    android:layout_marginEnd="@dimen/_10sdp"
+                    android:src="@drawable/phone_register"
+                    app:layout_constraintBottom_toBottomOf="@+id/extraMoney2"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="@+id/extraMoney2"/>
+
+                <TextView
+                    style="@style/TextTitleStyle"
+                    android:id="@+id/extraMoney2"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="@dimen/_50sdp"
+                    android:background="@android:color/transparent"
+                    android:fontFamily="@font/darker_grotesque_semibold"
+                    android:paddingStart="@dimen/_10sdp"
+                    android:paddingTop="@dimen/_20sdp"
+                    android:paddingBottom="@dimen/_20sdp"
+                    android:text="@string/SendNotification"
+                    android:textSize="@dimen/_12sdp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_goneMarginEnd="@dimen/_50sdp" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:id="@+id/lyt_btns"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_35sdp"
+            android:orientation="horizontal"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/chk_integrate_whatsapp"
+            app:layout_constraintVertical_bias="0.0"
+            tools:layout_editor_absoluteX="26dp">
+
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btn_skip"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/_42sdp"
+                android:layout_marginEnd="@dimen/_5sdp"
+                android:layout_marginBottom="@dimen/_10sdp"
+                android:layout_weight="1"
+                android:text="Skip"
+                android:textColor="@color/white"
+                app:backgroundTint="@null"
+                app:layout_constraintTop_toBottomOf="@+id/chk_integrate_whatsapp" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btn_continue_2"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/_42sdp"
+                android:layout_marginStart="@dimen/_5sdp"
+                android:layout_marginBottom="@dimen/_10sdp"
+                android:layout_weight="1"
+                android:text="Continue"
+                android:textColor="@color/white"
+                app:backgroundTint="@null"
+                app:layout_constraintTop_toBottomOf="@+id/chk_integrate_whatsapp" />
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
+
+        <TextView
+            android:id="@+id/lbl_sign_in"
+            style="@style/DarkBGTextStyle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/_10sdp"
+            android:fontFamily="@font/darker_grotesque_bold"
+            android:gravity="center"
+
+            android:text="Log in"
+            android:textSize="@dimen/_14sdp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintVertical_bias="0.9" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+</layout>

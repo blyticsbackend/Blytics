@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:tools="http://schemas.android.com/tools"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+<androidx.cardview.widget.CardView
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/_120sdp"
+    android:layout_marginHorizontal="@dimen/_8sdp"
+    app:cardElevation="4dp">
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:backgroundTint="@android:color/transparent"
+        android:layout_height="match_parent">
+
+
+        <ImageView
+            android:id="@+id/img_verify_status"
+            android:layout_width="@dimen/_18sdp"
+            android:layout_height="@dimen/_18sdp"
+            android:layout_marginEnd="@dimen/_5sdp"
+            android:elevation="5dp"
+            android:src="@drawable/ic_check"
+            app:layout_constraintBottom_toBottomOf="@+id/txt_name"
+            app:layout_constraintEnd_toEndOf="@+id/debitImage"
+            app:layout_constraintTop_toTopOf="@+id/txt_name" />
+
+
+        <ImageView
+            android:id="@+id/debitImage"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scaleType="fitXY"
+            android:src="@drawable/bg_debit_cart"
+           />
+
+        <TextView
+            android:id="@+id/txt_title"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/_10sdp"
+            android:fontFamily="@font/opensans_bold"
+            android:gravity="center"
+            android:text="Name"
+            android:textColor="@color/white"
+            android:layout_marginTop="@dimen/_5sdp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/debitImage" />
+
+        <TextView
+            android:id="@+id/txt_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/opensans_bold"
+            android:gravity="center"
+            android:text=""
+            android:textColor="@color/white"
+            android:textSize="@dimen/_15sdp"
+            app:layout_constraintBottom_toBottomOf="@+id/debitImage"
+            app:layout_constraintTop_toTopOf="@+id/debitImage" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.cardview.widget.CardView>
+</layout>

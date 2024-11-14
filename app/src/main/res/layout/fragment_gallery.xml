@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".modules.galleryBottomSheet.GalleryFragment">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingHorizontal="@dimen/_20sdp"
+            android:paddingVertical="@dimen/_20sdp">
+
+            <View
+                android:id="@+id/view5"
+                android:layout_width="@dimen/_20sdp"
+                android:layout_height="@dimen/_3sdp"
+                android:background="@color/black"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+
+            <TextView
+                android:id="@+id/lbl_title"
+                style="@style/TextTitleStyle"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:fontFamily="@font/darker_grotesque_bold"
+                android:gravity="center"
+                android:text="Upload Document From here"
+                android:textSize="@dimen/_17sdp"
+                app:layout_constraintEnd_toStartOf="@+id/btn_cancel"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/view5" />
+
+            <ImageView
+                android:id="@+id/btn_cancel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_12sdp"
+                android:src="@drawable/ic_baseline_cancel_24"
+                app:layout_constraintBottom_toBottomOf="@+id/lbl_title"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/lbl_title" />
+
+            <androidx.camera.view.PreviewView
+                android:id="@+id/cameraPreviewView"
+                android:layout_width="@dimen/_60sdp"
+                android:layout_height="0dp"
+                app:layout_constraintBottom_toBottomOf="@+id/galleryRecyclerView"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/galleryRecyclerView" />
+
+            <ImageButton
+                android:id="@+id/cameraButton"
+                android:layout_width="@dimen/_24sdp"
+                android:layout_height="@dimen/_24sdp"
+                android:background="@android:color/transparent"
+                android:scaleType="centerCrop"
+                android:src="@drawable/img_camera"
+                app:layout_constraintBottom_toBottomOf="@+id/cameraPreviewView"
+                app:layout_constraintEnd_toEndOf="@+id/cameraPreviewView"
+                app:layout_constraintStart_toStartOf="@+id/cameraPreviewView"
+                app:layout_constraintTop_toTopOf="@+id/cameraPreviewView"
+                app:tint="@color/white" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/galleryRecyclerView"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_10sdp"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:orientation="horizontal"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/cameraPreviewView"
+                app:layout_constraintTop_toBottomOf="@+id/lbl_title"
+                tools:itemCount="10"
+                tools:listitem="@layout/gallery_item" />
+
+            <LinearLayout
+                android:id="@+id/layout_document_btn"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:orientation="horizontal"
+                android:visibility="gone"
+                app:layout_constraintTop_toBottomOf="@+id/lbl_title"
+                tools:layout_editor_absoluteX="26dp">
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btn_Camera"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="start"
+                    android:layout_marginEnd="@dimen/_5sdp"
+                    android:layout_weight="1"
+                    android:fontFamily="@font/darker_grotesque_semibold"
+                    android:text="Pick Form Camera"
+                    android:textColor="@color/white"
+                    app:backgroundTint="@null" />
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btn_gallery"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_5sdp"
+                    android:layout_weight="1"
+                    android:fontFamily="@font/darker_grotesque_semibold"
+                    android:text="Pick Form Gallery"
+                    android:textColor="@color/white"
+                    app:backgroundTint="@null" />
+            </LinearLayout>
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btn_verify"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_42sdp"
+                android:layout_marginHorizontal="@dimen/_30sdp"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:fontFamily="@font/darker_grotesque_semibold"
+                android:text="Verify"
+                android:textColor="@color/white"
+                android:visibility="gone"
+                app:backgroundTint="@null"
+                app:layout_constraintEnd_toEndOf="@+id/layout_document_btn"
+                app:layout_constraintStart_toStartOf="@+id/layout_document_btn"
+                app:layout_constraintTop_toBottomOf="@+id/layout_document_btn" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </FrameLayout>
+</layout>

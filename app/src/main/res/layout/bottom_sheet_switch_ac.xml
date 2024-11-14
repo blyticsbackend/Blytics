@@ -1,0 +1,254 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:paddingHorizontal="@dimen/_5sdp"
+        android:paddingVertical="@dimen/_20sdp">
+
+        <TextView
+            android:id="@+id/lbl_title"
+            style="@style/TextTitleStyle"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:paddingHorizontal="@dimen/_10sdp"
+            android:fontFamily="@font/opensans_bold"
+            android:gravity="start"
+            android:text="Switch Account"
+            android:textSize="@dimen/_14sdp"
+            app:layout_constraintEnd_toStartOf="@+id/btn_cancel"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:id="@+id/btn_cancel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:src="@drawable/ic_baseline_cancel_24"
+            android:visibility="gone"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/btn_saving_ac"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/_5sdp"
+            android:layout_marginTop="@dimen/_10sdp"
+            app:cardCornerRadius="10dp"
+            app:cardElevation="5dp"
+            app:cardUseCompatPadding="true"
+            app:contentPaddingBottom="@dimen/_9sdp"
+            app:contentPaddingLeft="@dimen/_15sdp"
+            app:contentPaddingRight="@dimen/_15sdp"
+            app:contentPaddingTop="@dimen/_9sdp"
+            app:layout_constraintTop_toBottomOf="@id/lbl_title">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+
+                <TextView
+                    android:id="@+id/txt_saving_ac"
+                    style="@style/TextTitleStyle"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/opensans_bold"
+                    android:text="Saving Account"
+                    android:textSize="@dimen/_12sdp"
+                    />
+            </LinearLayout>
+
+            <ImageView
+                android:id="@+id/img_check_sa"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="end"
+                android:visibility="gone"
+                android:src="@drawable/ic_baseline_check_circle_outline_24" />
+
+
+        </com.google.android.material.card.MaterialCardView>
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/btn_current_ac"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/_5sdp"
+            app:cardCornerRadius="10dp"
+            app:cardElevation="5dp"
+            app:cardUseCompatPadding="true"
+            app:contentPaddingBottom="@dimen/_9sdp"
+            app:contentPaddingLeft="@dimen/_15sdp"
+            app:contentPaddingRight="@dimen/_15sdp"
+            app:contentPaddingTop="@dimen/_9sdp"
+            app:layout_constraintTop_toBottomOf="@id/btn_saving_ac">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/txt_current_ac"
+                    style="@style/TextTitleStyle"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/opensans_bold"
+                    android:text="Current Account"
+                    android:textSize="@dimen/_12sdp"
+                    />
+            </LinearLayout>
+
+            <ImageView
+                android:id="@+id/img_check_ca"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="end"
+                android:visibility="gone"
+                android:src="@drawable/ic_baseline_check_circle_outline_24" />
+
+
+        </com.google.android.material.card.MaterialCardView>
+
+    <!--    <com.google.android.material.card.MaterialCardView
+            android:id="@+id/btn_travel_ac"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/_5sdp"
+            app:cardCornerRadius="10dp"
+            app:cardElevation="5dp"
+            app:cardUseCompatPadding="true"
+            app:contentPaddingBottom="@dimen/_9sdp"
+            app:contentPaddingLeft="@dimen/_15sdp"
+            app:contentPaddingRight="@dimen/_15sdp"
+            app:contentPaddingTop="@dimen/_9sdp"
+            app:layout_constraintTop_toBottomOf="@id/btn_current_ac">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/txt_travel_ac"
+                    style="@style/TextTitleStyle"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:fontFamily="@font/opensans_bold"
+                    android:text="Travel/Tourist Account"
+                    android:textSize="@dimen/_12sdp" />
+
+            </LinearLayout>
+
+            <ImageView
+                android:id="@+id/img_check_ta"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="end"
+                android:src="@drawable/ic_baseline_check_circle_outline_24" />
+
+        </com.google.android.material.card.MaterialCardView>-->
+
+
+
+
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/btn_wallet_ac"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/_5sdp"
+            app:cardCornerRadius="10dp"
+            app:cardElevation="5dp"
+            app:cardUseCompatPadding="true"
+            app:contentPaddingBottom="@dimen/_9sdp"
+            app:contentPaddingLeft="@dimen/_15sdp"
+            app:contentPaddingRight="@dimen/_15sdp"
+            app:contentPaddingTop="@dimen/_9sdp"
+            app:layout_constraintTop_toBottomOf="@id/btn_current_ac">
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:id="@+id/txt_wallet_ac"
+                    style="@style/TextTitleStyle"
+                    android:layout_width="268dp"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/opensans_bold"
+                    android:text="Wallet Account"
+                    android:textSize="@dimen/_12sdp"
+                    />
+            </LinearLayout>
+
+            <ImageView
+                android:id="@+id/img_check_wallet"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="end"
+                android:visibility="gone"
+                android:src="@drawable/ic_baseline_check_circle_outline_24" />
+
+
+        </com.google.android.material.card.MaterialCardView>
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/btn_linked_ac"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/_5sdp"
+            app:cardCornerRadius="10dp"
+            app:cardElevation="5dp"
+            app:cardUseCompatPadding="true"
+            app:contentPaddingBottom="@dimen/_9sdp"
+            app:contentPaddingLeft="@dimen/_15sdp"
+            app:contentPaddingRight="@dimen/_15sdp"
+            app:contentPaddingTop="@dimen/_9sdp"
+            app:layout_constraintTop_toBottomOf="@id/btn_wallet_ac">
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/txt_linked_ac"
+                style="@style/TextTitleStyle"
+                android:layout_width="268dp"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/opensans_bold"
+                android:text="Linked Account"
+                android:textSize="@dimen/_12sdp"
+                />
+        </LinearLayout>
+
+        <ImageView
+            android:id="@+id/img_check_la"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="end"
+            android:visibility="gone"
+            android:src="@drawable/ic_baseline_check_circle_outline_24" />
+
+
+    </com.google.android.material.card.MaterialCardView>
+
+
+
+
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    </layout>

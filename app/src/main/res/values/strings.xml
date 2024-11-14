@@ -1,0 +1,55 @@
+<resources>
+    <string name="app_name" translatable="false">Blytics</string>
+    <string name="lbl_sing_in_password" translatable="false">Your Password</string>
+    <string name="lbl_sign_in_email_mobile" translatable="false">Your Email/Mobile Number</string>
+    <string name="lbl_sign_in" translatable="false">Sign in</string>
+    <string name="lbl_sign_up" translatable="false">Sign up</string>
+    <string name="lbl_or" translatable="false">or</string>
+    <string name="lbl_sing_in_mobile_login" translatable="false">Login With Mobile Number</string>
+    <string name="lbl_not_have_account" translatable="false">Sign up</string>
+    <string name="lbl_have_account" translatable="false">Already have an account? Sign In</string>
+    <string name="lbl_term_condition" translatable="false">By creating your account you have to\nagree with our Terms and Condition</string>
+    <string name="lbl_add_b_account" translatable="false">Add Saving Account</string>
+
+    <string name="default_notification_channel_id">default</string>
+    <string name="lbl_full_name" translatable="false">Full Name</string>
+    <string name="lbl_ac_number_auto" translatable="false">Account Number (Auto Generate)</string>
+    <string name="lbl_ac_purpose" translatable="false">Account Purpose</string>
+    <string name="lbl_bvn" translatable="false">BVN</string>
+    <string name="lbl_pin" translatable="false">T-PIN</string>
+    <string name="lbl_pin_confirm" translatable="false">T-PIN Confirm</string>
+    <string name="lbl_create" translatable="false">Create</string>
+
+
+    <string name="lbl_forgot_password" translatable="false"><u>Forgot password?</u></string>
+    <string name="lbl_login" translatable="false">Log in</string>
+    <string name="image" translatable="false">image</string>
+
+    <string name="error_msg_field_empty" translatable="false">All fields are required to fill</string>
+    <string name="error_msg_email_format" translatable="false">Wrong Email Format</string>
+    <string name="error_msg_phone_empty" translatable="false">Please Enter Phone Number</string>
+    <string name="error_msg_email_empty" translatable="false">Please Enter Email</string>
+    <string name="error_msg_select_country" translatable="false">Select Country</string>
+    <string name="message_no_contact_required" translatable="false">Contact permission required.</string>
+    <string name="error_msg_password_length" translatable="false">Password Length Too Short</string>
+
+    <string name="tag_is_center">tagIsCenter</string>
+    <string name="settings">Settings</string>
+    <string name="country_picker_title">Select Country</string>
+    <string name="country_picker_search_hint">Search..</string>
+    <string name="country_picker_no_result">No Result</string>
+
+    <string name="date">Please Select Valid Date of Birth</string>
+    <string name="withdraw_date">Please Enter Valid Withdrawal Date</string>
+
+    <string name="status_received">Received</string>
+    <string name="status_send">Sent</string>
+    <string name="ChargesText">Payment at a late date will incur an additional charge <b>N100</b>. you can adjust or cancel the payment date at anytime</string>
+    <string name="ChargesAddAccountLinked">“This account can be Linked to family, friends, or co-workers, allowing them to access funds you manage, set up allowances, view activity, and more. The Linked account holder will receive a debit card linked to your account, which you manage. Using a Linked account will incur a service charge N12,500 a year”</string>
+    <string name="ChargesAddAccountCurrent">For added security, please set a PIN for you transactions. It helps keep your account secured.</string>
+    <string name="SendNotification">We Will Send Them A Notification</string>
+    <string name="ConfirmTheAddress">Please confirm the address where the card associated with this Linked account should be sent.</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+</resources>

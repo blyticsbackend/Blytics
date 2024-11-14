@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/linked_nav"
+    app:startDestination="@id/linkedAcHomeFragment">
+
+    <fragment
+        android:id="@+id/linkedAcHomeFragment"
+        tools:layout="@layout/linked_ac_home_fragment"
+        android:name="com.nbt.blytics.modules.linkedac.home.LinkedAcHomeFragment"
+        android:label="LinkedAcHomeFragment" />
+</navigation>

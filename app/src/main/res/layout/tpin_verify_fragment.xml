@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:app="http://schemas.android.com/apk/res-auto">
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/top_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingStart="@dimen/_20sdp"
+    android:paddingTop="@dimen/_30sdp"
+    android:paddingEnd="@dimen/_20sdp"
+    android:paddingBottom="@dimen/_10sdp"
+    tools:context=".modules.tpinverify.TpinVerifyFragment">
+    <TextView
+        android:id="@+id/lbl_title"
+        style="@style/TextTitleStyle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_10sdp"
+        android:fontFamily="@font/darker_grotesque_bold"
+        android:gravity="center"
+        android:text="TPin"
+        android:textSize="@dimen/_21sdp"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+    <TextView
+        android:id="@+id/lbl_msg"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/_10sdp"
+        android:layout_marginTop="@dimen/_10sdp"
+        android:layout_marginEnd="@dimen/_10sdp"
+        android:fontFamily="@font/darker_grotesque_semibold"
+        android:gravity="center"
+        android:minLines="2"
+        android:text="Enter 4-digit Code we have sent to"
+        android:textSize="@dimen/_15sdp"
+        app:layout_constraintTop_toBottomOf="@+id/lbl_title" />
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:id="@+id/layout_tpin"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_10sdp"
+        android:orientation="vertical"
+        app:layout_constraintTop_toBottomOf="@id/lbl_msg">
+
+        <TextView
+            android:id="@+id/lbl_tpin"
+            style="@style/TextTitleStyle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/darker_grotesque_semibold"
+            android:text="TPIN (Wallet)"
+            android:gravity="center"
+            android:textSize="@dimen/_14sdp"
+            app:layout_constraintTop_toBottomOf="@+id/lbl_title" />
+
+        <com.nbt.blytics.otphelpernew.OtpTextView
+                android:id="@+id/tpin_view"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:gravity="center"
+                app:hide_otp="true"
+                android:focusableInTouchMode="true"
+                android:inputType="numberPassword"
+                android:textColor="@android:color/white"
+                android:layout_gravity="center"
+                app:otp_box_background="@color/blue_500"
+                app:height="@dimen/_30sdp"
+                app:width="@dimen/_30sdp"
+                app:bar_enabled="true"
+                app:bar_height="2dp"
+                app:bar_active_color="@color/blue_700"
+                app:length="4"
+                app:otp_text_size="24dp"
+        />
+
+
+
+    </androidx.appcompat.widget.LinearLayoutCompat>
+
+    <TextView
+        android:id="@+id/btn_forgot_tpin"
+        style="@style/TextTitleStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_5sdp"
+        android:fontFamily="@font/darker_grotesque_semibold"
+        android:text="Forgot TPIN?"
+        android:textSize="@dimen/_14sdp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/layout_tpin" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btn_continue"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_42sdp"
+        android:layout_marginHorizontal="@dimen/_30sdp"
+        android:layout_marginTop="@dimen/_32sdp"
+        android:text="Continue"
+
+            android:fontFamily="@font/darker_grotesque_bold"
+            android:textSize="@dimen/_13sdp"
+        android:textColor="@color/white"
+        app:backgroundTint="@null"
+        app:layout_constraintTop_toBottomOf="@+id/layout_tpin" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

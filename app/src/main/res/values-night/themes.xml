@@ -1,0 +1,171 @@
+<resources>
+    <!-- Base application theme. -->
+    <style name="Theme.Blytics" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+        <!-- Primary brand color. -->
+        <item name="colorPrimary">@color/orange_light</item>
+        <item name="colorPrimaryDark">@color/black</item>
+        <item name="colorAccent">@color/orange_light</item>
+        <!-- Customize your theme here. -->
+        <item name="otpViewStyle">@style/OtpWidget.OtpView</item>
+        <item name="bottomSheetDialogTheme">@style/CustomBottomSheetDialog</item>
+    </style>
+
+ <!--   <style name="Theme.Blytics2" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+        &lt;!&ndash; Primary brand color. &ndash;&gt;
+        <item name="colorPrimary">@color/white</item>
+        <item name="colorPrimaryDark">@color/blue_700</item>
+        <item name="colorAccent">@color/white</item>
+        &lt;!&ndash; Customize your theme here. &ndash;&gt;
+
+        <item name="otpViewStyle">@style/OtpWidget.OtpView</item>
+    </style>-->
+
+<!--    <style name="DarkGBTextInputEditText" parent="Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense">
+        <item name="android:textColor">@color/white</item>
+        <item name="colorControlActivated">@color/white</item>
+    </style>-->
+
+    <style name="SplashTheme" parent="Theme.Blytics">
+        <item name="android:windowBackground">@drawable/splash</item>
+    </style>
+
+    <style name="TextTitleStyle" parent="TextAppearance.AppCompat">
+        <item name="android:textColor" format="color">@color/white</item>
+    </style>
+    <style name="LblTextStyle" parent="TextAppearance.AppCompat">
+        <item name="android:textColor">@color/lbl_txt_blue</item>
+    </style>
+
+    <style name="StyleTextInputEditText" parent="Theme.Blytics">
+
+    </style>
+
+    <style name="OtpWidget.OtpView" parent="Widget.AppCompat.EditText">
+        <item name="android:background">@null</item>
+        <item name="android:minHeight">0dp</item>
+        <item name="android:maxLines">1</item>
+    </style>
+
+    <style name="toolbar_title" parent="TextAppearance.Widget.AppCompat.Toolbar.Title">
+        <item name="android:textSize">@dimen/_14sdp</item>
+    </style>
+
+    <declare-styleable name="CircleImageView">
+        <attr name="civ_border_width" format="dimension" />
+        <attr name="civ_border_color" format="color" />
+        <attr name="civ_border_overlay" format="boolean" />
+        <attr name="civ_circle_background_color" format="color" />
+    </declare-styleable>
+
+
+    <style name="TextTitleStyleLight" parent="TextAppearance.AppCompat">
+        <item name="android:textColor">@color/black</item>
+    </style>
+
+    <style name="Plain" parent="Theme.Blytics">
+        <item name="bottom_sheet_extra_padding">0dp</item>
+        <item name="should_draw_under_status_bar">false</item>
+    </style>
+    <style name="BottomDialogTheme" parent="Theme.Blytics">
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowIsFloating">false</item>
+        <item name="android:backgroundDimEnabled">false</item>
+        <item name="android:windowAnimationStyle">@null</item>
+    </style>
+
+    <string name="DayNightTint" parent="Theme.Blytics">
+          <item name="android:backgroundTint">@color/white</item>
+    </string>
+
+    <style name="BottomDrawerBgStyle">
+        <item name="android:background">@color/bottom_drawer_outside_background_night</item>
+    </style>
+
+    <style name="DarkBGTextStyle" parent="Theme.Blytics">
+        <item name="android:textColor">@color/white</item>
+    </style>
+
+
+    <style name="LightBGTextInputLayoutStyle" parent="Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense">
+        <item name="colorPrimaryDark">@color/white</item>
+        <item name="colorAccent">@color/white</item>
+        <item name="android:textColorHint">@color/white</item>
+        <item name="android:paddingStart">16dp</item>
+        <item name="android:paddingEnd">16dp</item>
+        <item name="boxStrokeColor">@color/edit_stock_white_selector</item>
+        <item name="colorOnSurface">@color/white</item>
+        <item name="colorPrimary">@color/white</item>
+    </style>
+
+    <style name="LightGBTextInputEditText" parent="Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense">
+        <item name="android:textColor">@color/white</item>
+        <item name="colorControlActivated">@color/white</item>
+    </style>
+
+    <style name="LightGBTextInputEditFilledBox" parent="Widget.MaterialComponents.TextInputLayout.FilledBox.Dense">
+        <item name="android:textColor">@color/white</item>
+        <item name="colorControlActivated">@color/white</item>
+    </style>
+    <style name="LightBGTextInputLayoutSpinnerStyle" parent="Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense.ExposedDropdownMenu">
+        <item name="colorPrimaryDark">@color/white</item>
+        <item name="colorAccent">@color/white</item>
+        <item name="android:textColorHint">@color/white</item>
+        <item name="android:paddingStart">16dp</item>
+        <item name="android:paddingEnd">16dp</item>
+        <item name="boxStrokeColor">@color/edit_stock_white_selector</item>
+        <item name="colorOnSurface">@color/white</item>
+        <item name="colorPrimary">@color/white</item>
+    </style>
+
+
+    <style name="TextTitleStyleCppSinner" parent="TextAppearance.AppCompat">
+        <item name="android:textColor" format="color">@color/white</item>
+        <item name="android:fontFamily">@font/opensans_regular</item>
+        <item name="android:textSize">@dimen/_12sdp</item>
+    </style>
+    <style name="CustomShapeAppearanceBottomSheetDialog" parent="">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSizeTopRight">16dp</item>
+        <item name="cornerSizeTopLeft">16dp</item>
+        <item name="cornerSizeBottomRight">0dp</item>
+        <item name="cornerSizeBottomLeft">0dp</item>
+    </style>
+    <style name="roundedImageView" parent="">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSize">@dimen/_8sdp</item>
+    </style>
+
+
+
+    <style name="cardViewTopRadius" parent="@style/Widget.MaterialComponents.CardView">
+        <item name="shapeAppearanceOverlay">@style/cardRadiusTop</item>
+    </style>
+    <style name="cardRadiusTop" parent="">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSizeTopRight">@dimen/_10sdp</item>
+        <item name="cornerSizeTopLeft">@dimen/_10sdp</item>
+        <item name="cornerSizeBottomRight">0dp</item>
+        <item name="cornerSizeBottomLeft">0dp</item>
+    </style>
+    <style name="cardViewBottomRadius" parent="@style/Widget.MaterialComponents.CardView">
+        <item name="shapeAppearanceOverlay">@style/cardRadiusBottom</item>
+    </style>
+
+
+    <style name="cardRadiusBottom" parent="">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSizeBottomRight">@dimen/_10sdp</item>
+        <item name="cornerSizeBottomLeft">@dimen/_10sdp</item>
+        <item name="cornerSizeTopRight">0dp</item>
+        <item name="cornerSizeTopLeft">0dp</item>
+
+    </style>
+    <style name="SeparatorColor" parent="">
+        <item name="background">@color/black</item>
+    </style>
+
+    <style name="BtnColorStyle" parent="Widget.MaterialComponents.Button">
+        <item name="android:background">@drawable/bg_gradient_orange_btn</item>
+    </style>
+</resources>

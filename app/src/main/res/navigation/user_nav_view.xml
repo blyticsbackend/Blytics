@@ -1,0 +1,270 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/user_nav_view"
+    app:startDestination="@id/signInFragment">
+
+    <fragment
+        android:id="@+id/signInFragment"
+        tools:layout="@layout/sign_in_fragment"
+        android:name="com.nbt.blytics.modules.signin.SignInFragment"
+        android:label="SignInFragment" >
+        <action
+            android:id="@+id/action_signInFragment_to_phoneLoginFragment"
+            app:destination="@id/phoneLoginFragment" />
+        <action
+            android:id="@+id/action_signInFragment_to_phoneRegistrationFragment"
+            app:destination="@id/phoneRegistrationFragment"
+            app:launchSingleTop="true"
+            app:popUpTo="@id/phoneRegistrationFragment"
+            app:popUpToInclusive="true"
+            app:enterAnim="@anim/slide_in"
+            app:exitAnim="@anim/fade_out"
+            app:popEnterAnim="@anim/fade_in"
+            app:popExitAnim="@anim/slide_out"/>
+        <action
+            android:id="@+id/action_signInFragment_to_bvnVarificationFragment"
+            app:destination="@id/bvnVarificationFragment"
+            app:enterAnim="@anim/slide_in"
+            app:exitAnim="@anim/fade_out"
+            app:popEnterAnim="@anim/fade_in"
+            app:popExitAnim="@anim/slide_out"/>
+        <action
+            android:id="@+id/action_signInFragment_to_otpFragment"
+            app:destination="@id/otpFragment"
+            app:enterAnim="@anim/slide_in"
+            app:exitAnim="@anim/fade_out"
+            app:popEnterAnim="@anim/fade_in"
+            app:popExitAnim="@anim/slide_out"
+            />
+
+    </fragment>
+    <fragment
+        android:id="@+id/signUpFragment"
+        tools:layout="@layout/sign_up_fragment"
+        android:name="com.nbt.blytics.modules.signup.SignUpFragment"
+        android:label="SignUpFragment" >
+        <action
+            android:id="@+id/action_signUpFragment_to_signInFragment"
+            app:destination="@id/signInFragment"
+            app:popUpTo="@id/signInFragment"
+            app:popUpToInclusive="true" />
+    </fragment>
+
+
+    <fragment
+        android:id="@+id/phoneLoginFragment"
+        tools:layout="@layout/phone_login_fragment"
+        android:name="com.nbt.blytics.modules.phonelogin.PhoneLoginFragment"
+        android:label="Phone Login">
+        <action
+            android:id="@+id/action_phoneLoginFragment_to_otpFragment"
+            app:destination="@id/otpFragment" />
+        <action
+            android:id="@+id/action_phoneLoginFragment_to_signUpFragment"
+            app:destination="@id/signUpFragment"
+            app:popUpTo="@id/signUpFragment"
+            app:popUpToInclusive="true" />
+    </fragment>
+    <fragment
+        android:id="@+id/phoneRegistrationFragment"
+        tools:layout="@layout/phone_registration_fragment"
+        android:name="com.nbt.blytics.modules.phoneregistation.PhoneRegistrationFragment"
+        android:label="PhoneRegistrationFragment" >
+
+        <action
+            android:id="@+id/action_phoneRegistrationFragment_to_otpFragment"
+            app:destination="@id/otpFragment"
+            app:enterAnim="@anim/slide_in"
+            app:exitAnim="@anim/fade_out"
+            app:popEnterAnim="@anim/fade_in"
+            app:popExitAnim="@anim/slide_out"/>
+        <action
+            android:id="@+id/action_phoneRegistrationFragment_to_signUpFragment"
+            app:destination="@id/signUpFragment"
+            app:popUpTo="@id/phoneRegistrationFragment"
+            app:popUpToInclusive="true" />
+        <action
+            android:id="@+id/action_phoneRegistrationFragment_to_signInFragment"
+            app:destination="@id/signInFragment"
+            app:launchSingleTop="true"
+            app:popUpTo="@id/signInFragment"
+            app:popUpToInclusive="true"
+
+            app:enterAnim="@anim/slide_in"
+            app:exitAnim="@anim/fade_out"
+            app:popEnterAnim="@anim/slide_in"
+            app:popExitAnim="@anim/slide_out"/>
+        <action
+            android:id="@+id/action_phoneRegistrationFragment_self"
+            app:destination="@id/phoneRegistrationFragment"
+            app:enterAnim="@anim/slide_in"
+            app:exitAnim="@anim/fade_out"
+            app:popEnterAnim="@anim/fade_in"
+            app:popExitAnim="@anim/slide_out"/>
+    </fragment>
+    <fragment
+        android:id="@+id/otpFragment"
+        tools:layout="@layout/otp_fragment"
+        android:name="com.nbt.blytics.modules.otp.OtpFragment"
+        android:label="OtpFragment">
+        <action
+            android:id="@+id/action_otpFragment_to_phoneLoginFragment"
+            app:destination="@id/phoneLoginFragment"
+            app:popUpTo="@id/phoneLoginFragment"
+            app:popUpToInclusive="true" />
+        <action
+            android:id="@+id/action_otpFragment_to_signUpFragment"
+            app:destination="@id/signUpFragment"
+            app:popUpTo="@id/otpFragment"
+            app:popUpToInclusive="true" />
+        <action
+            android:id="@+id/action_otpFragment_to_changePasswordFragment"
+            app:destination="@id/changePasswordFragment" />
+        <action
+            android:id="@+id/action_otpFragment_to_signupProfileEditFragment"
+            app:destination="@id/signupProfileEditFragment" />
+        <action
+            android:id="@+id/action_otpFragment_to_securityQuestionVerityFragment"
+            app:destination="@id/securityQuestionVerityFragment"
+
+            app:enterAnim="@anim/slide_in"
+            app:exitAnim="@anim/fade_out"
+            app:popEnterAnim="@anim/fade_in"
+            app:popExitAnim="@anim/slide_out"/>
+        <action
+            android:id="@+id/action_otpFragment_to_phoneRegistrationFragment"
+            app:destination="@id/phoneRegistrationFragment"
+            app:enterAnim="@anim/slide_in"
+            app:exitAnim="@anim/fade_out"
+            app:launchSingleTop="true"
+            app:popEnterAnim="@anim/fade_in"
+            app:popExitAnim="@anim/slide_out"
+            app:popUpTo="@id/phoneRegistrationFragment"
+            app:popUpToInclusive="true" />
+        <action
+            android:id="@+id/action_otpFragment_to_tpinVerifyFragment"
+            app:enterAnim="@anim/slide_in"
+            app:exitAnim="@anim/fade_out"
+            app:launchSingleTop="true"
+            app:popEnterAnim="@anim/fade_in"
+            app:popExitAnim="@anim/slide_out"
+            app:destination="@id/tpinVerifyFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/changePasswordFragment"
+        tools:layout="@layout/change_password_fragment"
+        android:name="com.nbt.blytics.modules.changepassword.ChangePasswordFragment"
+        android:label="ChangePasswordFragment" >
+        <action
+            android:id="@+id/action_changePasswordFragment_to_signInFragment"
+            app:destination="@id/signInFragment"
+            app:popUpTo="@id/signInFragment"
+            app:popUpToInclusive="true" />
+    </fragment>
+    <fragment
+        android:id="@+id/signupProfileEditFragment"
+        tools:layout="@layout/signup_profile_edit_fragment"
+        android:name="com.nbt.blytics.modules.signupprofile.SignupProfileEditFragment"
+        android:label="SignupProfileEditFragment" >
+        <action
+            android:id="@+id/action_signupProfileEditFragment_to_userEditAddressFragment"
+            app:destination="@id/userEditAddressFragment"
+            app:enterAnim="@anim/slide_in"
+            app:exitAnim="@anim/fade_out"
+            app:popEnterAnim="@anim/fade_in"
+            app:popExitAnim="@anim/slide_out"/>
+    </fragment>
+    <fragment
+        android:id="@+id/userEditAddressFragment"
+        tools:layout="@layout/user_edit_address_fragment"
+        android:name="com.nbt.blytics.modules.editaddress.UserEditAddressFragment"
+        android:label="UserEditAddressFragment" >
+        <action
+            android:id="@+id/action_userEditAddressFragment_to_setPasswordFragment"
+            app:destination="@id/setPasswordFragment"
+            app:enterAnim="@anim/slide_in"
+            app:exitAnim="@anim/fade_out"
+            app:popEnterAnim="@anim/fade_in"
+            app:popExitAnim="@anim/slide_out"/>
+    </fragment>
+    <fragment
+        android:id="@+id/setPasswordFragment"
+        tools:layout="@layout/set_password_fragment"
+        android:name="com.nbt.blytics.modules.setpassword.SetPasswordFragment"
+        android:label="SetPasswordFragment" >
+        <action
+            android:id="@+id/action_setPasswordFragment_to_bvnVarificationFragment"
+            app:destination="@id/bvnVarificationFragment"
+            app:enterAnim="@anim/slide_in"
+            app:exitAnim="@anim/fade_out"
+            app:popEnterAnim="@anim/fade_in"
+            app:popExitAnim="@anim/slide_out"/>
+    </fragment>
+    <fragment
+        android:id="@+id/bvnVarificationFragment"
+        tools:layout="@layout/bvn_verification_fragment"
+        android:name="com.nbt.blytics.modules.bvn.BvnVerificationFragment"
+        android:label="BvnVarificationFragment" />
+    <fragment
+        tools:layout="@layout/security_question_verity_fragment"
+        android:id="@+id/securityQuestionVerityFragment"
+        android:name="com.nbt.blytics.modules.sqverify.SecurityQuestionVerityFragment"
+        android:label="SecurityQuestionVerityFragment" >
+        <action
+            android:id="@+id/action_securityQuestionVerityFragment2_to_changeTipFragment"
+            app:destination="@id/changeTipFragment"
+            app:enterAnim="@anim/slide_in"
+            app:exitAnim="@anim/fade_out"
+            app:popEnterAnim="@anim/fade_in"
+            app:popExitAnim="@anim/slide_out"/>
+    </fragment>
+    <fragment
+        android:id="@+id/changeTipFragment"
+        tools:layout="@layout/change_tip_fragment"
+        android:name="com.nbt.blytics.modules.chagnetpin.ChangeTipFragment"
+        android:label="ChangeTipFragment" >
+        <action
+            android:id="@+id/action_changeTipFragment_to_otpFragment"
+            app:destination="@id/otpFragment"
+            app:popUpTo="@id/otpFragment"
+            app:enterAnim="@anim/slide_in"
+            app:exitAnim="@anim/fade_out"
+            app:popEnterAnim="@anim/fade_in"
+            app:popExitAnim="@anim/slide_out"
+            app:popUpToInclusive="true" />
+        <action
+            android:id="@+id/action_changeTipFragment_to_phoneRegistrationFragment"
+            app:destination="@id/phoneRegistrationFragment"
+            app:enterAnim="@anim/slide_in"
+            app:exitAnim="@anim/fade_out"
+            app:launchSingleTop="true"
+            app:popEnterAnim="@anim/fade_in"
+            app:popExitAnim="@anim/slide_out"
+            app:popUpTo="@id/otpFragment"
+            app:popUpToInclusive="true" />
+    </fragment>
+    <fragment
+        android:id="@+id/tpinVerifyFragment"
+        tools:layout="@layout/tpin_verify_fragment"
+        android:name="com.nbt.blytics.modules.tpinverify.TpinVerifyFragment"
+        android:label="TpinVerifyFragment" >
+        <action
+            android:id="@+id/action_tpinVerifyFragment_to_securityQuestionVerityFragment"
+            app:enterAnim="@anim/slide_in"
+            app:exitAnim="@anim/fade_out"
+            app:launchSingleTop="true"
+            app:popEnterAnim="@anim/fade_in"
+            app:popExitAnim="@anim/slide_out"
+            app:destination="@id/securityQuestionVerityFragment" />
+        <action
+            android:id="@+id/action_tpinVerifyFragment_to_changePasswordFragment"
+            app:enterAnim="@anim/slide_in"
+            app:exitAnim="@anim/fade_out"
+            app:launchSingleTop="true"
+            app:popEnterAnim="@anim/fade_in"
+            app:popExitAnim="@anim/slide_out"
+            app:destination="@id/changePasswordFragment" />
+    </fragment>
+</navigation>

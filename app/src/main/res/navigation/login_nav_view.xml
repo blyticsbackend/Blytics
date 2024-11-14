@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/otpFragment"
+    app:startDestination="@id/contactFragment2">
+
+
+    <fragment
+        android:id="@+id/loginFragment"
+        tools:layout="@layout/login_fragment"
+        android:name="com.nbt.blytics.testing.login.LoginFragment"
+        android:label="LoginFragment" >
+        <action
+            android:id="@+id/action_loginFragment_to_regFragment"
+            app:destination="@id/regFragment"
+            app:enterAnim="@anim/slide_in"
+            app:exitAnim="@anim/fade_out"
+            app:launchSingleTop="true"
+            app:popEnterAnim="@anim/fade_in"
+            app:popExitAnim="@anim/slide_out"
+            app:popUpTo="@id/regFragment"
+            app:popUpToInclusive="true" />
+    </fragment>
+    <fragment
+        android:id="@+id/regFragment"
+        android:name="com.nbt.blytics.testing.signup.RegFragment"
+        android:label="reg_fragment"
+        tools:layout="@layout/reg_fragment" >
+        <action
+            android:id="@+id/action_regFragment_to_loginFragment"
+            app:destination="@id/loginFragment"
+            app:enterAnim="@anim/slide_in"
+            app:exitAnim="@anim/fade_out"
+            app:popEnterAnim="@anim/slide_in"
+            app:popExitAnim="@anim/slide_out"
+            app:launchSingleTop="true"
+            app:popUpTo="@id/loginFragment"
+            app:popUpToInclusive="true" />
+    </fragment>
+    <fragment
+        android:id="@+id/signupProfileEditFragment2"
+        tools:layout="@layout/signup_profile_edit_fragment"
+        android:name="com.nbt.blytics.modules.signupprofile.SignupProfileEditFragment"
+        android:label="SignupProfileEditFragment" >
+        <action
+            android:id="@+id/action_signupProfileEditFragment_to_userEditAddressFragment"
+            app:destination="@id/userEditAddressFragment2" />
+    </fragment>
+    <fragment
+        android:id="@+id/bvnVerificationFragment"
+        android:name="com.nbt.blytics.modules.bvn.BvnVerificationFragment"
+        android:label="BvnVerificationFragment" />
+    <fragment
+        android:id="@+id/userEditAddressFragment2"
+        android:name="com.nbt.blytics.modules.editaddress.UserEditAddressFragment"
+        android:label="UserEditAddressFragment" >
+        <action
+            android:id="@+id/action_userEditAddressFragment_to_setPasswordFragment"
+            app:destination="@id/setPasswordFragment2" />
+    </fragment>
+    <fragment
+        android:id="@+id/setPasswordFragment2"
+        android:name="com.nbt.blytics.modules.setpassword.SetPasswordFragment"
+        android:label="SetPasswordFragment" />
+    <fragment
+        android:id="@+id/securityQuestionVerityFragment"
+        android:name="com.nbt.blytics.modules.sqverify.SecurityQuestionVerityFragment"
+        android:label="SecurityQuestionVerityFragment" />
+    <fragment
+        android:id="@+id/changeTipFragment2"
+        android:name="com.nbt.blytics.modules.chagnetpin.ChangeTipFragment"
+        android:label="ChangeTipFragment" />
+    <fragment
+        android:id="@+id/newProfileFragment2"
+        tools:layout="@layout/new_profile_fragment"
+        android:name="com.nbt.blytics.modules.newprofile.NewProfileFragment"
+        android:label="NewProfileFragment" />
+    <fragment
+        android:id="@+id/appsFragment2"
+        tools:layout="@layout/apps_fragment"
+        android:name="com.nbt.blytics.modules.apps.AppsFragment"
+        android:label="AppsFragment" />
+    <fragment
+        android:id="@+id/securityQuestionFragment2"
+        tools:layout="@layout/security_question_fragment"
+        android:name="com.nbt.blytics.modules.securityQes.SecurityQuestionFragment"
+        android:label="SecurityQuestionFragment" />
+    <fragment
+        android:id="@+id/contactFragment2"
+        android:name="com.nbt.blytics.modules.contact.ContactFragment"
+        android:label="contact_fragment"
+        tools:layout="@layout/contact_fragment" />
+</navigation>

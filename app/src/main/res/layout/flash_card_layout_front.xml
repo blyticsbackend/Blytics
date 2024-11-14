@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/card_back"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_150sdp"
+        app:cardElevation="5dp"
+        app:cardCornerRadius="@dimen/_5sdp"
+        android:visibility="visible"
+        app:cardUseCompatPadding="true"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/bg_gradient_blue_layout_bg"
+            android:paddingVertical="@dimen/_5sdp"
+            >
+
+            <TextView
+                android:id="@+id/lbl_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/opensans_bold"
+                android:paddingHorizontal="@dimen/_5sdp"
+                android:text="Linked Account"
+                android:textColor="@color/white"
+                android:textSize="@dimen/_11sdp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+
+
+            <View
+                android:id="@+id/line2"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:background="@color/white"
+                app:layout_constraintTop_toBottomOf="@+id/lbl_title" />
+
+            <TextView
+                android:id="@+id/txt_card_number"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/opensans_bold"
+                android:gravity="center"
+                android:text="212312312321"
+                android:textColor="@color/white"
+                android:textSize="@dimen/_14sdp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageView
+                android:id="@+id/img_info_end"
+                android:layout_width="@dimen/_18sdp"
+                android:layout_height="@dimen/_18sdp"
+                android:layout_marginStart="@dimen/_10sdp"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:src="@drawable/ic_baseline_info_24"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:tint="@color/white" />
+
+            <TextView
+                android:id="@+id/txt_cvc"
+                app:layout_constraintStart_toEndOf="@id/img_info_end"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/opensans_bold"
+                android:textSize="@dimen/_12sdp"
+                android:textColor="@color/white"
+                android:layout_marginHorizontal="@dimen/_10sdp"
+                app:layout_constraintTop_toTopOf="@id/img_info_end"
+                app:layout_constraintBottom_toBottomOf="@id/img_info_end"
+                />
+            <TextView
+                android:id="@+id/txt_date"
+                app:layout_constraintBaseline_toBaselineOf="@+id/txt_cvc"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/opensans_bold"
+                android:textSize="@dimen/_12sdp"
+                android:textColor="@color/white"
+                android:layout_marginHorizontal="@dimen/_10sdp"
+                />
+
+
+            <TextView
+                android:id="@+id/txt_payee_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/white"
+                android:textSize="@dimen/_11sdp"
+                android:fontFamily="@font/opensans_regular"
+                app:layout_constraintTop_toBottomOf="@id/line2"
+                app:layout_constraintStart_toStartOf="parent"
+                android:layout_marginStart="@dimen/_5sdp"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:text="Payee Name"/>
+
+            <TextView
+                android:id="@+id/txt_relation"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/white"
+                android:textSize="@dimen/_11sdp"
+                android:fontFamily="@font/opensans_regular"
+                app:layout_constraintTop_toBottomOf="@id/line2"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_marginEnd="@dimen/_5sdp"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:text="Relation"/>
+
+            <TextView
+                android:id="@+id/txt_user_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/white"
+                android:textSize="@dimen/_11sdp"
+                android:fontFamily="@font/opensans_regular"
+                app:layout_constraintStart_toStartOf="@+id/txt_card_number"
+                app:layout_constraintEnd_toEndOf="@id/txt_card_number"
+                app:layout_constraintBottom_toTopOf="@+id/txt_card_number"
+                android:text="User_name"/>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </com.google.android.material.card.MaterialCardView>
+</androidx.constraintlayout.widget.ConstraintLayout>

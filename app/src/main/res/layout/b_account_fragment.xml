@@ -1,0 +1,214 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools">
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/main_layout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:padding="@dimen/_10sdp"
+            tools:context=".modules.baccount.BAccountFragment">
+
+
+   <!--     <com.google.android.material.card.MaterialCardView
+                android:layout_width="0dp"
+
+                app:cardElevation="0dp"
+                app:cardPreventCornerOverlap="false"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">-->
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/btn_profile"
+                    app:layout_constraintEnd_toEndOf="@+id/guideline"
+                    android:layout_marginEnd="@dimen/_10sdp"
+                    android:layout_height="@dimen/_140sdp"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    app:cardCornerRadius="@dimen/_20sdp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    android:layout_width="0dp"
+                    >
+
+                <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:adjustViewBounds="true"
+                        android:scaleType="fitXY"
+                        android:src="@drawable/img_samll_bg_2"
+                        android:id="@+id/imageView3"/>
+
+                <com.nbt.blytics.utils.CircleImageView
+                        android:id="@+id/img_profile"
+                        android:layout_width="@dimen/_35sdp"
+                        android:layout_height="@dimen/_35sdp"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        android:layout_marginStart="@dimen/_10sdp"
+                        android:layout_marginTop="@dimen/_10sdp"
+                        android:src="@drawable/ic_user_profile"
+                />
+
+                <TextView
+
+                        android:layout_marginBottom="@dimen/_20sdp"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textSize="@dimen/_16sdp"
+                        android:textColor="@color/white"
+                        android:text="Profile"
+                        android:paddingStart="@dimen/_10sdp"
+                        android:fontFamily="@font/darker_grotesque_bold"
+                        app:layout_constraintBottom_toBottomOf="@+id/imageView3"/>
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/btn_security"
+                    android:layout_marginStart="@dimen/_10sdp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="@+id/guideline"
+                    app:layout_constraintTop_toTopOf="@+id/btn_profile"
+                    app:layout_constraintBottom_toBottomOf="@+id/btn_profile"
+                    android:layout_width="0dp"
+                    android:layout_height="@dimen/_140sdp">
+
+                <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:adjustViewBounds="true"
+                        android:scaleType="fitXY"
+                        android:src="@drawable/img_samll_bg_1"/>
+
+                <ImageView
+                        android:id="@+id/img_lock"
+                        android:layout_width="@dimen/_35sdp"
+                        android:layout_height="@dimen/_35sdp"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        android:layout_marginStart="@dimen/_10sdp"
+                        android:layout_marginTop="@dimen/_10sdp"
+                        android:src="@drawable/ic_lock"
+                        app:tint="@color/white"/>
+
+                <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textSize="@dimen/_16sdp"
+                        android:textColor="@color/white"
+                        android:text="Security"
+                        android:paddingStart="@dimen/_10sdp"
+                        android:layout_marginTop="@dimen/_5sdp"
+                        android:layout_marginBottom="@dimen/_20sdp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        android:fontFamily="@font/darker_grotesque_bold"/>
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_marginEnd="@dimen/_10sdp"
+
+                    android:id="@+id/btn_apps"
+                    android:layout_width="0dp"
+                    android:layout_height="@dimen/_140sdp"
+                    android:layout_marginTop="@dimen/_20sdp"
+                    app:layout_constraintEnd_toEndOf="@+id/guideline"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/btn_security"
+                    >
+
+                <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:adjustViewBounds="true"
+                        android:scaleType="fitXY"
+                        android:src="@drawable/img_samll_bg_3"/>
+
+                <ImageView
+                        android:id="@+id/img_app"
+                        android:layout_width="@dimen/_35sdp"
+                        android:layout_height="@dimen/_35sdp"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        android:layout_marginStart="@dimen/_10sdp"
+                        android:layout_marginTop="@dimen/_10sdp"
+                        android:src="@drawable/ic_apps"
+                        app:tint="@color/white"/>
+
+                <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textSize="@dimen/_16sdp"
+                        android:textColor="@color/white"
+                        android:text="Apps"
+                        android:paddingStart="@dimen/_10sdp"
+                        android:layout_marginBottom="@dimen/_20sdp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        android:layout_marginTop="@dimen/_5sdp"
+                        android:fontFamily="@font/darker_grotesque_bold"/>
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        <com.google.android.material.card.MaterialCardView
+                android:id="@+id/btn_info"
+                android:visibility="gone"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/_140sdp"
+                app:cardCornerRadius="@dimen/_20sdp"
+                app:cardElevation="8dp"
+                app:layout_constraintStart_toStartOf="@+id/guideline"
+                android:layout_marginStart="@dimen/_10sdp"
+                app:cardPreventCornerOverlap="false"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/btn_apps">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:adjustViewBounds="true"
+                        android:scaleType="fitXY"
+                        android:src="@drawable/img_2"/>
+
+                <ImageView
+                        android:id="@+id/img_info"
+                        android:layout_width="@dimen/_35sdp"
+                        android:layout_height="@dimen/_35sdp"
+                        android:layout_marginStart="@dimen/_8sdp"
+                        android:layout_marginTop="@dimen/_10sdp"
+                        android:src="@drawable/ic_baseline_info_24"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:tint="@color/white"/>
+
+                <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textSize="@dimen/_13sdp"
+                        android:textColor="@color/white"
+                        android:text="Info"
+                        android:layout_marginBottom="@dimen/_20sdp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        android:paddingStart="@dimen/_10sdp"
+                        android:layout_marginTop="@dimen/_5sdp"
+                        android:fontFamily="@font/opensans_bold"/>
+
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+        <androidx.constraintlayout.widget.Guideline
+
+                android:layout_width="wrap_content"
+                                                    android:layout_height="wrap_content"
+                                                    android:id="@+id/guideline"
+                                                    app:layout_constraintGuide_percent="0.5"
+                                                    android:orientation="vertical"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

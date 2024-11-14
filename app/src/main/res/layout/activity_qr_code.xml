@@ -1,0 +1,212 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/activity_qr"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".homemodule.HomeFragment">
+
+
+        <com.google.android.material.appbar.MaterialToolbar
+            android:id="@+id/toolbar_top"
+            android:layout_width="match_parent"
+            android:layout_height="?android:attr/actionBarSize"
+            app:layout_constraintTop_toTopOf="parent"
+            app:navigationIcon="?attr/homeAsUpIndicator">
+
+        </com.google.android.material.appbar.MaterialToolbar>
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/userImage"
+            android:layout_width="@dimen/_50sdp"
+            android:layout_height="@dimen/_50sdp"
+            android:layout_marginTop="@dimen/_20sdp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/toolbar_top" />
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/cvShowQr2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_20sdp"
+            android:orientation="vertical"
+            android:visibility="visible"
+            app:cardCornerRadius="@dimen/_5sdp"
+            app:cardElevation="0dp"
+            app:cardUseCompatPadding="true"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/userImage">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/_10sdp"
+
+                >
+
+                <TextView
+                    android:id="@+id/home_qr_text"
+                    style="@style/TextTitleStyle"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginStart="@dimen/_35sdp"
+                    android:layout_marginEnd="@dimen/_35sdp"
+                    android:layout_marginBottom="@dimen/_10sdp"
+                    android:fontFamily="@font/darker_grotesque_bold"
+                    android:gravity="center"
+                    android:text="Scan QR Code"
+                    android:textSize="@dimen/_16sdp"
+                    app:layout_constraintBottom_toTopOf="@+id/home"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <ImageView
+                    android:id="@+id/home"
+                    android:layout_width="@dimen/_200sdp"
+                    android:layout_height="@dimen/_200sdp"
+                    android:scaleType="fitXY"
+                    android:src="@drawable/qr_image"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <me.dm7.barcodescanner.zxing.ZXingScannerView
+                    android:id="@+id/activity_qr_image"
+                    android:layout_width="250dp"
+                    android:layout_height="300dp"
+                    android:src="@drawable/qr_image"
+                    android:visibility="gone"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/home_qr_text" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/cvShowQr"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_20sdp"
+            android:orientation="vertical"
+            android:visibility="gone"
+            app:cardCornerRadius="@dimen/_5sdp"
+            app:cardElevation="0dp"
+            app:cardUseCompatPadding="true"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/userImage">
+
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:id="@+id/lyt_user_info"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="@dimen/_10sdp"
+                android:visibility="visible">
+
+                <androidx.appcompat.widget.LinearLayoutCompat
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_weight="1"
+                        android:fontFamily="@font/darker_grotesque_bold"
+                        android:gravity="center"
+                        android:text="QR Code"
+                        android:textSize="@dimen/_17sdp"
+                        app:layout_constraintBottom_toTopOf="@+id/home"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <ImageView
+                        android:id="@+id/btn_share_qr"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/ic_baseline_share_24"
+                        app:tint="@color/b_light_300" />
+                </androidx.appcompat.widget.LinearLayoutCompat>
+
+
+                <ImageView
+                    android:id="@+id/qr_holder"
+                    android:layout_width="@dimen/_150sdp"
+                    android:layout_height="@dimen/_150sdp"
+                    android:layout_gravity="center"
+                    android:layout_margin="@dimen/_10sdp"
+                    android:scaleType="fitXY"
+                    android:src="@drawable/qr_image"
+                    android:visibility="visible" />
+
+
+            </androidx.appcompat.widget.LinearLayoutCompat>
+        </com.google.android.material.card.MaterialCardView>
+
+        <TextView
+            android:id="@+id/user_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:fontFamily="@font/darker_grotesque_bold"
+            android:gravity="center"
+            android:textColor="@color/b_light_300"
+            android:textSize="@dimen/_17sdp"
+            app:layout_constraintTop_toBottomOf="@+id/cvShowQr" />
+
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btn_close"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_42sdp"
+            android:layout_marginHorizontal="@dimen/_40sdp"
+            android:layout_marginTop="@dimen/_20sdp"
+            android:text="Close"
+            android:textColor="@color/white"
+            android:visibility="gone"
+            app:backgroundTint="@null"
+            app:layout_constraintTop_toBottomOf="@+id/user_name" />
+
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btn_scan"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_42sdp"
+            android:layout_marginHorizontal="@dimen/_50sdp"
+            android:layout_marginTop="@dimen/_20sdp"
+            android:text="Scan"
+            android:textColor="@color/white"
+            app:backgroundTint="@null"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/cvShowQr2" />
+
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btn_Cancel_Scan"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_42sdp"
+            android:layout_marginHorizontal="@dimen/_50sdp"
+            android:layout_marginTop="@dimen/_20sdp"
+            android:text="Cancel"
+            android:textColor="@color/white"
+            android:visibility="gone"
+            app:backgroundTint="@null"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/cvShowQr2" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

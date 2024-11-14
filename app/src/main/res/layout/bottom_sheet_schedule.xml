@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+
+    <androidx.appcompat.widget.LinearLayoutCompat xmlns:app="http://schemas.android.com/apk/res-auto"
+            xmlns:android="http://schemas.android.com/apk/res/android"
+            android:orientation="vertical"
+            android:id="@+id/top_layout"
+            android:paddingVertical="@dimen/_5sdp"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+
+            >
+
+        <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                 android:textSize="@dimen/_16sdp"
+                android:fontFamily="@font/darker_grotesque_bold"
+                android:gravity="center_horizontal"
+                android:paddingTop="@dimen/_10sdp"
+                android:paddingBottom="@dimen/_10sdp"
+            android:text="Please select type"/>
+        <View
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_1sdp"
+                android:background="@color/gray_dark"
+            />
+
+        <TextView
+                android:id="@+id/btn_b_user"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="@color/b_blue_text"
+                android:gravity="center_horizontal"
+                android:paddingVertical="@dimen/_5sdp"
+                android:textSize="@dimen/_16sdp"
+            android:text="B payee"/>
+        <TextView
+                android:id="@+id/btn_external"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="@color/b_blue_text"
+                android:gravity="center_horizontal"
+                android:paddingVertical="@dimen/_5sdp"
+                android:textSize="@dimen/_16sdp"
+                android:text="External accounts"/>
+
+        <TextView
+                android:id="@+id/btn_self"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="@color/b_blue_text"
+                android:gravity="center_horizontal"
+                android:paddingVertical="@dimen/_5sdp"
+                android:textSize="@dimen/_16sdp"
+                android:text="Between accounts"/>
+
+        <com.google.android.material.button.MaterialButton
+                android:id="@+id/btn_dismiss"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_40sdp"
+                android:layout_marginHorizontal="@dimen/_30sdp"
+                android:layout_marginTop="@dimen/_20sdp"
+                android:text="Dismiss"
+                android:imeOptions="actionDone"
+                android:textColor="@color/white"
+                app:backgroundTint="@null"
+                android:layout_marginBottom="@dimen/_5sdp"
+                app:layout_constraintTop_toBottomOf="@+id/layout_tpin" />
+
+    </androidx.appcompat.widget.LinearLayoutCompat>
+
+</layout>

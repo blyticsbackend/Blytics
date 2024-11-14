@@ -1,0 +1,311 @@
+<?xml version="1.0" encoding="utf-8"?>
+<MotionScene xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <Transition
+        app:constraintSetEnd="@+id/end"
+        app:constraintSetStart="@id/start"
+        app:duration="1000">
+        <OnSwipe
+            app:dragDirection="dragUp"
+            app:onTouchUp="autoComplete"
+            app:touchAnchorId="@id/lbl_total_amount"
+            app:touchRegionId="@id/rv_transaction" />
+    </Transition>
+
+    <ConstraintSet android:id="@+id/start">
+        <Constraint
+            android:id="@+id/txt_total_amount_sent"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content">
+            <Layout
+                android:layout_marginEnd="@dimen/_5sdp"
+                android:layout_marginStart="@dimen/_8sdp"
+                android:fontFamily="@font/darker_grotesque_bold"
+                app:layout_constraintEnd_toStartOf="@+id/img_user"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <CustomAttribute
+                    app:attributeName="textSize"
+                    app:customDimension="12sp" />
+
+        </Constraint>
+        <Constraint
+            android:id="@+id/lbl_total_amount_sent"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_3sdp"
+            android:layout_marginEnd="@dimen/_5sdp"
+            android:fontFamily="@font/darker_grotesque_bold"
+            android:textSize="@dimen/_12sdp">
+            <Layout
+                android:layout_marginStart="@dimen/_8sdp"
+                app:layout_constraintEnd_toStartOf="@+id/img_user"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/txt_total_amount_sent" />
+            <CustomAttribute
+                app:attributeName="text"
+                app:customStringValue="Sent" />
+
+
+        </Constraint>
+        <Constraint
+            android:id="@+id/txt_total_amount_receive"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content">
+            <Layout
+                android:layout_marginTop="@dimen/_10sdp"
+                android:layout_marginEnd="@dimen/_5sdp"
+                android:layout_marginStart="@dimen/_8sdp"
+                android:fontFamily="@font/darker_grotesque_bold"
+                app:layout_constraintEnd_toStartOf="@+id/img_user"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/lbl_total_amount_sent" />
+            <CustomAttribute
+                    app:attributeName="textSize"
+                    app:customDimension="12sp" />
+        </Constraint>
+        <Constraint
+            android:id="@+id/lbl_total_amount"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_3sdp"
+            android:fontFamily="@font/darker_grotesque_bold"
+            android:textSize="@dimen/_12sdp">
+            <Layout
+                app:layout_constraintTop_toBottomOf="@+id/txt_total_amount_receive"
+                app:layout_constraintStart_toStartOf="parent"
+                android:layout_marginStart="@dimen/_8sdp"/>
+            <CustomAttribute
+                app:attributeName="text"
+                app:customStringValue="Received" />
+        </Constraint>
+        <Constraint
+            android:id="@+id/img_user"
+            android:layout_width="@dimen/_40sdp"
+            android:layout_height="@dimen/_40sdp"
+            android:src="@drawable/dummy_user">
+            <Layout
+                android:layout_marginEnd="@dimen/_8sdp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+        </Constraint>
+        <Constraint
+            android:id="@+id/txt_user_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_5sdp"
+            android:textSize="@dimen/_14sdp">
+            <Layout
+                app:layout_constraintEnd_toEndOf="@+id/img_user"
+                app:layout_constraintTop_toBottomOf="@+id/img_user" />
+        </Constraint>
+        <Constraint
+            android:id="@+id/btn_block"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:visibility="gone"
+            android:text="Block future payment">
+            <Layout
+                app:icon="@drawable/ic_baseline_block_24"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/lbl_total_amount" />
+        </Constraint>
+        <Constraint
+            android:id="@+id/materialCardView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <Layout
+                app:cardCornerRadius="10dp"
+                app:cardElevation="5dp"
+                app:cardUseCompatPadding="true"
+                app:layout_constraintTop_toBottomOf="@+id/btn_block" />
+
+
+        </Constraint>
+        <Constraint
+            android:id="@+id/lbl_payment_history"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/darker_grotesque_bold"
+            android:text="Payment history"
+            android:textSize="@dimen/_14sdp">
+            <Layout
+                android:layout_marginStart="@dimen/_8sdp"
+
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/materialCardView" />
+
+
+        </Constraint>
+        <Constraint
+            android:id="@+id/lbl_payment_all"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/darker_grotesque_semibold"
+            android:text="See All"
+            android:textSize="@dimen/_12sdp">
+            <Layout
+                android:layout_marginEnd="@dimen/_8sdp"
+                app:layout_constraintBaseline_toBaselineOf="@+id/lbl_payment_history"
+                app:layout_constraintEnd_toEndOf="parent" />
+        </Constraint>
+        <Constraint
+            android:id="@+id/rv_transaction"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_marginTop="@dimen/_5sdp">
+            <Layout
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/lbl_payment_history" />
+        </Constraint>
+    </ConstraintSet>
+
+    <ConstraintSet android:id="@+id/end">
+
+        <Constraint
+            android:id="@+id/txt_total_amount_sent"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/darker_grotesque_bold"
+            android:textSize="@dimen/_12sdp">
+
+            <Layout
+                android:layout_marginStart="@dimen/_5sdp"
+                app:layout_constraintBaseline_toBaselineOf="@+id/lbl_total_amount_sent"
+                app:layout_constraintStart_toEndOf="@id/lbl_total_amount_sent"
+                app:layout_constraintEnd_toStartOf="@+id/lbl_total_amount"
+                app:layout_constraintTop_toTopOf="@id/lbl_total_amount_sent" />
+            <CustomAttribute
+                    app:attributeName="textSize"
+                    app:customDimension="@dimen/_8sdp" />
+
+        </Constraint>
+        <Constraint
+            android:id="@+id/lbl_total_amount_sent"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_3sdp"
+            android:fontFamily="@font/darker_grotesque_bold"
+            android:textSize="@dimen/_12sdp">
+            <Layout
+                android:layout_marginStart="@dimen/_8sdp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+
+            <CustomAttribute
+                app:attributeName="text"
+                app:customStringValue="Sent" />
+
+        </Constraint>
+        <Constraint
+            android:id="@+id/txt_total_amount_receive"
+                android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_3sdp"
+            android:fontFamily="@font/darker_grotesque_bold">
+            <Layout
+                app:layout_constraintBaseline_toBaselineOf="@+id/lbl_total_amount"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/lbl_total_amount" />
+
+            <CustomAttribute
+                    app:attributeName="textSize"
+                    app:customDimension="@dimen/_8sdp"  />
+        </Constraint>
+        <Constraint
+            android:id="@+id/lbl_total_amount"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="5dp"
+            android:layout_marginTop="@dimen/_3sdp"
+            android:fontFamily="@font/darker_grotesque_bold"
+            android:textSize="@dimen/_12sdp">
+            <Layout
+
+                android:layout_marginEnd="@dimen/_8sdp"
+                app:layout_constraintEnd_toStartOf="@id/txt_total_amount_receive"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <CustomAttribute
+                app:attributeName="text"
+                app:customStringValue="Received" />
+        </Constraint>
+        <Constraint
+            android:id="@+id/img_user"
+            android:layout_width="@dimen/_40sdp"
+            android:layout_height="@dimen/_40sdp"
+            android:src="@drawable/dummy_user"
+            android:visibility="gone">
+            <Layout
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+        </Constraint>
+        <Constraint
+            android:id="@+id/txt_user_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_5sdp"
+            android:textSize="@dimen/_14sdp"
+            android:visibility="gone">
+            <Layout
+                app:layout_constraintEnd_toEndOf="@+id/img_user"
+                app:layout_constraintTop_toBottomOf="@+id/img_user" />
+        </Constraint>
+        <Constraint
+            android:id="@+id/btn_block"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:text="Block future payment"
+            android:visibility="gone">
+            <Layout
+                app:icon="@drawable/ic_baseline_block_24"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/lbl_total_amount" />
+        </Constraint>
+        <Constraint
+            android:id="@+id/materialCardView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:visibility="gone">
+            <Layout app:layout_constraintTop_toBottomOf="@+id/btn_block" />
+
+        </Constraint>
+        <Constraint
+            android:id="@+id/lbl_payment_history"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/darker_grotesque_bold"
+            android:text="Payment history"
+            android:textSize="@dimen/_14sdp">
+            <Layout
+                android:layout_marginStart="@dimen/_8sdp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/lbl_total_amount" />
+        </Constraint>
+        <Constraint
+            android:id="@+id/lbl_payment_all"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/darker_grotesque_semibold"
+            android:text="See All"
+            android:textSize="@dimen/_12sdp">
+            <Layout
+                android:layout_marginEnd="@dimen/_8sdp"
+                app:layout_constraintBaseline_toBaselineOf="@+id/lbl_payment_history"
+                app:layout_constraintEnd_toEndOf="parent" />
+        </Constraint>
+        <Constraint
+            android:id="@+id/rv_transaction"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_marginTop="@dimen/_5sdp">
+            <Layout
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/lbl_payment_history" />
+        </Constraint>
+    </ConstraintSet>
+</MotionScene>

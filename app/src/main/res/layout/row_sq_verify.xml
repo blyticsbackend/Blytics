@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+<androidx.appcompat.widget.LinearLayoutCompat
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="@dimen/_5sdp"
+    android:paddingHorizontal="@dimen/_10sdp"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/ques"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Q1"
+        style="@style/TextTitleStyle"
+        android:layout_marginStart="@dimen/_12sdp"
+        />
+
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/layout_BVN"
+        style="@style/LightBGTextInputLayoutStyle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_2sdp"
+        android:fontFamily="@font/opensans_regular"
+        android:hint="Answer"
+       >
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/edt_ans"
+            style="@style/LightGBTextInputEditText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/opensans_regular"
+            android:inputType="text" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:id="@+id/btn_hint"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_4sdp"
+        android:layout_marginStart="@dimen/_11sdp"
+        android:orientation="horizontal">
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_baseline_info_24"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="  Hint"
+            style="@style/TextTitleStyle"
+            android:fontFamily="@font/opensans_regular"
+            android:textSize="@dimen/_10sdp"
+            android:layout_gravity="center_vertical"/>
+
+        <TextView
+            android:id="@+id/txt_hint"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="@dimen/_12sdp"
+            android:fontFamily="@font/opensans_regular"
+            android:text="sdfsdf"
+            android:textStyle="bold"
+            android:layout_gravity="center_vertical"
+            android:visibility="gone"
+            android:textColor="@color/app_green_dark"
+            android:layout_marginStart="@dimen/_10sdp"
+            />
+    </androidx.appcompat.widget.LinearLayoutCompat>
+
+
+
+
+</androidx.appcompat.widget.LinearLayoutCompat>
+</layout>

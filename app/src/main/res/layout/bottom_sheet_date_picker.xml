@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:paddingHorizontal="@dimen/_5sdp"
+        android:paddingVertical="@dimen/_20sdp">
+
+        <TextView
+            android:id="@+id/lbl_title"
+            style="@style/TextTitleStyle"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:paddingHorizontal="@dimen/_10sdp"
+            android:fontFamily="@font/opensans_bold"
+            android:gravity="start"
+            android:text="Select Date"
+            android:textSize="@dimen/_14sdp"
+            app:layout_constraintEnd_toStartOf="@+id/btn_cancel"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:id="@+id/btn_cancel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:src="@drawable/ic_baseline_cancel_24"
+            android:visibility="gone"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+
+        <FrameLayout
+                android:id="@+id/layout_frame_start"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_15sdp"
+                android:layout_marginHorizontal="@dimen/_5sdp"
+                app:layout_constraintTop_toBottomOf="@+id/lbl_title"
+              >
+
+            <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/layout_startd"
+                    style="@style/LightBGTextInputLayoutStyle"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/opensans_regular"
+                    android:hint="From"
+
+            >
+
+                <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/edt_startd"
+                        style="@style/LightGBTextInputEditText"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:cursorVisible="false"
+                        android:focusable="false"
+                        android:inputType="textPersonName" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <View
+                    android:id="@+id/btnstartd"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_45sdp" />
+        </FrameLayout>
+
+
+        <FrameLayout
+                android:id="@+id/layout_frame_endd"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:layout_marginHorizontal="@dimen/_5sdp"
+                app:layout_constraintTop_toBottomOf="@+id/layout_frame_start"
+        >
+
+            <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/layout_endd"
+                    style="@style/LightBGTextInputLayoutStyle"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/opensans_regular"
+                    android:hint="To"
+
+            >
+
+                <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/edt_endd"
+                        style="@style/LightGBTextInputEditText"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:cursorVisible="false"
+                        android:focusable="false"
+                        android:inputType="textPersonName" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <View
+                    android:id="@+id/btnEndd"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_45sdp" />
+        </FrameLayout>
+
+        <com.google.android.material.button.MaterialButton
+                android:id="@+id/btn_search"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_15sdp"
+                android:layout_marginHorizontal="@dimen/_15sdp"
+                android:text="Search"
+                android:textColor="@color/white"
+                app:backgroundTint="@null"
+                app:layout_constraintTop_toBottomOf="@+id/layout_frame_endd"
+                app:layout_constraintStart_toStartOf="@+id/layout_frame_endd"
+                app:layout_constraintEnd_toEndOf="@+id/layout_frame_endd"/>
+
+
+
+
+
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    </layout>

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item android:id="@+id/homeFragment"
+        android:icon="@drawable/icon_menu_home"
+        android:title="Home"/>
+
+    <item android:id="@+id/transactionFragment"
+        android:icon="@drawable/ic_baseline_notes_24"
+        android:title="Transaction"/>
+
+    <item android:id="@+id/profileFragment"
+        android:icon="@drawable/ic_baseline_account_circle_24"
+        android:title="Profile"/>
+
+    <item android:id="@+id/BAccountFragment"
+        android:icon="@drawable/icon_menu_setting"
+        android:title="Setting"/>
+</menu>

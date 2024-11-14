@@ -1,0 +1,184 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/materialCardView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/_5sdp"
+            app:cardBackgroundColor="#3A7B86"
+            app:cardCornerRadius="3dp"
+            app:cardElevation="0dp"
+            app:cardUseCompatPadding="true"
+
+            app:layout_constraintTop_toBottomOf="@+id/btn_block">
+
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:orientation="horizontal"
+                android:paddingHorizontal="@dimen/_5sdp"
+                android:paddingVertical="@dimen/_2sdp">
+
+                <TextView
+                    android:id="@+id/date_title"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:fontFamily="@font/darker_grotesque_semibold"
+                    android:paddingVertical="@dimen/_2sdp"
+                    android:text=""
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/_13sdp" />
+
+                <TextView
+                    android:id="@+id/closing_amt"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/darker_grotesque_semibold"
+                    android:paddingVertical="@dimen/_2sdp"
+                    android:text=""
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/_13sdp" />
+
+            </androidx.appcompat.widget.LinearLayoutCompat>
+        </com.google.android.material.card.MaterialCardView>
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:id="@+id/lyt_card"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_100sdp"
+            android:layout_marginHorizontal="@dimen/_5sdp"
+            android:background="@drawable/img_red_shadow_bg"
+            android:elevation="10dp">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:paddingStart="@dimen/_10sdp"
+                android:paddingTop="@dimen/_7sdp"
+                android:paddingEnd="@dimen/_10sdp"
+                android:paddingBottom="@dimen/_7sdp">
+
+                <TextView
+                    android:id="@+id/date"
+                    style="@style/TextTitleStyle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:ellipsize="end"
+                    android:fontFamily="@font/darker_grotesque_semibold"
+                    android:maxLines="1"
+                    android:textSize="@dimen/_14sdp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    tools:text="" />
+
+                <TextView
+                    android:id="@+id/time"
+                    style="@style/TextTitleStyle"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:fontFamily="@font/darker_grotesque_semibold"
+                    android:gravity="end"
+                    android:maxLines="1"
+                    android:text=""
+                    android:textSize="@dimen/_14sdp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <de.hdodenhof.circleimageview.CircleImageView
+                    android:id="@+id/img_user"
+                    android:layout_width="@dimen/_40sdp"
+                    android:layout_height="@dimen/_40sdp"
+                    android:layout_marginTop="@dimen/_5sdp"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/dummy_user"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/date"
+                    app:shapeAppearanceOverlay="@style/roundedImageView" />
+
+                <androidx.appcompat.widget.LinearLayoutCompat
+                    android:id="@+id/layout_details"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_8sdp"
+                    android:layout_marginTop="@dimen/_5sdp"
+                    android:layout_marginEnd="@dimen/_8sdp"
+                    android:gravity="center_vertical"
+                    android:orientation="vertical"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@id/img_user"
+                    app:layout_constraintTop_toBottomOf="@+id/date">
+
+
+                    <TextView
+                        android:id="@+id/txt_user_name"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:ellipsize="end"
+                        android:fontFamily="@font/darker_grotesque_bold"
+                        android:maxLines="1"
+                        android:text=""
+                        android:textColor="@color/b_blue_text"
+                        android:textSize="@dimen/_14sdp" />
+
+
+                    <androidx.appcompat.widget.LinearLayoutCompat
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="end"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:id="@+id/txtReference"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_vertical"
+                            android:layout_marginTop="@dimen/_5sdp"
+                            android:ellipsize="end"
+                            android:fontFamily="@font/darker_grotesque_semibold"
+                            android:maxLines="1"
+                            android:text=""
+                            android:textSize="@dimen/_14sdp" />
+
+                        <ImageView
+                            android:id="@+id/status_failed"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:src="@drawable/ic_baseline_error_24"
+                            android:text=""
+                            android:visibility="gone" />
+
+                    </androidx.appcompat.widget.LinearLayoutCompat>
+
+                </androidx.appcompat.widget.LinearLayoutCompat>
+
+                <TextView
+                    android:id="@+id/amount"
+                    style="@style/TextTitleStyle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_5sdp"
+                    android:fontFamily="@font/darker_grotesque_bold"
+                    android:text=""
+                    android:textSize="@dimen/_14sdp"
+                    app:layout_constraintBottom_toBottomOf="@+id/layout_details"
+                    app:layout_constraintEnd_toEndOf="@+id/layout_details"
+                    app:layout_constraintTop_toTopOf="@+id/layout_details" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </androidx.appcompat.widget.LinearLayoutCompat>
+    </androidx.appcompat.widget.LinearLayoutCompat>
+
+
+</layout>

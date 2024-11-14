@@ -1,0 +1,226 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <com.google.android.material.appbar.MaterialToolbar
+        android:id="@+id/toolbar_top"
+        android:layout_width="match_parent"
+        android:layout_height="?android:attr/actionBarSize"
+        app:layout_constraintTop_toTopOf="parent"
+        app:navigationIcon="?attr/homeAsUpIndicator"
+        app:navigationIconTint="@color/gray_dark">
+
+    </com.google.android.material.appbar.MaterialToolbar>
+
+
+    <TextView
+        android:id="@+id/placeholder"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_40sdp"
+        android:fontFamily="@font/darker_grotesque_bold"
+        android:gravity="center"
+        android:text="No recent contacts"
+        android:textSize="@dimen/_18sdp"
+        android:visibility="gone"
+        app:layout_constraintTop_toBottomOf="@+id/toolbar_top" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/top_layout_relation"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:visibility="visible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/toolbar_top">
+
+        <TextView
+            android:id="@+id/lbl_title_1"
+            style="@style/TextTitleStyle"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/_10sdp"
+            android:layout_marginTop="@dimen/_5sdp"
+            android:fontFamily="@font/darker_grotesque_bold"
+            android:gravity="start"
+            android:text="Switch Account"
+            android:textSize="@dimen/_17sdp"
+            android:visibility="gone"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/addAccountButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_15sdp"
+            android:backgroundTint="@color/new_button_light"
+            android:fontFamily="@font/opensans_bold"
+            android:paddingLeft="@dimen/_30sdp"
+            android:text="Add Account"
+            android:textColor="@color/white"
+            android:visibility="visible"
+            app:cornerRadius="@dimen/_24sdp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/lbl_title_1" />
+
+        <ImageView
+            android:id="@+id/imageView4"
+            android:layout_width="@dimen/_15sdp"
+            android:layout_height="@dimen/_15sdp"
+            android:layout_marginStart="@dimen/_10sdp"
+            android:scaleType="fitCenter"
+            android:src="@drawable/img_plus_circle_icon"
+            android:translationZ="10dp"
+            app:layout_constraintBottom_toBottomOf="@+id/addAccountButton"
+            app:layout_constraintStart_toStartOf="@+id/addAccountButton"
+            app:layout_constraintTop_toTopOf="@+id/addAccountButton" />
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/card_relation"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/_20sdp"
+            android:layout_marginTop="@dimen/_10sdp"
+            app:cardCornerRadius="10dp"
+            app:cardElevation="0dp"
+            app:cardUseCompatPadding="true"
+            app:contentPadding="@dimen/_15sdp"
+            app:layout_constraintTop_toBottomOf="@id/addAccountButton">
+
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:id="@+id/btn_regular"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:layout_width="@dimen/_20sdp"
+                        android:layout_height="@dimen/_20sdp"
+                        android:layout_gravity="center"
+                        android:src="@drawable/img_circle_selector" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginStart="@dimen/_10sdp"
+                        android:fontFamily="@font/darker_grotesque_semibold"
+                        android:text="Regular saver account"
+                        android:textColor="@color/b_blue_text"
+                        android:textSize="@dimen/_16sdp" />
+                </LinearLayout>
+
+                <View
+                    android:id="@+id/line_regular"
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:background="@color/gray_light" />
+
+                <LinearLayout
+                    android:id="@+id/btn_current_ac"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:layout_width="@dimen/_20sdp"
+                        android:layout_height="@dimen/_20sdp"
+                        android:layout_gravity="center"
+                        android:src="@drawable/img_circle_selector" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginStart="@dimen/_10sdp"
+                        android:fontFamily="@font/darker_grotesque_semibold"
+                        android:text="Current account"
+                        android:textColor="@color/b_blue_text"
+                        android:textSize="@dimen/_16sdp" />
+                </LinearLayout>
+
+                <View
+                    android:id="@+id/line_current"
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:background="@color/gray_light" />
+
+                <LinearLayout
+                    android:id="@+id/btn_linked_ac"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:layout_width="@dimen/_20sdp"
+                        android:layout_height="@dimen/_20sdp"
+                        android:layout_gravity="center"
+                        android:src="@drawable/img_circle_selector" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginStart="@dimen/_10sdp"
+                        android:fontFamily="@font/darker_grotesque_semibold"
+                        android:text="Linked account"
+                        android:textColor="@color/b_blue_text"
+                        android:textSize="@dimen/_16sdp" />
+                </LinearLayout>
+
+                <View
+                    android:id="@+id/line_linked"
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:background="@color/gray_light" />
+
+                <LinearLayout
+                    android:id="@+id/btn_wallet_ac"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:layout_width="@dimen/_20sdp"
+                        android:layout_height="@dimen/_20sdp"
+                        android:layout_gravity="center"
+                        android:src="@drawable/img_circle_selector" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginStart="@dimen/_10sdp"
+                        android:fontFamily="@font/darker_grotesque_semibold"
+                        android:text="Wallet account"
+                        android:textColor="@color/b_blue_text"
+                        android:textSize="@dimen/_16sdp" />
+                </LinearLayout>
+
+                <View
+                    android:id="@+id/lint_wallet"
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:background="@color/gray_light"
+                    android:visibility="gone" />
+            </androidx.appcompat.widget.LinearLayoutCompat>
+        </com.google.android.material.card.MaterialCardView>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

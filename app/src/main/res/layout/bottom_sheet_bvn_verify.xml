@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:app="http://schemas.android.com/apk/res-auto">
+    <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:paddingHorizontal="@dimen/_20sdp"
+        android:paddingVertical="@dimen/_20sdp">
+
+        <TextView
+            android:id="@+id/lbl_title"
+            style="@style/TextTitleStyle"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:fontFamily="@font/darker_grotesque_bold"
+            android:gravity="center"
+            android:text="BVN Verification"
+            android:textSize="@dimen/_17sdp"
+            app:layout_constraintEnd_toStartOf="@+id/btn_cancel"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:id="@+id/btn_cancel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_12sdp"
+            android:src="@drawable/ic_baseline_cancel_24"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:id="@+id/lyt_bvn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:orientation="vertical"
+            app:layout_constraintTop_toBottomOf="@+id/btn_cancel">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/darker_grotesque_bold"
+                android:paddingHorizontal="@dimen/_5sdp"
+                android:text="BVN"
+                android:textColor="@color/b_blue_text"
+                android:textSize="@dimen/_15sdp" />
+
+            <androidx.appcompat.widget.AppCompatEditText
+                android:id="@+id/edt_bvn"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:cursorVisible="false"
+                android:editable="false"
+                android:enabled="false"
+                android:focusable="false"
+                android:fontFamily="@font/darker_grotesque_semibold"
+                android:hint="BVN"
+                android:inputType="number"
+                android:maxLines="1"
+                android:paddingHorizontal="@dimen/_5sdp"
+                android:textSize="@dimen/_14sdp" />
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
+        <TextView
+            android:id="@+id/lbl_msg"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:fontFamily="@font/opensans_regular"
+            android:gravity="start|center"
+            android:minLines="2"
+            android:text="Enter 6-digit Code we have sent to "
+            android:textSize="@dimen/_12sdp"
+            android:visibility="gone"
+            app:layout_constraintTop_toBottomOf="@+id/lbl_title" />
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:id="@+id/layout_otp"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_5sdp"
+            android:orientation="vertical"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/lyt_bvn">
+
+            <LinearLayout
+                android:id="@+id/layout_lbl_document"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_15sdp"
+                android:orientation="horizontal"
+                app:layout_constraintTop_toBottomOf="@+id/layout_BVN">
+
+                <TextView
+                    style="@style/TextTitleStyle"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:fontFamily="@font/darker_grotesque_semibold"
+                    android:paddingEnd="@dimen/_5sdp"
+                    android:text="ID Proof"
+                    android:textSize="@dimen/_15sdp" />
+
+                <TextView
+                    style="@style/TextTitleStyle"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:fontFamily="@font/darker_grotesque_semibold"
+                    android:paddingStart="@dimen/_5sdp"
+                    android:text="  Address Proof"
+                    android:textSize="@dimen/_15sdp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/layout_document_btn"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_4sdp"
+                android:orientation="horizontal"
+                app:layout_constraintTop_toBottomOf="@+id/layout_lbl_document">
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btn_doc_1"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="start"
+                    android:layout_marginEnd="@dimen/_5sdp"
+                    android:layout_weight="1"
+                    android:fontFamily="@font/darker_grotesque_semibold"
+                    android:text="Upload Doc"
+                    android:textColor="@color/white"
+                    app:backgroundTint="@null" />
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btn_doc_2"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_5sdp"
+                    android:layout_weight="1"
+                    android:fontFamily="@font/darker_grotesque_semibold"
+                    android:text="Upload Doc"
+                    android:textColor="@color/white"
+                    app:backgroundTint="@null" />
+            </LinearLayout>
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btn_verify"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_42sdp"
+            android:layout_marginHorizontal="@dimen/_30sdp"
+            android:layout_marginTop="@dimen/_20sdp"
+            android:fontFamily="@font/darker_grotesque_semibold"
+            android:text="Verify"
+            android:textColor="@color/white"
+            app:backgroundTint="@null"
+            app:layout_constraintTop_toBottomOf="@+id/layout_otp" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

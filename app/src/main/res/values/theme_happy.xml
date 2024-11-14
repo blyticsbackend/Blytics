@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="Theme.Blytics.Happy" parent="Theme.MaterialComponents.Light.NoActionBar">
+        <!-- Primary brand color. -->
+        <item name="colorPrimary">@color/yellow_700</item>
+        <item name="colorPrimaryDark">@color/yellow_700</item>
+        <item name="colorAccent">@color/yellow_700</item>
+        <!-- Customize your theme here. -->
+        <item name="otpViewStyle">@style/OtpWidget.OtpView</item>
+
+    </style>
+
+
+    <style name="TextTitleStyle2" parent="Theme.Blytics.Happy">
+        <item name="android:textColor">@color/yellow_700</item>
+    </style>
+    <style name="App.Custom.Indicator" parent="Widget.Material3.BottomNavigationView.ActiveIndicator">
+        <item name="android:color">@color/b_light_100</item>
+    </style>
+</resources>

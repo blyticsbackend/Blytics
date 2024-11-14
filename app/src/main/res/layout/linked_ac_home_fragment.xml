@@ -1,0 +1,387 @@
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <androidx.core.widget.NestedScrollView
+            android:id="@+id/topLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+          >
+
+            <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/card_1"
+                    style="@style/cardViewBottomRadius"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintTop_toTopOf="parent">
+
+<androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/_10sdp">
+            <FrameLayout
+                android:id="@+id/card_back"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_170sdp"
+                android:visibility="visible"
+                app:cardElevation="5dp"
+                app:layout_constraintTop_toTopOf="parent"
+                    android:layout_margin="@dimen/_5sdp">
+
+                <ImageView
+                        android:id="@+id/debitImageBack"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:scaleType="fitXY"
+                        android:src="@drawable/bg_debit_cart" />
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:paddingVertical="@dimen/_5sdp">
+
+                    <TextView
+                        android:id="@+id/lbl_title_card_back"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/darker_grotesque_bold"
+                        android:paddingHorizontal="@dimen/_5sdp"
+                        android:text="Linked Account"
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/_14sdp"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+
+                    <View
+                        android:id="@+id/line2"
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:layout_marginTop="@dimen/_19sdp"
+                        app:layout_constraintTop_toBottomOf="@+id/lbl_title_card_back" />
+
+                    <TextView
+                        android:id="@+id/txt_card_number_back"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/darker_grotesque_bold"
+                        android:gravity="center"
+                        android:text="End"
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/_17sdp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <ImageView
+                        android:id="@+id/img_info_end"
+                        android:layout_width="@dimen/_18sdp"
+                        android:layout_height="@dimen/_18sdp"
+                        android:layout_marginStart="@dimen/_10sdp"
+                        android:layout_marginTop="@dimen/_5sdp"
+                        android:src="@drawable/icon_info"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        android:layout_marginBottom="@dimen/_10sdp"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:tint="@color/white" />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="@dimen/_14sdp"
+                        android:fontFamily="@font/darker_grotesque_semibold"
+                        android:textColor="@color/white"
+                        android:layout_marginBottom="@dimen/_5sdp"
+                        app:layout_constraintEnd_toEndOf="@+id/txt_cvc_back"
+                        app:layout_constraintBottom_toTopOf="@+id/txt_cvc_back"
+                        app:layout_constraintStart_toStartOf="@+id/txt_cvc_back"
+                        android:text="CVV"/>
+
+                    <TextView
+                        android:id="@+id/txt_cvc_back"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginHorizontal="@dimen/_10sdp"
+                        android:fontFamily="@font/darker_grotesque_bold"
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/_15sdp"
+                        app:layout_constraintBottom_toBottomOf="@id/img_info_end"
+                        app:layout_constraintStart_toEndOf="@id/img_info_end"
+                        app:layout_constraintTop_toTopOf="@id/img_info_end" />
+
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="@dimen/_14sdp"
+                        android:fontFamily="@font/darker_grotesque_semibold"
+                        android:textColor="@color/white"
+                        android:layout_marginBottom="@dimen/_5sdp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        android:layout_marginEnd="@dimen/_10sdp"
+                        app:layout_constraintBottom_toTopOf="@+id/txt_date_back"
+                        android:text="Expiry Date"/>
+                    <TextView
+                        android:id="@+id/txt_date_back"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginHorizontal="@dimen/_10sdp"
+                        android:fontFamily="@font/darker_grotesque_bold"
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/_15sdp"
+                        app:layout_constraintBaseline_toBaselineOf="@+id/txt_cvc_back"
+                        app:layout_constraintEnd_toEndOf="parent" />
+
+
+                    <TextView
+                        android:id="@+id/txt_payee_name_back"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/_10sdp"
+                        android:layout_marginTop="@dimen/_5sdp"
+                        android:fontFamily="@font/darker_grotesque_semibold"
+                        android:text="Payee Name"
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/_14sdp"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/line2" />
+
+                    <TextView
+                        android:id="@+id/txt_relation_back"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_5sdp"
+                        android:layout_marginEnd="@dimen/_10sdp"
+                        android:fontFamily="@font/darker_grotesque_semibold"
+                        android:text="Relation"
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/_14sdp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/line2" />
+
+                    <TextView
+                        android:id="@+id/txt_user_name_back"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/darker_grotesque_semibold"
+                        android:text="User_name"
+                        android:visibility="gone"
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/_14sdp"
+                        app:layout_constraintBottom_toTopOf="@+id/txt_card_number_back"
+                        app:layout_constraintEnd_toEndOf="@id/txt_card_number_back"
+                        app:layout_constraintStart_toStartOf="@+id/txt_card_number_back" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </FrameLayout>
+
+            <FrameLayout
+                android:id="@+id/card_front"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_170sdp"
+                android:visibility="visible"
+                app:cardElevation="5dp"
+                    android:layout_margin="@dimen/_5sdp"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <ImageView
+                        android:id="@+id/debitImageFront"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:scaleType="fitXY"
+                        android:src="@drawable/bg_debit_cart" />
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:paddingVertical="@dimen/_5sdp">
+
+                    <TextView
+                        android:id="@+id/lbl_title_card"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/darker_grotesque_bold"
+                        android:paddingHorizontal="@dimen/_10sdp"
+                        android:text="Linked Account"
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/_14sdp"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+
+                    <View
+                        android:id="@+id/line"
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:layout_marginTop="@dimen/_19sdp"
+                        app:layout_constraintTop_toBottomOf="@+id/lbl_title_card" />
+
+                    <TextView
+                        android:id="@+id/txt_card_number"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/darker_grotesque_bold"
+                        android:gravity="center"
+                        android:text="212312312321"
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/_17sdp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <ImageView
+                        android:id="@+id/img_info"
+                        android:layout_width="@dimen/_18sdp"
+                        android:layout_height="@dimen/_18sdp"
+                        android:layout_marginStart="@dimen/_10sdp"
+                        android:layout_marginTop="@dimen/_5sdp"
+                        android:src="@drawable/icon_info"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                      android:layout_marginBottom="@dimen/_10sdp"
+                        app:tint="@color/white" />
+
+                    <TextView
+                        android:id="@+id/txt_cvc"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginHorizontal="@dimen/_10sdp"
+                        android:fontFamily="@font/darker_grotesque_bold"
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/_15sdp"
+                        app:layout_constraintBottom_toBottomOf="@id/img_info"
+                        app:layout_constraintStart_toEndOf="@id/img_info"
+                        app:layout_constraintTop_toTopOf="@id/img_info" />
+
+                    <TextView
+                        android:id="@+id/txt_manage_ac"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginHorizontal="@dimen/_10sdp"
+                        android:fontFamily="@font/darker_grotesque_bold"
+                        android:text="Manage Account"
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/_12sdp"
+                        app:layout_constraintBaseline_toBaselineOf="@+id/txt_cvc"
+                        app:layout_constraintEnd_toEndOf="parent" />
+
+
+                    <TextView
+                        android:id="@+id/txt_payee_name"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/_10sdp"
+                        android:layout_marginTop="@dimen/_5sdp"
+                        android:fontFamily="@font/darker_grotesque_semibold"
+                        android:text="Payee Name"
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/_14sdp"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/line" />
+
+                    <TextView
+                        android:id="@+id/txt_relation"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_5sdp"
+                        android:layout_marginEnd="@dimen/_10sdp"
+                        android:fontFamily="@font/darker_grotesque_semibold"
+                        android:text="Relation"
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/_14sdp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/line" />
+
+                    <TextView
+                        android:id="@+id/txt_user_name"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/darker_grotesque_semibold"
+                        android:text="User_name"
+                        android:visibility="gone"
+                        android:layout_marginBottom="@dimen/_5sdp"
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/_14sdp"
+                        app:layout_constraintBottom_toTopOf="@+id/txt_card_number"
+                        app:layout_constraintEnd_toEndOf="@id/txt_card_number"
+                        app:layout_constraintStart_toStartOf="@+id/txt_card_number" />
+
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </FrameLayout>
+    <TextView
+            android:id="@+id/lbl_list_title"
+            style="@style/TextTitleStyle"
+            android:visibility="invisible"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_5sdp"
+            android:layout_marginTop="@dimen/_190sdp"
+            android:fontFamily="@font/darker_grotesque_semibold"
+            android:text="Transactions"
+            android:textSize="@dimen/_15sdp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/_5sdp"
+            android:fontFamily="@font/darker_grotesque_semibold"
+            android:text="See All"
+            android:visibility="gone"
+            android:textColor="@color/blue_500"
+            android:textSize="@dimen/_15sdp"
+            app:layout_constraintBaseline_toBaselineOf="@id/lbl_list_title"
+            app:layout_constraintEnd_toEndOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/card_2"
+                    style="@style/cardViewTopRadius"
+                    android:layout_marginTop="@dimen/_10sdp"
+
+                    app:layout_constraintTop_toBottomOf="@id/card_1"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_500sdp">
+
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rv_transaction"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginStart="@dimen/_minus5sdp"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:layout_marginEnd="@dimen/_minus5sdp"
+                android:orientation="vertical"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/lbl_list_title"
+                tools:itemCount="0"
+                tools:listitem="@layout/row_home_transaction" />
+                <TextView
+                        android:id="@+id/txt_no_txn"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:fontFamily="@font/darker_grotesque_bold"
+                        android:text="You don't have any recent\ntransaction"
+                        android:textSize="@dimen/_18sdp"
+                        android:visibility="gone"
+                        android:layout_marginBottom="@dimen/_150sdp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        android:layout_marginTop="@dimen/_20sdp"
+                        app:layout_constraintTop_toTopOf="parent"
+
+                        />
+
+            </com.google.android.material.card.MaterialCardView>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.core.widget.NestedScrollView>
+
+
+</layout>

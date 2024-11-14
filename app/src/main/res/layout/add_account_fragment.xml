@@ -1,0 +1,821 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <ScrollView
+        android:id="@+id/top_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <ViewFlipper
+                android:id="@+id/account_flipper"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingBottom="@dimen/_20sdp"
+                android:visibility="visible">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:paddingHorizontal="@dimen/_20sdp"
+                    android:paddingTop="@dimen/_5sdp"
+                    android:visibility="gone">
+
+                    <TextView
+                        android:id="@+id/lbl_title_1"
+                        style="@style/TextTitleStyle"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginHorizontal="@dimen/_10sdp"
+                        android:layout_marginTop="@dimen/_10sdp"
+                        android:fontFamily="@font/opensans_bold"
+                        android:gravity="start"
+                        android:text="Add New Account"
+                        android:textSize="@dimen/_14sdp"
+                        android:visibility="gone"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <com.google.android.material.card.MaterialCardView
+                        android:id="@+id/card_ac"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginHorizontal="@dimen/_5sdp"
+                        android:layout_marginTop="@dimen/_10sdp"
+                        app:cardCornerRadius="10dp"
+                        app:cardElevation="0dp"
+                        app:cardUseCompatPadding="true"
+                        app:contentPadding="@dimen/_15sdp"
+                        app:layout_constraintTop_toBottomOf="@id/lbl_title_1">
+
+                        <androidx.appcompat.widget.LinearLayoutCompat
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical">
+
+                            <LinearLayout
+                                android:id="@+id/btn_saving_ac"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="horizontal">
+
+                                <ImageView
+                                    android:layout_width="@dimen/_20sdp"
+                                    android:layout_height="@dimen/_20sdp"
+                                    android:layout_gravity="center"
+                                    android:src="@drawable/img_circle_selector" />
+
+                                <TextView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center"
+                                    android:layout_marginStart="@dimen/_10sdp"
+                                    android:fontFamily="@font/darker_grotesque_semibold"
+                                    android:text="Regular saver account"
+                                    android:textColor="@color/b_blue_text"
+                                    android:textSize="@dimen/_16sdp" />
+                            </LinearLayout>
+
+                            <View
+                                android:layout_width="match_parent"
+                                android:layout_height="1dp"
+                                android:layout_marginTop="@dimen/_10sdp"
+                                android:background="@color/gray_light" />
+
+                            <LinearLayout
+                                android:id="@+id/btn_current_ac"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="@dimen/_10sdp"
+                                android:orientation="horizontal">
+
+                                <ImageView
+                                    android:layout_width="@dimen/_20sdp"
+                                    android:layout_height="@dimen/_20sdp"
+                                    android:layout_gravity="center"
+                                    android:src="@drawable/img_circle_selector" />
+
+                                <TextView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center"
+                                    android:layout_marginStart="@dimen/_10sdp"
+                                    android:fontFamily="@font/darker_grotesque_semibold"
+                                    android:text="Current account"
+                                    android:textColor="@color/b_blue_text"
+                                    android:textSize="@dimen/_16sdp" />
+                            </LinearLayout>
+
+                            <View
+                                android:layout_width="match_parent"
+                                android:layout_height="1dp"
+                                android:layout_marginTop="@dimen/_10sdp"
+                                android:background="@color/gray_light" />
+
+                            <LinearLayout
+                                android:id="@+id/btn_linked_ac"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="@dimen/_10sdp"
+                                android:orientation="horizontal">
+
+                                <ImageView
+                                    android:layout_width="@dimen/_20sdp"
+                                    android:layout_height="@dimen/_20sdp"
+                                    android:layout_gravity="center"
+                                    android:src="@drawable/img_circle_selector" />
+
+                                <TextView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center"
+                                    android:layout_marginStart="@dimen/_10sdp"
+                                    android:fontFamily="@font/darker_grotesque_semibold"
+                                    android:text="Linked account"
+                                    android:textColor="@color/b_blue_text"
+                                    android:textSize="@dimen/_16sdp" />
+                            </LinearLayout>
+                        </androidx.appcompat.widget.LinearLayoutCompat>
+                    </com.google.android.material.card.MaterialCardView>
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/lyt_saving"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingHorizontal="@dimen/_20sdp"
+                    android:paddingTop="@dimen/_5sdp"
+                    android:paddingBottom="@dimen/_10sdp"
+                    tools:context=".modules.addaccount.AddAccountFragment">
+
+                    <com.google.android.material.card.MaterialCardView
+                        android:id="@+id/cv_saving"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginHorizontal="@dimen/_5sdp"
+                        android:layout_marginTop="@dimen/_10sdp"
+                        app:cardCornerRadius="10dp"
+                        app:cardElevation="0dp"
+                        app:cardUseCompatPadding="true"
+                        app:contentPadding="@dimen/_10sdp"
+                        app:layout_constraintTop_toTopOf="parent">
+
+                        <androidx.constraintlayout.widget.ConstraintLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+
+                            <TextView
+                                android:id="@+id/lbl_title"
+                                style="@style/TextTitleStyle"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="@dimen/_5sdp"
+                                android:fontFamily="@font/opensans_bold"
+                                android:gravity="start"
+                                android:text="@string/lbl_add_b_account"
+                                android:textSize="@dimen/_14sdp"
+                                android:visibility="gone"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toTopOf="parent" />
+
+                            <TextView
+                                android:id="@+id/lbl_ac_holder"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:fontFamily="@font/darker_grotesque_bold"
+                                android:gravity="start"
+                                android:imeOptions="actionNone"
+                                android:paddingHorizontal="@dimen/_5sdp"
+                                android:text="Account holder name"
+                                android:textColor="@color/b_blue_text"
+                                android:textSize="@dimen/_15sdp"
+                                app:layout_constraintBottom_toTopOf="@+id/edt_full_name"
+                                app:layout_constraintEnd_toEndOf="@+id/edt_full_name"
+                                app:layout_constraintStart_toStartOf="@+id/edt_full_name"
+                                app:layout_constraintTop_toTopOf="parent" />
+
+                            <EditText
+                                android:id="@+id/edt_full_name"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginHorizontal="@dimen/_10sdp"
+                                android:clickable="false"
+                                android:cursorVisible="false"
+                                android:editable="false"
+                                android:focusable="false"
+                                android:fontFamily="@font/darker_grotesque_semibold"
+                                android:importantForAutofill="no"
+                                android:inputType="textEmailAddress|phone"
+                                android:paddingHorizontal="@dimen/_5sdp"
+                                android:textSize="@dimen/_14sdp"
+                                app:layout_constraintTop_toBottomOf="@+id/lbl_ac_holder" />
+
+                            <TextView
+                                android:id="@+id/layout_account_number"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="@dimen/_10sdp"
+                                android:fontFamily="@font/darker_grotesque_bold"
+                                android:gravity="start"
+                                android:paddingHorizontal="@dimen/_5sdp"
+                                android:visibility="gone"
+                                android:text="Account number"
+                                android:textColor="@color/b_blue_text"
+                                android:textSize="@dimen/_15sdp"
+                                app:layout_constraintEnd_toEndOf="@+id/edt_ac_number"
+                                app:layout_constraintStart_toStartOf="@+id/edt_ac_number"
+                                app:layout_constraintTop_toBottomOf="@+id/edt_full_name" />
+
+                            <EditText
+                                android:id="@+id/edt_ac_number"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginHorizontal="@dimen/_10sdp"
+                                android:clickable="false"
+                                android:visibility="gone"
+                                android:cursorVisible="false"
+                                android:editable="false"
+                                android:focusable="false"
+                                android:fontFamily="@font/darker_grotesque_semibold"
+                                android:hint="Auto generate"
+                                android:importantForAutofill="no"
+                                android:inputType="textEmailAddress|phone"
+                                android:paddingHorizontal="@dimen/_5sdp"
+                                android:textSize="@dimen/_14sdp"
+                                app:layout_constraintTop_toBottomOf="@+id/layout_account_number" />
+
+                            <TextView
+                                android:id="@+id/layout_account_name"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="@dimen/_10sdp"
+                                android:fontFamily="@font/darker_grotesque_bold"
+                                android:gravity="start"
+                                android:paddingHorizontal="@dimen/_5sdp"
+                                android:text="Alias"
+                                android:textColor="@color/b_blue_text"
+                                android:textSize="@dimen/_15sdp"
+                                app:layout_constraintEnd_toEndOf="@+id/edt_ac_name"
+                                app:layout_constraintStart_toStartOf="@+id/edt_ac_name"
+                                app:layout_constraintTop_toBottomOf="@+id/edt_ac_number" />
+
+                            <EditText
+                                android:id="@+id/edt_ac_name"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginHorizontal="@dimen/_10sdp"
+                                android:fontFamily="@font/darker_grotesque_semibold"
+                                android:hint="Alias"
+                                android:importantForAutofill="no"
+                                android:inputType="text"
+                                android:paddingHorizontal="@dimen/_5sdp"
+                                android:textSize="@dimen/_14sdp"
+                                app:layout_constraintTop_toBottomOf="@+id/layout_account_name" />
+
+                            <TextView
+                                android:id="@+id/layout_pin"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="@dimen/_10sdp"
+                                android:fontFamily="@font/darker_grotesque_bold"
+                                android:gravity="start"
+                                android:paddingHorizontal="@dimen/_5sdp"
+                                android:text="Transaction pin"
+                                android:textColor="@color/b_blue_text"
+                                android:textSize="@dimen/_15sdp"
+                                app:layout_constraintEnd_toEndOf="@+id/edt_pin"
+                                app:layout_constraintStart_toStartOf="@+id/edt_pin"
+                                app:layout_constraintTop_toBottomOf="@+id/edt_ac_name" />
+
+                            <EditText
+                                android:id="@+id/edt_pin"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginHorizontal="@dimen/_10sdp"
+                                android:fontFamily="@font/darker_grotesque_semibold"
+                                android:hint="TPIN"
+                                android:importantForAutofill="no"
+                                android:inputType="numberPassword"
+                                android:maxLength="4"
+                                android:paddingHorizontal="@dimen/_5sdp"
+                                android:textSize="@dimen/_14sdp"
+                                app:layout_constraintTop_toBottomOf="@+id/layout_pin" />
+
+                            <TextView
+                                android:id="@+id/layout_confirm_pin"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="@dimen/_10sdp"
+                                android:fontFamily="@font/darker_grotesque_bold"
+                                android:gravity="start"
+                                android:paddingHorizontal="@dimen/_5sdp"
+                                android:text="Repeat transaction pin"
+                                android:textColor="@color/b_blue_text"
+                                android:textSize="@dimen/_15sdp"
+                                app:layout_constraintEnd_toEndOf="@+id/edt_confirm_pin"
+                                app:layout_constraintStart_toStartOf="@+id/edt_confirm_pin"
+                                app:layout_constraintTop_toBottomOf="@+id/edt_pin" />
+
+                            <EditText
+                                android:id="@+id/edt_confirm_pin"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginHorizontal="@dimen/_10sdp"
+                                android:fontFamily="@font/darker_grotesque_semibold"
+                                android:hint="TPIN"
+                                android:importantForAutofill="no"
+                                android:inputType="numberPassword"
+                                android:maxLength="4"
+                                android:paddingHorizontal="@dimen/_5sdp"
+                                android:textSize="@dimen/_14sdp"
+                                app:layout_constraintTop_toBottomOf="@+id/layout_confirm_pin" />
+
+                            <TextView
+                                android:id="@+id/lbl_withdraw"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="@dimen/_10sdp"
+                                android:fontFamily="@font/darker_grotesque_bold"
+                                android:gravity="start"
+                                android:visibility="gone"
+                                android:paddingHorizontal="@dimen/_5sdp"
+                                android:text="Withdrawal date"
+                                android:textColor="@color/b_blue_text"
+                                android:textSize="@dimen/_15sdp"
+                                app:layout_constraintEnd_toEndOf="@+id/layout_date"
+                                app:layout_constraintStart_toStartOf="@+id/layout_date"
+                                app:layout_constraintTop_toBottomOf="@+id/edt_confirm_pin" />
+
+                            <FrameLayout
+                                android:visibility="gone"
+                                android:id="@+id/layout_date"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginHorizontal="@dimen/_10sdp"
+                                app:layout_constraintTop_toBottomOf="@+id/lbl_withdraw">
+
+                                <androidx.appcompat.widget.LinearLayoutCompat
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:orientation="horizontal">
+
+                                    <EditText
+                                        android:id="@+id/edt_dob_date"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:clickable="false"
+                                        android:cursorVisible="false"
+                                        android:editable="false"
+                                        android:focusable="false"
+                                        android:fontFamily="@font/darker_grotesque_semibold"
+                                        android:hint="dd/mm/yyyy"
+                                        android:importantForAutofill="no"
+                                        android:inputType="date"
+                                        android:paddingHorizontal="@dimen/_5sdp"
+                                        android:textSize="@dimen/_14sdp"
+                                        app:layout_constraintTop_toBottomOf="@+id/layout_confirm_pin" />
+                                </androidx.appcompat.widget.LinearLayoutCompat>
+
+                                <View
+                                    android:id="@+id/btnPickDate"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent" />
+                            </FrameLayout>
+
+                            <androidx.appcompat.widget.LinearLayoutCompat
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="@dimen/_10sdp"
+                                android:layout_marginTop="@dimen/_10sdp"
+                                android:orientation="horizontal"
+                                android:visibility="gone"
+                                app:layout_constraintTop_toBottomOf="@+id/layout_date">
+
+                                <ImageView
+                                    android:id="@+id/chkDefault"
+                                    android:layout_width="@dimen/_20sdp"
+                                    android:layout_height="@dimen/_20sdp"
+                                    android:src="@drawable/img_circle_selector"
+                                    android:tag="false" />
+
+                                <TextView
+                                    style="@style/TextTitleStyle"
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center"
+                                    android:layout_marginStart="@dimen/_5sdp"
+                                    android:layout_weight="1"
+                                    android:fontFamily="@font/opensans_regular"
+                                    android:text="Set as default account"
+                                    android:textSize="@dimen/_12sdp" />
+                            </androidx.appcompat.widget.LinearLayoutCompat>
+                        </androidx.constraintlayout.widget.ConstraintLayout>
+                    </com.google.android.material.card.MaterialCardView>
+
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/btn_create_ac"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/_42sdp"
+                        android:layout_marginHorizontal="@dimen/_30sdp"
+                        android:layout_marginTop="@dimen/_20sdp"
+                        android:layout_marginBottom="@dimen/_10sdp"
+                        android:fontFamily="@font/darker_grotesque_bold"
+                        android:text="@string/lbl_create"
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/_14sdp"
+                        android:visibility="visible"
+                        app:backgroundTint="@null"
+                        app:layout_constraintTop_toBottomOf="@+id/cv_saving" />
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/_10sdp"
+                        app:layout_constraintTop_toBottomOf="@+id/btn_create_ac" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/lyt_current"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingHorizontal="@dimen/_20sdp"
+                    android:paddingTop="@dimen/_5sdp"
+                    android:paddingBottom="@dimen/_10sdp"
+                    tools:context=".modules.addaccount.AddAccountFragment">
+
+                    <com.google.android.material.card.MaterialCardView
+                        android:id="@+id/cv_current"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginHorizontal="@dimen/_5sdp"
+                        android:layout_marginTop="@dimen/_10sdp"
+                        app:cardCornerRadius="10dp"
+                        app:cardElevation="0dp"
+                        app:cardUseCompatPadding="true"
+                        app:contentPadding="@dimen/_10sdp"
+                        app:layout_constraintTop_toTopOf="parent">
+
+                        <androidx.constraintlayout.widget.ConstraintLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+
+                            <TextView
+                                android:id="@+id/lbl_title_current"
+                                style="@style/TextTitleStyle"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="@dimen/_5sdp"
+                                android:fontFamily="@font/opensans_bold"
+                                android:gravity="start"
+                                android:text="@string/lbl_add_b_account"
+                                android:textSize="@dimen/_14sdp"
+                                android:visibility="gone"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toTopOf="parent" />
+
+                            <TextView
+                                android:id="@+id/lbl_ac_holder_currnet"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:fontFamily="@font/darker_grotesque_bold"
+                                android:gravity="start"
+                                android:importantForAutofill="no"
+                                android:paddingHorizontal="@dimen/_5sdp"
+                                android:text="Account holder name"
+                                android:textColor="@color/b_blue_text"
+                                android:textSize="@dimen/_15sdp"
+                                app:layout_constraintBottom_toTopOf="@+id/edt_full_name_current"
+                                app:layout_constraintEnd_toEndOf="@+id/edt_full_name_current"
+                                app:layout_constraintStart_toStartOf="@+id/edt_full_name_current"
+                                app:layout_constraintTop_toTopOf="parent" />
+
+                            <EditText
+                                android:id="@+id/edt_full_name_current"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginHorizontal="@dimen/_10sdp"
+                                android:clickable="false"
+                                android:cursorVisible="false"
+                                android:editable="false"
+                                android:focusable="false"
+                                android:fontFamily="@font/darker_grotesque_semibold"
+                                android:importantForAutofill="no"
+                                android:inputType="textEmailAddress|phone"
+                                android:paddingHorizontal="@dimen/_5sdp"
+                                android:textSize="@dimen/_13sdp"
+                                app:layout_constraintTop_toBottomOf="@+id/lbl_ac_holder_currnet" />
+
+                            <TextView
+                                android:id="@+id/layout_account_number_current"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="@dimen/_10sdp"
+                                android:fontFamily="@font/darker_grotesque_bold"
+                                android:gravity="start"
+                                android:importantForAutofill="no"
+                                android:paddingHorizontal="@dimen/_5sdp"
+                                android:text="Account Number"
+                                android:textColor="@color/b_blue_text"
+                                android:textSize="@dimen/_15sdp"
+                                android:visibility="gone"
+                                app:layout_constraintEnd_toEndOf="@+id/edt_ac_number_current"
+                                app:layout_constraintStart_toStartOf="@+id/edt_ac_number_current"
+                                app:layout_constraintTop_toBottomOf="@+id/edt_full_name_current" />
+
+                            <EditText
+                                android:id="@+id/edt_ac_number_current"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginHorizontal="@dimen/_10sdp"
+                                android:clickable="false"
+                                android:cursorVisible="false"
+                                android:editable="false"
+                                android:focusable="false"
+                                android:fontFamily="@font/darker_grotesque_semibold"
+                                android:hint="Auto generate"
+                                android:importantForAutofill="no"
+                                android:inputType="textEmailAddress|phone"
+                                android:paddingHorizontal="@dimen/_5sdp"
+                                android:textSize="@dimen/_14sdp"
+                                android:visibility="gone"
+                                app:layout_constraintTop_toBottomOf="@+id/layout_account_number_current" />
+
+                            <TextView
+                                android:id="@+id/layout_pin_current"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="@dimen/_10sdp"
+                                android:fontFamily="@font/darker_grotesque_bold"
+                                android:gravity="start"
+                                android:paddingHorizontal="@dimen/_5sdp"
+                                android:text="Transaction pin"
+                                android:textColor="@color/b_blue_text"
+                                android:textSize="@dimen/_15sdp"
+                                app:layout_constraintEnd_toEndOf="@+id/edt_pin_current"
+                                app:layout_constraintStart_toStartOf="@+id/edt_pin_current"
+                                app:layout_constraintTop_toBottomOf="@+id/edt_ac_number_current" />
+
+                            <EditText
+                                android:id="@+id/edt_pin_current"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginHorizontal="@dimen/_10sdp"
+                                android:fontFamily="@font/darker_grotesque_semibold"
+                                android:hint="TPIN"
+                                android:importantForAutofill="no"
+                                android:inputType="numberPassword"
+                                android:maxLength="4"
+                                android:paddingHorizontal="@dimen/_5sdp"
+                                android:textSize="@dimen/_14sdp"
+                                app:layout_constraintTop_toBottomOf="@+id/layout_pin_current" />
+
+                            <TextView
+                                android:id="@+id/layout_confirm_pin_current"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="@dimen/_10sdp"
+                                android:fontFamily="@font/darker_grotesque_bold"
+                                android:gravity="start"
+                                android:paddingHorizontal="@dimen/_5sdp"
+                                android:text="Repeat transaction pin"
+                                android:textColor="@color/b_blue_text"
+                                android:textSize="@dimen/_15sdp"
+                                app:layout_constraintEnd_toEndOf="@+id/edt_confirm_pin_current"
+                                app:layout_constraintStart_toStartOf="@+id/edt_confirm_pin_current"
+                                app:layout_constraintTop_toBottomOf="@+id/edt_pin_current" />
+
+                            <EditText
+                                android:id="@+id/edt_confirm_pin_current"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginHorizontal="@dimen/_10sdp"
+                                android:fontFamily="@font/darker_grotesque_semibold"
+                                android:hint="TPIN"
+                                android:importantForAutofill="no"
+                                android:inputType="numberPassword"
+                                android:maxLength="4"
+                                android:paddingHorizontal="@dimen/_5sdp"
+                                android:textSize="@dimen/_14sdp"
+                                app:layout_constraintTop_toBottomOf="@+id/layout_confirm_pin_current" />
+                        </androidx.constraintlayout.widget.ConstraintLayout>
+                    </com.google.android.material.card.MaterialCardView>
+
+                    <View
+                        android:id="@+id/view7"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/_10sdp"
+                        app:layout_constraintTop_toBottomOf="@+id/btn_create_ac_current" />
+
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/btn_create_ac_current"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/_42sdp"
+                        android:layout_marginHorizontal="@dimen/_30sdp"
+                        android:layout_marginTop="@dimen/_20sdp"
+                        android:fontFamily="@font/darker_grotesque_bold"
+                        android:text="@string/lbl_create"
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/_14sdp"
+                        android:visibility="visible"
+                        app:backgroundTint="@null"
+                        app:layout_constraintTop_toBottomOf="@+id/cv_current" />
+
+                    <com.google.android.material.card.MaterialCardView
+                        android:id="@+id/card_4"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginHorizontal="@dimen/_5sdp"
+                        android:layout_marginTop="@dimen/_20sdp"
+                        app:cardCornerRadius="10dp"
+                        app:cardElevation="0dp"
+                        app:cardUseCompatPadding="true"
+                        app:layout_constraintTop_toBottomOf="@+id/btn_create_ac_current">
+
+                        <androidx.constraintlayout.widget.ConstraintLayout
+                            android:id="@+id/view6"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+
+                            <com.google.android.material.imageview.ShapeableImageView
+                                android:id="@+id/backImage3"
+                                android:layout_width="wrap_content"
+                                android:layout_height="0dp"
+                                android:scaleType="fitXY"
+                                android:src="@drawable/message_background"
+                                app:layout_constraintBottom_toBottomOf="@+id/extraMoney3"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintTop_toTopOf="@+id/extraMoney3"
+                                app:shapeAppearance="@style/ShapeAppearance.Material3.Corner.Medium" />
+
+                            <ImageView
+                                android:id="@+id/worningImg1"
+                                android:layout_width="wrap_content"
+                                android:layout_height="0dp"
+                                android:layout_marginEnd="@dimen/_10sdp"
+                                android:src="@drawable/phone_register"
+                                app:layout_constraintBottom_toBottomOf="@+id/extraMoney3"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintTop_toTopOf="@+id/extraMoney3" />
+
+                            <TextView
+                                android:id="@+id/extraMoney3"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_marginEnd="@dimen/_50sdp"
+                                android:background="@android:color/transparent"
+                                android:fontFamily="@font/darker_grotesque_semibold"
+                                android:paddingStart="@dimen/_10sdp"
+                                android:paddingTop="@dimen/_10sdp"
+                                android:paddingBottom="@dimen/_10sdp"
+                                android:text=""
+                                android:textColor="@color/black"
+                                android:textSize="@dimen/_12sdp"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toTopOf="parent"
+                                app:layout_goneMarginEnd="@dimen/_50sdp" />
+                        </androidx.constraintlayout.widget.ConstraintLayout>
+                    </com.google.android.material.card.MaterialCardView>
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </ViewFlipper>
+
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:id="@+id/lyt_create"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/_20sdp"
+                android:layout_marginTop="@dimen/_20sdp"
+                android:orientation="vertical"
+                android:paddingVertical="@dimen/_30sdp"
+                android:visibility="gone"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <com.nbt.blytics.utils.CircleImageView
+                    android:id="@+id/img_user_profile"
+                    android:layout_width="@dimen/_70sdp"
+                    android:layout_height="@dimen/_70sdp"
+                    android:layout_gravity="center"
+                    android:visibility="visible"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/card_1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="@dimen/_5sdp"
+                    android:layout_marginTop="@dimen/_15sdp"
+                    app:cardCornerRadius="10dp"
+                    app:cardElevation="0dp"
+                    app:cardUseCompatPadding="true"
+                    app:contentPadding="@dimen/_10sdp"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <TextView
+                        android:id="@+id/lbl_title_crate_ac"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/darker_grotesque_semibold"
+                        android:text="Pasdsd sdfsf sdfsdf \n\nsdfsdfsddfsdfsdfsfs"
+                        android:textColor="@color/b_blue_text"
+                        android:textSize="@dimen/_14sdp"
+                        android:visibility="visible"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/img_user_profile" />
+
+                </com.google.android.material.card.MaterialCardView>
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btn_create"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_42sdp"
+                    android:layout_marginHorizontal="@dimen/_30sdp"
+                    android:layout_marginTop="@dimen/_20sdp"
+                    android:fontFamily="@font/darker_grotesque_bold"
+                    android:text="Create Account"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/_12sdp"
+                    android:visibility="visible"
+                    app:backgroundTint="@null"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/card_1" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_10sdp" />
+
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/card_3"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="@dimen/_5sdp"
+                    android:layout_marginTop="@dimen/_20sdp"
+                    app:cardCornerRadius="10dp"
+                    app:cardElevation="0dp"
+                    app:cardUseCompatPadding="true"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:id="@+id/view"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:visibility="gone">
+
+                        <com.google.android.material.imageview.ShapeableImageView
+                            android:id="@+id/backImage2"
+                            android:layout_width="wrap_content"
+                            android:layout_height="0dp"
+                            android:scaleType="fitXY"
+                            android:src="@drawable/message_background"
+                            app:layout_constraintBottom_toBottomOf="@+id/extraMoney2"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintTop_toTopOf="@+id/extraMoney2"
+                            app:shapeAppearance="@style/ShapeAppearance.Material3.Corner.Medium" />
+
+                        <ImageView
+                            android:id="@+id/worningImg"
+                            android:layout_width="wrap_content"
+                            android:layout_height="0dp"
+                            android:layout_marginEnd="@dimen/_10sdp"
+                            android:src="@drawable/phone_register"
+                            app:layout_constraintBottom_toBottomOf="@+id/extraMoney2"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintTop_toTopOf="@+id/extraMoney2" />
+
+                        <TextView
+                            android:id="@+id/extraMoney2"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginEnd="@dimen/_50sdp"
+                            android:background="@android:color/transparent"
+                            android:fontFamily="@font/darker_grotesque_semibold"
+                            android:paddingStart="@dimen/_10sdp"
+                            android:paddingTop="@dimen/_10sdp"
+                            android:paddingBottom="@dimen/_10sdp"
+                            android:text=""
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/_12sdp"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:layout_goneMarginEnd="@dimen/_50sdp" />
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+                </com.google.android.material.card.MaterialCardView>
+            </androidx.appcompat.widget.LinearLayoutCompat>
+        </androidx.appcompat.widget.LinearLayoutCompat>
+    </ScrollView>
+</layout>

@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/lytMain"
+            tools:context=".modules.payee.PayeeFragment">
+
+        <com.google.android.material.tabs.TabLayout
+                app:layout_constraintTop_toTopOf="parent"
+                android:id="@+id/tabLayout"
+                app:tabGravity="center"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+        <androidx.viewpager2.widget.ViewPager2
+                android:id="@+id/payeeViewPager"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                app:layout_constraintBottom_toTopOf="@+id/lyt_bottom"
+                app:layout_constraintTop_toBottomOf="@+id/tabLayout"
+                app:layout_constraintVertical_bias="1.0" />
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+                android:id="@+id/lyt_bottom"
+                app:layout_constraintBottom_toBottomOf="parent"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+            <androidx.appcompat.widget.LinearLayoutCompat
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="@dimen/_10sdp"
+                    android:orientation="horizontal">
+
+                <com.google.android.material.button.MaterialButton
+                        android:id="@+id/btn_request_money"
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:layout_height="wrap_content"
+                        android:text="Request"
+                        android:textColor="@color/white"
+                        android:visibility="visible"
+                        android:layout_marginBottom="@dimen/_10sdp"
+                        android:layout_marginEnd="@dimen/_5sdp"
+                        app:backgroundTint="@null" />
+
+                <com.google.android.material.button.MaterialButton
+                        android:id="@+id/btn_send_money"
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/_5sdp"
+                        android:text="Send"
+                        android:layout_marginBottom="@dimen/_10sdp"
+                        android:textColor="@color/white"
+                        android:visibility="visible"
+                        app:backgroundTint="@null" />
+
+            </androidx.appcompat.widget.LinearLayoutCompat>
+
+
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

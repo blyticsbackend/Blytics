@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/dialog_rly"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="8dp"
+    >
+
+  <TextView
+          android:id="@+id/title_tv"
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:paddingVertical="@dimen/_10sdp"
+          android:text="@string/country_picker_title"
+          android:fontFamily="@font/darker_grotesque_bold"
+          android:textSize="@dimen/_17sdp"
+          android:paddingHorizontal="@dimen/_5sdp"
+          android:textStyle="bold" />
+
+  <EditText
+          android:id="@+id/search_edt"
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:layout_below="@+id/title_tv"
+          android:hint="@string/country_picker_search_hint"
+          android:textSize="@dimen/_14sdp"
+          android:fontFamily="@font/darker_grotesque_bold"
+          android:imeOptions="flagNoExtractUi"
+          android:maxLines="1"
+          android:singleLine="true"
+
+          />
+
+
+  <androidx.recyclerview.widget.RecyclerView
+          android:id="@+id/country_dialog_rv"
+          android:layout_width="match_parent"
+          android:layout_height="match_parent"
+          android:layout_below="@+id/search_edt"
+          android:dividerHeight="2dp" />
+
+  <TextView
+      android:id="@+id/no_result_tv"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_below="@+id/search_edt"
+      android:layout_centerHorizontal="true"
+      android:layout_marginTop="@dimen/_40sdp"
+      android:text="@string/country_picker_no_result"
+          android:textSize="@dimen/_14sdp"
+          android:fontFamily="@font/darker_grotesque_bold"
+      android:textColor="@android:color/primary_text_light"
+      android:visibility="gone"
+      />
+
+</RelativeLayout>
+</layout>

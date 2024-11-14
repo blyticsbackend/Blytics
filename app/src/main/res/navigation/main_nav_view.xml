@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main_nav_view"
+    app:startDestination="@id/transactionFragment">
+
+    <fragment
+        android:id="@+id/homeFragment"
+        android:name="com.nbt.blytics.modules.payment.PaymentFragment"
+        android:label="home_fragment"
+        tools:layout="@layout/payment_fragment">
+        <action
+            android:id="@+id/action_homeFragment_to_addAccountFragment"
+            app:destination="@id/addAccountFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_mangeAccountFragment"
+            app:destination="@id/mangeAccountFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_profileFragment"
+            app:destination="@id/profileFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_allAccountFragment"
+            app:destination="@id/allAccountFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/userProfileFragment"
+        android:name="com.nbt.blytics.modules.userprofile.UserProfileFragment"
+        android:label="user_profile_fragment"
+        tools:layout="@layout/user_profile_fragment">
+        <action
+            android:id="@+id/action_userProfileFragment_to_phoneRegistrationFragment2"
+            app:destination="@id/phoneRegistrationFragment2" />
+    </fragment>
+    <fragment
+        android:id="@+id/addAccountFragment"
+        android:name="com.nbt.blytics.modules.addaccount.AddAccountFragment"
+        android:label="AddAccountFragment"
+        tools:layout="@layout/add_account_fragment" />
+    <fragment
+        android:id="@+id/mangeAccountFragment"
+        android:name="com.nbt.blytics.modules.manageaccount.MangeAccountFragment"
+        android:label="MangeAccountFragment"
+        tools:layout="@layout/mange_account_fragment" />
+    <fragment
+        android:id="@+id/transactionFragment"
+        android:name="com.nbt.blytics.modules.home.HomeFragment"
+        android:label="transaction_fragment"
+        tools:layout="@layout/home_fragment" >
+
+
+        <action
+            android:id="@+id/action_transactionFragment_to_allAccountFragment"
+            app:destination="@id/allAccountFragment"
+
+            />
+    </fragment>
+    <fragment
+        android:id="@+id/trasactionDetailsFragment"
+        android:name="com.nbt.blytics.modules.transactiondetails.TransactionDetailsFragment"
+        android:label="trasaction_details_fragment"
+        tools:layout="@layout/trasaction_details_fragment" />
+    <fragment
+        android:id="@+id/phoneRegistrationFragment2"
+        android:name="com.nbt.blytics.modules.phoneregistation.PhoneRegistrationFragment"
+        android:label="PhoneRegistrationFragment"
+        tools:layout="@layout/phone_registration_fragment">
+        <action
+            android:id="@+id/action_phoneRegistrationFragment2_to_otpFragment2"
+            app:destination="@id/otpFragment2" />
+    </fragment>
+    <fragment
+        android:id="@+id/otpFragment2"
+        android:name="com.nbt.blytics.modules.otp.OtpFragment"
+        android:label="OtpFragment"
+        tools:layout="@layout/otp_fragment" />
+    <fragment
+        android:id="@+id/BAccountFragment"
+        android:name="com.nbt.blytics.modules.baccount.BAccountFragment"
+        android:label="BAccountFragment"
+        tools:layout="@layout/b_account_fragment">
+        <action
+            android:id="@+id/action_BAccountFragment_to_changeTipFragment3"
+            app:destination="@id/changeTipFragment3" />
+        <action
+            android:id="@+id/action_BAccountFragment_to_updateSQFragment"
+            app:destination="@id/updateSQFragment" />
+        <action
+            android:id="@+id/action_BAccountFragment_to_newProfileFragment"
+            app:destination="@id/newProfileFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/changeTipFragment3"
+        android:name="com.nbt.blytics.modules.chagnetpin.ChangeTipFragment"
+        android:label="ChangeTipFragment"
+        tools:layout="@layout/change_tip_fragment" />
+    <fragment
+        android:id="@+id/updateSQFragment"
+        android:name="com.nbt.blytics.modules.squpdate.UpdateSQFragment"
+        android:label="UpdateSQFragment"
+        tools:layout="@layout/update_s_q_fragment" />
+    <fragment
+        android:id="@+id/profileFragment"
+        android:name="com.nbt.blytics.modules.profile.ProfileFragment"
+        android:label="ProfileFragment"
+        tools:layout="@layout/profile_fragment" />
+    <fragment
+        android:id="@+id/menuFragment"
+        android:name="com.nbt.blytics.modules.menu.MenuFragment"
+        android:label="MenuFragment"
+        tools:layout="@layout/menu_fragment" />
+    <fragment
+        android:id="@+id/cardFragment"
+        android:name="com.nbt.blytics.testing.CardFragment"
+        android:label="fragment_card"
+        tools:layout="@layout/fragment_card" />
+    <fragment
+        android:id="@+id/loanFragment"
+        android:name="com.nbt.blytics.testing.LoanFragment"
+        android:label="fragment_loan"
+        tools:layout="@layout/fragment_loan" />
+    <fragment
+        android:id="@+id/moneyFragment"
+        android:name="com.nbt.blytics.testing.MoneyFragment"
+        android:label="fragment_money"
+        tools:layout="@layout/fragment_money" />
+    <fragment
+        android:id="@+id/allAccountFragment"
+        android:name="com.nbt.blytics.modules.allaccount.AllAccountFragment"
+        android:label="AllAccountFragment"
+        tools:layout="@layout/fragment_all_account">
+        <action
+            android:id="@+id/action_allAccountFragment_to_homeFragment"
+            app:destination="@id/homeFragment"
+            app:popUpTo="@id/transactionFragment"
+            />
+    </fragment>
+    <fragment
+        android:id="@+id/newProfileFragment"
+        tools:layout="@layout/new_profile_fragment"
+        android:name="com.nbt.blytics.modules.newprofile.NewProfileFragment"
+        android:label="NewProfileFragment" />
+    <fragment
+        android:id="@+id/payeeFragment"
+        tools:layout="@layout/payee_fragment"
+        android:name="com.nbt.blytics.modules.payee.PayeeFragment"
+        android:label="PayeeFragment" >
+        <action
+            android:id="@+id/action_payeeFragment_to_contactFragment"
+            app:destination="@id/contactFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/transactionHistoryFragment"
+        tools:layout="@layout/transaction_history_fragment"
+        android:name="com.nbt.blytics.modules.transactionhistory.TransactionHistoryFragment"
+        android:label="TransactionHistoryFragment" />
+    <fragment
+        android:id="@+id/contactFragment"
+        android:name="com.nbt.blytics.modules.contact.ContactFragment"
+        android:label="contact_fragment"
+        tools:layout="@layout/contact_fragment" >
+
+    </fragment>
+    <fragment
+        android:id="@+id/linkedAcHomeFragment2"
+        android:name="com.nbt.blytics.modules.linkedac.home.LinkedAcHomeFragment"
+        android:label="LinkedAcHomeFragment" />
+    <fragment android:id="@+id/allAcInfoFragment"
+              tools:layout="@layout/all_ac_info_fragment"
+              android:name="com.nbt.blytics.modules.acinfo.AllAcInfoFragment"
+              android:label="AllAcInfoFragment"/>
+
+</navigation>

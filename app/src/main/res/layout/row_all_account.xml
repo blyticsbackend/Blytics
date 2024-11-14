@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+
+
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/allAccountCard"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/_8sdp"
+
+        >
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:padding="@dimen/_8sdp">
+
+            <LinearLayout
+                android:id="@+id/checkLayout"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <ImageView
+                    android:id="@+id/uncheck"
+                    android:layout_width="@dimen/_20sdp"
+                    android:layout_height="@dimen/_20sdp"
+                    android:src="@drawable/uncheck"
+                    android:visibility="gone" />
+
+                <ImageView
+                    android:id="@+id/check"
+                    android:layout_width="@dimen/_20sdp"
+                    android:layout_height="@dimen/_20sdp"
+                    android:src="@drawable/check"
+                    android:visibility="gone"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+
+            </LinearLayout>
+
+
+            <TextView
+                android:id="@+id/textAccount"
+                style="@style/TextTitleStyle"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:fontFamily="@font/opensans_regular"
+                android:padding="@dimen/_4sdp"
+                android:paddingStart="@dimen/_10sdp"
+                android:text=""
+                android:textAlignment="center"
+                android:textSize="@dimen/_12sdp"
+                app:layout_constraintEnd_toStartOf="@id/checkLayout"
+                app:layout_constraintStart_toStartOf="parent"
+
+                app:layout_constraintTop_toBottomOf="@+id/textPurpose"
+                />
+
+
+            <TextView
+                android:id="@+id/textPurpose"
+                style="@style/TextTitleStyle"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/_4sdp"
+                android:paddingStart="@dimen/_10sdp"
+                android:text=""
+                android:fontFamily="@font/opensans_bold"
+                android:textAlignment="center"
+                android:textSize="@dimen/_12sdp"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintEnd_toStartOf="@id/checkLayout"
+                app:layout_constraintStart_toStartOf="@+id/textAccount"
+                 />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    </com.google.android.material.card.MaterialCardView>
+
+
+
+   </layout>

@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/lytMain"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:paddingHorizontal="@dimen/_10sdp"
+        tools:context=".modules.payee.schedule.ScheduleFragment">
+
+        <TextView
+            android:id="@+id/swipe"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="6dp"
+            android:fontFamily="@font/darker_grotesque_bold"
+            android:text="Swipe"
+            android:textColor="@color/card_green_bg"
+            android:textSize="@dimen/_13sdp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/btn_add_new_schedule" />
+
+        <ImageView
+            android:id="@+id/edit"
+            android:layout_width="@dimen/_20sdp"
+            android:layout_height="@dimen/_20sdp"
+            android:foregroundTintMode="add"
+            android:src="@drawable/arrows_right"
+            app:layout_constraintBottom_toBottomOf="@+id/swipe"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/swipe"
+            app:tint="@color/b_light_300" />
+
+        <ImageView
+            android:id="@+id/delete"
+            android:layout_width="@dimen/_20sdp"
+            android:layout_height="@dimen/_20sdp"
+            android:src="@drawable/arrows_left"
+            app:layout_constraintBottom_toBottomOf="@+id/swipe"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/swipe"
+            app:tint="@color/b_light_300" />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_10sdp"
+            android:src="@drawable/img_plus_circle_icon"
+            app:layout_constraintBottom_toBottomOf="@+id/btn_add_new_schedule"
+            app:layout_constraintStart_toStartOf="@+id/btn_add_new_schedule"
+            app:layout_constraintTop_toTopOf="@+id/btn_add_new_schedule" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btn_add_new_schedule"
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/_35sdp"
+            android:layout_marginStart="@dimen/_5sdp"
+            android:layout_marginTop="6dp"
+            android:paddingLeft="@dimen/_40sdp"
+            android:text="Add new schedule payment"
+            android:textColor="@color/white"
+            app:backgroundTint="@null"
+            app:cornerRadius="5dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:layout_width="@dimen/_20sdp"
+            android:layout_height="@dimen/_20sdp"
+            android:layout_marginStart="@dimen/_10sdp"
+            android:src="@drawable/img_plus_circle_icon"
+            android:translationZ="@dimen/_50sdp"
+            app:layout_constraintBottom_toBottomOf="@+id/btn_add_new_schedule"
+            app:layout_constraintStart_toStartOf="@+id/btn_add_new_schedule"
+            app:layout_constraintTop_toTopOf="@+id/btn_add_new_schedule" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rv_schedule"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_marginTop="6dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/swipe"
+            tools:itemCount="5"
+            tools:listitem="@layout/row_schedule" />
+
+        <TextView
+            android:id="@+id/txt_no_txn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_100sdp"
+            android:fontFamily="@font/opensans_bold"
+            android:gravity="center"
+            android:text="You don't have any recent\ntransaction"
+            android:textSize="@dimen/_15sdp"
+            android:visibility="gone"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/swipe" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

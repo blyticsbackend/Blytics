@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+<FrameLayout
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_marginHorizontal="@dimen/_3sdp"
+    >
+
+
+
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:paddingTop="@dimen/_5sdp"
+        android:paddingBottom="@dimen/_5sdp"
+        android:layout_width="wrap_content"
+        android:orientation="vertical"
+        android:layout_height="wrap_content">
+
+        <com.nbt.blytics.utils.CircleImageView
+            android:id="@+id/img_user"
+            android:layout_width="@dimen/_48sdp"
+            android:layout_height="@dimen/_48sdp"
+            android:layout_marginHorizontal="@dimen/_5sdp"
+            android:src="@drawable/dummy_user"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"/>
+
+        <TextView
+            android:id="@+id/txt_user_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text=""
+            android:layout_marginTop="@dimen/_5sdp"
+            android:maxLines="1"
+            android:ellipsize="end"
+            android:gravity="center"
+            android:fontFamily="@font/darker_grotesque_semibold"
+            android:textSize="@dimen/_13sdp"
+            style="@style/TextTitleStyle"/>
+    </androidx.appcompat.widget.LinearLayoutCompat>
+
+    <ImageView
+        android:id="@+id/img_check"
+        android:layout_width="@dimen/_15sdp"
+        android:layout_height="@dimen/_15sdp"
+        android:layout_gravity="end|top"
+        android:layout_marginTop="@dimen/_5sdp"
+        android:layout_marginEnd="@dimen/_3sdp"
+        android:visibility="gone"
+        android:src="@drawable/ic_check"/>
+
+</FrameLayout>
+</layout>

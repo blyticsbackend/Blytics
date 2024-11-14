@@ -1,0 +1,781 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".modules.home.HomeFragment">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/top_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+       >
+
+        <androidx.constraintlayout.motion.widget.MotionLayout
+            android:id="@+id/motionPillCards"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            app:layoutDescription="@xml/fragment_circle_screen"
+            app:layout_constraintBottom_toTopOf="@+id/btn_up_transaction"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="1.0">
+
+            <FrameLayout
+                android:id="@+id/lyt_center_center"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+
+                <ImageView
+                    android:id="@+id/center_white_circle"
+                    android:layout_width="@dimen/_200sdp"
+                    android:layout_height="@dimen/_200sdp"
+                    android:layout_gravity="center"
+                    android:scaleType="fitXY"
+                    android:src="@drawable/img_circle_white"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+
+             <!--   <View
+                    android:id="@+id/view_ring_center"
+                    android:layout_width="@dimen/_200sdp"
+                    android:layout_height="@dimen/_200sdp"
+                    android:layout_gravity="center"
+                    android:elevation="5dp" />-->
+
+
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/inner_circle_center"
+                    android:layout_width="@dimen/_150sdp"
+                    android:layout_height="@dimen/_150sdp"
+                    android:layout_gravity="center"
+                    app:cardCornerRadius="@dimen/_100sdp"
+                    app:cardElevation="5dp">
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+                        <TextView
+                            android:id="@+id/lbl_status_center"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/darker_grotesque_semibold"
+                            android:gravity="center"
+                            android:text="Balance"
+                            android:textSize="@dimen/_15sdp"
+                            app:layout_constraintBottom_toTopOf="@+id/txt_amount_center"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                        <TextView
+                            android:id="@+id/txt_amount_center"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/darker_grotesque_bold"
+                            android:gravity="center"
+                            android:text=""
+
+                                android:textColor="@color/b_light_300"
+                            android:textSize="@dimen/_19sdp"
+                            app:layout_constraintBottom_toTopOf="@+id/txt_day_center"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/lbl_status_center" />
+
+                        <TextView
+                            android:id="@+id/txt_day_center"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/darker_grotesque_semibold"
+                            android:gravity="center"
+                            android:text="Total"
+                            android:textSize="@dimen/_15sdp"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/txt_amount_center" />
+
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+                </com.google.android.material.card.MaterialCardView>
+
+                <!--   <ImageView
+                    android:id="@+id/img_circle_top_center"
+                    android:layout_width="@dimen/_15sdp"
+                    android:layout_height="@dimen/_15sdp"
+                    android:src="@drawable/ic_baseline_circle_24"
+                    android:layout_gravity="center|top"
+                    android:scaleType="fitXY"
+                    android:elevation="@dimen/_5sdp"
+                    android:layout_marginTop="@dimen/_5sdp"
+                    />-->
+
+
+                <!--     <ImageView
+                    android:id="@+id/img_circle_left_center"
+                    android:layout_width="@dimen/_15sdp"
+                    android:layout_height="@dimen/_15sdp"
+                    android:scaleType="fitXY"
+                    android:src="@drawable/ic_baseline_circle_24"
+                    android:layout_gravity="left|center"
+                    android:elevation="@dimen/_5sdp"
+                    android:layout_marginStart="@dimen/_5sdp"
+                    />-->
+
+                <!--   <ImageView
+                    android:id="@+id/img_circle_right_center"
+                    android:layout_width="@dimen/_15sdp"
+                    android:layout_height="@dimen/_15sdp"
+                    android:src="@drawable/ic_baseline_circle_24"
+                    android:scaleType="fitXY"
+                    android:elevation="@dimen/_5sdp"
+                    android:layout_marginEnd="@dimen/_5sdp"
+                    android:layout_gravity="right|center"
+                    />-->
+                <!--     <ImageView
+                    android:id="@+id/img_circle_bottom_center"
+                    android:layout_width="@dimen/_15sdp"
+                    android:layout_height="@dimen/_15sdp"
+                    android:src="@drawable/ic_baseline_circle_24"
+                    android:layout_gravity="bottom|center"
+                    android:scaleType="fitXY"
+                    android:elevation="@dimen/_5sdp"
+                    android:layout_marginBottom="@dimen/_5sdp"
+                    />-->
+            </FrameLayout>
+
+            <FrameLayout
+                android:id="@+id/lyt_left"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+
+                <ImageView
+                    android:id="@+id/left_white_circle"
+                    android:layout_width="@dimen/_200sdp"
+                    android:layout_height="@dimen/_200sdp"
+                    android:layout_gravity="center"
+                    android:scaleType="fitXY"
+                    android:src="@drawable/img_circle_white"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+
+            <!--    <View
+                    android:id="@+id/view_ring_left"
+                    android:layout_width="@dimen/_200sdp"
+                    android:layout_height="@dimen/_200sdp"
+                    android:layout_gravity="center"
+                    android:background="@drawable/bg_gradient_ring_blue"
+                    android:elevation="5dp" />-->
+
+
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/inner_circle_left"
+                    android:layout_width="@dimen/_150sdp"
+                    android:layout_height="@dimen/_150sdp"
+                    android:layout_gravity="center"
+                    app:cardCornerRadius="@dimen/_100sdp"
+                    app:cardElevation="5dp">
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+                        <TextView
+                            android:id="@+id/lbl_status_left"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/darker_grotesque_semibold"
+                            android:gravity="center"
+                            android:text="Spent"
+                            android:textSize="@dimen/_15sdp"
+                            app:layout_constraintBottom_toTopOf="@+id/txt_amount_left"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                        <TextView
+                            android:id="@+id/txt_amount_left"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/darker_grotesque_bold"
+                            android:gravity="center"
+                            android:text=""
+                                android:textColor="@color/b_light_300"
+                            android:textSize="@dimen/_19sdp"
+                            app:layout_constraintBottom_toTopOf="@+id/txt_day_center_left"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/lbl_status_left" />
+
+                        <TextView
+                            android:id="@+id/txt_day_center_left"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/darker_grotesque_semibold"
+                            android:gravity="center"
+                            android:text="Month"
+                            android:textSize="@dimen/_15sdp"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/txt_amount_left" />
+
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+                </com.google.android.material.card.MaterialCardView>
+
+                <!--    <ImageView
+                    android:id="@+id/img_circle_top_left"
+                    android:layout_width="@dimen/_20sdp"
+                    android:layout_height="@dimen/_13sdp"
+                    android:src="@drawable/img_top_arrow"
+                    android:layout_gravity="center|top"
+                    android:scaleType="fitXY"
+                    android:elevation="@dimen/_5sdp"
+                    android:layout_marginTop="@dimen/_8sdp"
+                    />
+-->
+
+                <!--           <ImageView
+                    android:id="@+id/img_circle_left_left"
+                    android:layout_width="@dimen/_13sdp"
+                    android:layout_height="@dimen/_20sdp"
+                    android:scaleType="fitXY"
+                    android:src="@drawable/img_left_arrow"
+
+                    android:layout_gravity="left|center"
+                    android:elevation="@dimen/_5sdp"
+                    android:layout_marginStart="@dimen/_8sdp"
+                    />-->
+
+                <!--  <ImageView
+                    android:id="@+id/img_circle_right_left"
+                    android:layout_width="@dimen/_15sdp"
+                    android:layout_height="@dimen/_15sdp"
+                    android:src="@drawable/ic_baseline_circle_24"
+                    android:scaleType="fitXY"
+                    android:layout_gravity="right|center"
+                    android:elevation="@dimen/_5sdp"
+                    android:layout_marginEnd="@dimen/_5sdp"
+                    />-->
+                <!--  <ImageView
+                    android:id="@+id/img_circle_bottom_left"
+                    android:layout_width="@dimen/_20sdp"
+                    android:layout_height="@dimen/_13sdp"
+                    android:src="@drawable/img_bottom_arrow"
+                    android:layout_gravity="bottom|center"
+                    android:scaleType="fitXY"
+                    android:elevation="@dimen/_5sdp"
+                    android:layout_marginBottom="@dimen/_8sdp"
+                    />-->
+            </FrameLayout>
+
+            <FrameLayout
+                android:id="@+id/lyt_right"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+
+                <ImageView
+                    android:id="@+id/right_white_circle"
+                    android:layout_width="@dimen/_200sdp"
+                    android:layout_height="@dimen/_200sdp"
+                    android:layout_gravity="center"
+                    android:scaleType="fitXY"
+                    android:src="@drawable/img_circle_white"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+
+           <!--     <View
+                    android:id="@+id/view_ring_right"
+                    android:layout_width="@dimen/_200sdp"
+                    android:layout_height="@dimen/_200sdp"
+                    android:layout_gravity="center"
+                    android:background="@drawable/bg_gradient_ring_blue"
+                    android:elevation="5dp" />-->
+
+
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/inner_circle_right"
+                    android:layout_width="@dimen/_150sdp"
+                    android:layout_height="@dimen/_150sdp"
+                    android:layout_gravity="center"
+                    app:cardCornerRadius="@dimen/_100sdp"
+                    app:cardElevation="5dp">
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+                        <TextView
+                            android:id="@+id/lbl_status_right"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/darker_grotesque_semibold"
+                            android:gravity="center"
+                            android:text="Spent"
+                            android:textSize="@dimen/_15sdp"
+                            app:layout_constraintBottom_toTopOf="@+id/txt_amount_right"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                        <TextView
+                            android:id="@+id/txt_amount_right"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/darker_grotesque_bold"
+                            android:gravity="center"
+                            android:text=""
+                                android:textColor="@color/b_light_300"
+                            android:textSize="@dimen/_19sdp"
+                            app:layout_constraintBottom_toTopOf="@+id/txt_day_center_right"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/lbl_status_right" />
+
+                        <TextView
+                            android:id="@+id/txt_day_center_right"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/darker_grotesque_semibold"
+                            android:gravity="center"
+                            android:text="Today"
+                            android:textSize="@dimen/_15sdp"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/txt_amount_right" />
+
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+                </com.google.android.material.card.MaterialCardView>
+
+                <!--   <ImageView
+                    android:id="@+id/img_circle_top_right"
+                    android:layout_width="@dimen/_20sdp"
+                    android:layout_height="@dimen/_13sdp"
+                    android:src="@drawable/img_top_arrow"
+                    android:layout_gravity="center|top"
+                    android:scaleType="fitXY"
+                    android:elevation="@dimen/_5sdp"
+                    android:layout_marginTop="@dimen/_8sdp"
+                    />
+-->
+
+                <!-- <ImageView
+                    android:id="@+id/img_circle_left_right"
+                    android:layout_width="@dimen/_15sdp"
+                    android:layout_height="@dimen/_15sdp"
+                    android:scaleType="fitXY"
+                    android:src="@drawable/ic_baseline_circle_24"
+                    android:layout_gravity="left|center"
+                    android:elevation="@dimen/_5sdp"
+                    android:layout_marginStart="@dimen/_5sdp"
+                    />
+-->
+                <!--   <ImageView
+                    android:id="@+id/img_circle_right_right"
+                    android:layout_width="@dimen/_13sdp"
+                    android:layout_height="@dimen/_20sdp"
+                    android:src="@drawable/img_right_arrow"
+                    android:scaleType="fitXY"
+                    android:layout_gravity="right|center"
+                    android:elevation="@dimen/_5sdp"
+                    android:layout_marginEnd="@dimen/_8sdp"
+                    />-->
+                <!-- <ImageView
+                    android:id="@+id/img_circle_bottom_right"
+                    android:layout_width="@dimen/_20sdp"
+                    android:layout_height="@dimen/_13sdp"
+                    android:src="@drawable/img_bottom_arrow"
+                    android:layout_gravity="bottom|center"
+                    android:scaleType="fitXY"
+                    android:elevation="@dimen/_5sdp"
+                    android:layout_marginBottom="@dimen/_8sdp"
+                    />-->
+            </FrameLayout>
+
+            <FrameLayout
+                android:id="@+id/lyt_top"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+
+                <ImageView
+                    android:id="@+id/top_white_circle"
+                    android:layout_width="@dimen/_200sdp"
+                    android:layout_height="@dimen/_200sdp"
+                    android:layout_gravity="center"
+                    android:scaleType="fitXY"
+                    android:src="@drawable/img_circle_white"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+
+               <!-- <View
+                    android:id="@+id/view_ring_top"
+                    android:layout_width="@dimen/_200sdp"
+                    android:layout_height="@dimen/_200sdp"
+                    android:layout_gravity="center"
+                    android:background="@drawable/bg_gradient_ring_blue"
+                    android:elevation="5dp" />-->
+
+
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/inner_circle_top"
+                    android:layout_width="@dimen/_150sdp"
+                    android:layout_height="@dimen/_150sdp"
+                    android:layout_gravity="center"
+                    app:cardCornerRadius="@dimen/_100sdp"
+                    app:cardElevation="5dp">
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+                        <TextView
+                            android:id="@+id/lbl_status_top"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/darker_grotesque_semibold"
+                            android:gravity="center"
+                            android:text="Received"
+                            android:textSize="@dimen/_15sdp"
+                            app:layout_constraintBottom_toTopOf="@+id/txt_amount_top"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                        <TextView
+                            android:id="@+id/txt_amount_top"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/darker_grotesque_bold"
+                            android:gravity="center"
+                            android:text=""
+                                android:textColor="@color/b_light_300"
+                            android:textSize="@dimen/_19sdp"
+                            app:layout_constraintBottom_toTopOf="@+id/txt_day_center_top"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/lbl_status_top" />
+
+                        <TextView
+                            android:id="@+id/txt_day_center_top"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/darker_grotesque_semibold"
+                            android:gravity="center"
+                            android:text="Month"
+                            android:textSize="@dimen/_15sdp"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/txt_amount_top" />
+
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+                </com.google.android.material.card.MaterialCardView>
+
+                <!--    <ImageView
+                    android:id="@+id/img_circle_top_top"
+                    android:layout_width="@dimen/_20sdp"
+                    android:layout_height="@dimen/_13sdp"
+                    android:src="@drawable/img_top_arrow"
+                    android:layout_gravity="center|top"
+                    android:scaleType="fitXY"
+                    android:elevation="@dimen/_5sdp"
+                    android:layout_marginTop="@dimen/_8sdp"
+                    />
+-->
+
+                <!--    <ImageView
+                    android:id="@+id/img_circle_left_top"
+                    android:layout_width="@dimen/_13sdp"
+                    android:layout_height="@dimen/_20sdp"
+                    android:scaleType="fitXY"
+                    android:src="@drawable/img_left_arrow"
+                    android:layout_gravity="left|center"
+                    android:elevation="@dimen/_5sdp"
+                    android:layout_marginStart="@dimen/_8sdp"
+                    />-->
+
+                <!--   <ImageView
+                    android:id="@+id/img_circle_right_top"
+                    android:layout_width="@dimen/_13sdp"
+                    android:layout_height="@dimen/_20sdp"
+                    android:src="@drawable/img_right_arrow"
+                    android:scaleType="fitXY"
+                    android:layout_gravity="right|center"
+                    android:elevation="@dimen/_5sdp"
+                    android:layout_marginEnd="@dimen/_8sdp"
+                    />-->
+                <!-- <ImageView
+                    android:id="@+id/img_circle_bottom_top"
+                    android:layout_width="@dimen/_15sdp"
+                    android:layout_height="@dimen/_15sdp"
+                    android:src="@drawable/ic_baseline_circle_24"
+                    android:layout_gravity="bottom|center"
+                    android:scaleType="fitXY"
+                    android:elevation="@dimen/_5sdp"
+                    android:layout_marginBottom="@dimen/_5sdp"
+                    />-->
+            </FrameLayout>
+
+            <FrameLayout
+                android:id="@+id/lyt_bottom"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+
+                <ImageView
+                    android:id="@+id/bottom_white_circle"
+                    android:layout_width="@dimen/_200sdp"
+                    android:layout_height="@dimen/_200sdp"
+                    android:layout_gravity="center"
+                    android:scaleType="fitXY"
+                    android:src="@drawable/img_circle_white"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+
+              <!--  <View
+                    android:id="@+id/view_ring_bottom"
+                    android:layout_width="@dimen/_200sdp"
+                    android:layout_height="@dimen/_200sdp"
+                    android:layout_gravity="center"
+                    android:background="@drawable/bg_gradient_ring_blue"
+                    android:elevation="5dp" />-->
+
+
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/inner_circle_bottom"
+                    android:layout_width="@dimen/_150sdp"
+                    android:layout_height="@dimen/_150sdp"
+                    android:layout_gravity="center"
+                    app:cardCornerRadius="@dimen/_100sdp"
+                    app:cardElevation="5dp">
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+                        <TextView
+                            android:id="@+id/lbl_status_bottom"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/darker_grotesque_semibold"
+                            android:gravity="center"
+                            android:text="Received"
+                            android:textSize="@dimen/_15sdp"
+                            app:layout_constraintBottom_toTopOf="@+id/txt_amount_bottom"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                        <TextView
+                            android:id="@+id/txt_amount_bottom"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/darker_grotesque_bold"
+                            android:gravity="center"
+                            android:text=""
+                                android:textColor="@color/b_light_300"
+                            android:textSize="@dimen/_19sdp"
+                            app:layout_constraintBottom_toTopOf="@+id/txt_day_center_bottom"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/lbl_status_bottom" />
+
+                        <TextView
+                            android:id="@+id/txt_day_center_bottom"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/darker_grotesque_semibold"
+                            android:gravity="center"
+                            android:text="Today"
+                            android:textSize="@dimen/_15sdp"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/txt_amount_bottom" />
+
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+                </com.google.android.material.card.MaterialCardView>
+
+                <!--  <ImageView
+                    android:id="@+id/img_circle_top_bottom"
+                    android:layout_width="@dimen/_15sdp"
+                    android:layout_height="@dimen/_15sdp"
+                    android:src="@drawable/ic_baseline_circle_24"
+                    android:layout_gravity="center|top"
+                    android:scaleType="fitXY"
+                    android:elevation="@dimen/_5sdp"
+                    android:layout_marginTop="@dimen/_5sdp"
+                    />-->
+
+
+                <!--   <ImageView
+                    android:id="@+id/img_circle_left_bottom"
+                    android:layout_width="@dimen/_13sdp"
+                    android:layout_height="@dimen/_20sdp"
+                    android:scaleType="fitXY"
+                    android:src="@drawable/img_left_arrow"
+                    android:layout_gravity="left|center"
+                    android:elevation="@dimen/_5sdp"
+                    android:layout_marginStart="@dimen/_8sdp"
+                    />
+
+                <ImageView
+                    android:id="@+id/img_circle_right_bottom"
+                    android:layout_width="@dimen/_13sdp"
+                    android:layout_height="@dimen/_20sdp"
+                    android:src="@drawable/img_right_arrow"
+                    android:scaleType="fitXY"
+                    android:layout_gravity="right|center"
+                    android:elevation="@dimen/_5sdp"
+                    android:layout_marginEnd="@dimen/_8sdp"
+                    />-->
+                <!--  <ImageView
+                    android:id="@+id/img_circle_bottom_bottom"
+                    android:layout_width="@dimen/_20sdp"
+                    android:layout_height="@dimen/_13sdp"
+                    android:src="@drawable/img_bottom_arrow"
+                    android:layout_gravity="bottom|center"
+                    android:scaleType="fitXY"
+                    android:elevation="@dimen/_5sdp"
+                    android:layout_marginBottom="@dimen/_8sdp"
+                    />-->
+            </FrameLayout>
+
+
+
+        </androidx.constraintlayout.motion.widget.MotionLayout>
+
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/circle_container"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toBottomOf="@+id/motionPillCards"
+            app:layout_constraintEnd_toEndOf="parent"
+                android:layout_marginBottom="@dimen/_60sdp"
+            app:layout_constraintStart_toStartOf="parent">
+
+            <ImageView
+                android:id="@+id/img_center_dot"
+                android:layout_width="@dimen/_5sdp"
+                android:layout_height="@dimen/_5sdp"
+                android:layout_marginBottom="@dimen/_40sdp"
+                android:elevation="@dimen/_5sdp"
+                android:src="@drawable/ic_baseline_circle_24"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:tint="@color/blue_700" />
+
+
+            <ImageView
+                android:id="@+id/img_left_dot"
+                android:layout_width="@dimen/_5sdp"
+                android:layout_height="@dimen/_5sdp"
+                android:layout_marginEnd="@dimen/_8sdp"
+                android:elevation="@dimen/_5sdp"
+                android:src="@drawable/ic_baseline_circle_24"
+                app:layout_constraintBottom_toBottomOf="@id/img_center_dot"
+                app:layout_constraintEnd_toStartOf="@+id/img_center_dot"
+                app:layout_constraintTop_toTopOf="@+id/img_center_dot"
+                app:tint="@color/gray_dark" />
+
+
+            <ImageView
+                android:id="@+id/img_right_dot"
+                android:layout_width="@dimen/_5sdp"
+                android:layout_height="@dimen/_5sdp"
+                android:layout_marginStart="@dimen/_8sdp"
+                android:elevation="@dimen/_5sdp"
+                android:src="@drawable/ic_baseline_circle_24"
+                app:layout_constraintBottom_toBottomOf="@id/img_center_dot"
+                app:layout_constraintStart_toEndOf="@+id/img_center_dot"
+                app:layout_constraintTop_toTopOf="@+id/img_center_dot"
+                app:tint="@color/gray_dark" />
+
+            <ImageView
+                android:id="@+id/img_top_dot"
+                android:layout_width="@dimen/_5sdp"
+                android:layout_height="@dimen/_5sdp"
+                android:layout_marginBottom="@dimen/_8sdp"
+                android:elevation="@dimen/_5sdp"
+                android:src="@drawable/ic_baseline_circle_24"
+                app:layout_constraintBottom_toTopOf="@+id/img_center_dot"
+                app:layout_constraintEnd_toEndOf="@id/img_center_dot"
+                app:layout_constraintStart_toStartOf="@+id/img_center_dot"
+                app:tint="@color/gray_dark" />
+
+            <ImageView
+                android:id="@+id/img_bottom_dot"
+                android:layout_width="@dimen/_5sdp"
+                android:layout_height="@dimen/_5sdp"
+                android:layout_marginTop="@dimen/_8sdp"
+                android:elevation="@dimen/_5sdp"
+                android:src="@drawable/ic_baseline_circle_24"
+                app:layout_constraintEnd_toEndOf="@id/img_center_dot"
+                app:layout_constraintStart_toStartOf="@+id/img_center_dot"
+                app:layout_constraintTop_toBottomOf="@+id/img_center_dot"
+                app:tint="@color/gray_dark" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:id="@+id/btn_up_transaction"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_40sdp"
+            android:elevation="@dimen/_5sdp"
+            android:background="@drawable/img_home_bottom"
+            app:layout_constraintBottom_toBottomOf="parent" />
+
+        <ImageView
+            android:id="@+id/img_bar"
+            android:layout_width="@dimen/_30sdp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_8sdp"
+            android:src="@drawable/icon_menu"
+            android:elevation="@dimen/_10sdp"
+            app:layout_constraintEnd_toEndOf="@+id/btn_up_transaction"
+            app:layout_constraintStart_toStartOf="@+id/btn_up_transaction"
+            app:layout_constraintTop_toTopOf="@+id/btn_up_transaction"
+            app:tint="@color/gray_dark" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:elevation="@dimen/_10sdp"
+            android:layout_marginTop="@dimen/_5sdp"
+                android:textSize="@dimen/_13sdp"
+            android:fontFamily="@font/darker_grotesque_semibold"
+            app:layout_constraintTop_toBottomOf="@+id/img_bar"
+            android:text="Swipe up for transactions"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+</layout>

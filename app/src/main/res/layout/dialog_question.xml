@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        xmlns:app="http://schemas.android.com/apk/res-auto">
+    <com.google.android.material.appbar.MaterialToolbar
+            app:layout_constraintTop_toTopOf="parent"
+            android:id="@+id/toolbar_top"
+            app:navigationIconTint="@color/gray_dark"
+            android:layout_width="match_parent"
+            app:navigationIcon="?attr/homeAsUpIndicator"
+            android:layout_height="?android:attr/actionBarSize">
+
+    </com.google.android.material.appbar.MaterialToolbar>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/toolbar_top"
+            android:id="@+id/top_layout_relation"
+            android:paddingHorizontal="@dimen/_20sdp"
+            >
+        <TextView
+                android:id="@+id/lbl_title_1"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:fontFamily="@font/darker_grotesque_bold"
+                android:gravity="start"
+               style="@style/TextTitleStyle"
+                android:text="Select Question"
+                android:textSize="@dimen/_17sdp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rv_all_question"
+                android:layout_marginTop="@dimen/_5sdp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/lbl_title_1"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"/>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:app="http://schemas.android.com/apk/res-auto">
+<com.google.android.material.card.MaterialCardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:paddingHorizontal="@dimen/_10sdp"
+    app:cardUseCompatPadding="true"
+   >
+
+
+    <androidx.appcompat.widget.AppCompatCheckBox
+        android:id="@+id/ques"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text=""
+        android:checked="true"
+        android:clickable="false"
+        android:paddingVertical="@dimen/_5sdp"
+        android:fontFamily="@font/opensans_bold"
+        android:textSize="@dimen/_12sdp"
+        style="@style/TextTitleStyle"
+        android:layout_marginStart="@dimen/_12sdp"
+        />
+
+</com.google.android.material.card.MaterialCardView>
+</layout>

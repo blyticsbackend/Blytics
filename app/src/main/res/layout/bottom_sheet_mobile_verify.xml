@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:paddingHorizontal="@dimen/_20sdp"
+            android:paddingVertical="@dimen/_20sdp">
+
+        <TextView
+                android:id="@+id/lbl_title"
+                style="@style/TextTitleStyle"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                app:layout_constraintEnd_toStartOf="@+id/btn_cancel"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:fontFamily="@font/darker_grotesque_bold"
+                android:gravity="start"
+                android:text="Verify Phone Number"
+                android:textSize="@dimen/_17sdp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+                android:id="@+id/btn_cancel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:src="@drawable/ic_baseline_cancel_24"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintEnd_toEndOf="parent" />
+
+
+        <TextView
+                android:id="@+id/lbl_msg"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:fontFamily="@font/opensans_regular"
+                android:gravity="start|center"
+                android:visibility="gone"
+                android:minLines="2"
+                android:text="Enter 6-digit Code we have sent to "
+                android:textSize="@dimen/_12sdp"
+                app:layout_constraintTop_toBottomOf="@+id/lbl_title" />
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+                android:id="@+id/layout_otp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_marginTop="@dimen/_20sdp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/lbl_msg">
+
+            <TextView
+                    android:id="@+id/lbl_otp"
+                    style="@style/TextTitleStyle"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/darker_grotesque_semibold"
+                    android:text="Enter OTP"
+                    android:textSize="@dimen/_14sdp"
+                    android:textColor="@color/b_blue_text"
+                    app:layout_constraintTop_toBottomOf="@+id/lbl_title" />
+
+            <!--    <com.nbt.blytics.otphelper.OtpView
+                    android:id="@+id/otp_view"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginTop="@dimen/_5sdp"
+                    android:gravity="center"
+                    android:inputType="number"
+                    android:itemBackground="@color/blue_500"
+                    android:textColor="@android:color/white"
+                    app:OtpItemCount="6"
+                    app:OtpLineColor="@color/blue_700"
+                    app:OtpViewType="line" />-->
+            <com.nbt.blytics.otphelpernew.OtpTextView
+                    android:id="@+id/otp_view"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_5sdp"
+                    android:gravity="center"
+                    app:hide_otp="false"
+                    android:focusableInTouchMode="true"
+                    android:inputType="number"
+                    android:textColor="@android:color/white"
+                    android:layout_gravity="center"
+                    app:otp_box_background="@color/blue_500"
+                    app:height="@dimen/_30sdp"
+                    app:width="@dimen/_30sdp"
+                    app:bar_enabled="true"
+                    app:bar_height="2dp"
+                    app:bar_active_color="@color/blue_700"
+                    app:length="6"
+                    app:otp_text_size="24dp" />
+
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
+
+        <com.google.android.material.button.MaterialButton
+                android:id="@+id/btn_verify"
+                style="@style/BtnColorStyle"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_42sdp"
+                android:layout_marginHorizontal="@dimen/_30sdp"
+                android:layout_marginTop="@dimen/_20sdp"
+                android:text="Verify"
+                android:imeOptions="actionDone"
+                android:textColor="@color/white"
+                app:backgroundTint="@null"
+
+                app:layout_constraintTop_toBottomOf="@+id/layout_otp" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

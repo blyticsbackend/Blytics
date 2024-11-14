@@ -1,0 +1,235 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <androidx.core.widget.NestedScrollView
+        android:id="@+id/top_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/chngeTpin"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingStart="@dimen/_20sdp"
+            android:paddingTop="@dimen/_30sdp"
+            android:paddingEnd="@dimen/_20sdp"
+            android:paddingBottom="@dimen/_10sdp">
+
+            <FrameLayout
+                android:id="@+id/lyt_image"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                android:visibility="gone"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <com.nbt.blytics.utils.CircleImageView
+                    android:id="@+id/img_profile"
+                    android:layout_width="@dimen/_70sdp"
+                    android:layout_height="@dimen/_70sdp"
+                    android:src="@drawable/dummy_user"/>
+
+            </FrameLayout>
+
+            <TextView
+                android:id="@+id/lbl_title"
+                style="@style/TextTitleStyle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_15sdp"
+                android:fontFamily="@font/opensans_bold"
+                android:gravity="center"
+                android:text="Change TPIN"
+                android:textSize="@dimen/_18sdp"
+                app:layout_constraintTop_toBottomOf="@+id/lyt_image" />
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:id="@+id/old_layout_tpin"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_30sdp"
+                android:orientation="vertical"
+                android:visibility="gone"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/lbl_title">
+
+                <TextView
+                    android:id="@+id/old_lbl_tpin"
+                    style="@style/TextTitleStyle"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/opensans_regular"
+                    android:text="Old TPIN "
+                    android:textSize="@dimen/_11sdp"
+                    app:layout_constraintTop_toBottomOf="@+id/lbl_title" />
+<!--
+                <com.nbt.blytics.otphelper.OtpView
+                    android:id="@+id/old_tpin_view"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_5sdp"
+                    android:gravity="center"
+                    android:inputType="numberPassword"
+                    app:OtpItemSpacing="@dimen/_10sdp"
+                    android:itemBackground="@color/blue_500"
+                    android:textColor="@android:color/white"
+                    app:OtpItemCount="4"
+                    app:OtpLineColor="@color/blue_700"
+                    app:OtpViewType="line" />-->
+
+                <com.nbt.blytics.otphelpernew.OtpTextView
+                        android:id="@+id/old_tpin_view"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_5sdp"
+                        android:gravity="center"
+                        app:hide_otp="true"
+                        android:focusableInTouchMode="true"
+                        android:inputType="numberPassword"
+                        android:textColor="@android:color/white"
+                        android:layout_gravity="center"
+                        app:otp_box_background="@color/blue_500"
+                        app:height="@dimen/_30sdp"
+                        app:width="@dimen/_30sdp"
+                        app:bar_enabled="true"
+                        app:bar_height="2dp"
+                        app:bar_active_color="@color/blue_700"
+                        app:length="4"
+                        app:otp_text_size="24dp"
+                />
+
+
+            </androidx.appcompat.widget.LinearLayoutCompat>
+
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:id="@+id/layout_tpin"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_10sdp"
+
+                android:orientation="vertical"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/old_layout_tpin">
+
+                <TextView
+                    android:id="@+id/lbl_tpin"
+                    style="@style/TextTitleStyle"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/opensans_regular"
+                    android:text="Enter TPIN "
+                    android:textSize="@dimen/_11sdp"
+                    app:layout_constraintTop_toBottomOf="@+id/lbl_title" />
+
+             <!--   <com.nbt.blytics.otphelper.OtpView
+                    android:id="@+id/tpin_view"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_5sdp"
+                    android:gravity="center"
+                    android:inputType="numberPassword"
+                    app:OtpItemSpacing="@dimen/_10sdp"
+                    android:itemBackground="@color/blue_500"
+                    android:textColor="@android:color/white"
+                    app:OtpItemCount="4"
+                    app:OtpLineColor="@color/blue_700"
+                    app:OtpViewType="line" />-->
+                <com.nbt.blytics.otphelpernew.OtpTextView
+                        android:id="@+id/tpin_view"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_5sdp"
+                        android:gravity="center"
+                        app:hide_otp="true"
+                        android:focusableInTouchMode="true"
+                        android:inputType="numberPassword"
+                        android:textColor="@android:color/white"
+                        android:layout_gravity="center"
+                        app:otp_box_background="@color/blue_500"
+                        app:height="@dimen/_30sdp"
+                        app:width="@dimen/_30sdp"
+                        app:bar_enabled="true"
+                        app:bar_height="2dp"
+                        app:bar_active_color="@color/blue_700"
+                        app:length="4"
+                        app:otp_text_size="24dp"
+                />
+
+            </androidx.appcompat.widget.LinearLayoutCompat>
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:id="@+id/layout_tpin_confirm"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:orientation="vertical"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/layout_tpin"
+                >
+
+                <TextView
+                    android:id="@+id/lbl_tpin_confirm"
+                    style="@style/TextTitleStyle"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/opensans_regular"
+                    android:text="Confirm TPIN"
+                    android:textSize="@dimen/_11sdp"
+                    app:layout_constraintTop_toBottomOf="@+id/lbl_title" />
+<!--
+                <com.nbt.blytics.otphelper.OtpView
+                    android:id="@+id/tpin_view_confirm"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_5sdp"
+                    android:gravity="center"
+                    android:inputType="numberPassword"
+                    app:OtpItemSpacing="@dimen/_10sdp"
+                    android:itemBackground="@color/blue_500"
+                    android:textColor="@android:color/white"
+                    app:OtpItemCount="4"
+                    app:OtpLineColor="@color/blue_700"
+                    app:OtpViewType="line" />-->
+
+                <com.nbt.blytics.otphelpernew.OtpTextView
+                        android:id="@+id/tpin_view_confirm"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_10sdp"
+                        android:gravity="center"
+                        app:hide_otp="true"
+                        android:focusableInTouchMode="true"
+                        android:inputType="numberPassword"
+                        android:textColor="@android:color/white"
+                        android:layout_gravity="center"
+                        app:otp_box_background="@color/blue_500"
+                        app:height="@dimen/_30sdp"
+                        app:width="@dimen/_30sdp"
+                        app:bar_enabled="true"
+                        app:bar_height="2dp"
+                        app:bar_active_color="@color/blue_700"
+                        app:length="4"
+                        app:otp_text_size="24dp"
+                />
+
+
+            </androidx.appcompat.widget.LinearLayoutCompat>
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btn_continue"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_42sdp"
+                android:layout_marginHorizontal="@dimen/_30sdp"
+                android:layout_marginTop="@dimen/_20sdp"
+                android:text="Continue"
+                android:textColor="@color/white"
+                app:backgroundTint="@null"
+                app:layout_constraintTop_toBottomOf="@+id/layout_tpin_confirm" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.core.widget.NestedScrollView>
+</layout>

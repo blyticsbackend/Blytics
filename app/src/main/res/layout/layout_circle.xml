@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:background="@drawable/bg_gradient_blue"
+    android:layout_height="match_parent"
+    >
+
+    <FrameLayout
+        android:id="@+id/lyt_circle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+
+
+        <ImageView
+            android:layout_width="@dimen/_180sdp"
+            android:layout_height="@dimen/_180sdp"
+            android:layout_gravity="center"
+            android:scaleType="fitXY"
+            android:src="@drawable/img_circle_white"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+
+        <View
+            android:id="@+id/view_ring_center"
+            android:layout_width="@dimen/_200sdp"
+            android:layout_height="@dimen/_200sdp"
+            android:layout_gravity="center"
+            android:background="@drawable/bg_gradient_ring_orange"
+            android:elevation="5dp" />
+
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/inner_circle_center"
+            android:layout_width="@dimen/_130sdp"
+            android:layout_height="@dimen/_130sdp"
+            android:layout_gravity="center"
+            app:cardCornerRadius="@dimen/_100sdp"
+            app:cardElevation="5dp">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <TextView
+                    android:id="@+id/lbl_status_center"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/opensans_regular"
+                    android:gravity="center"
+                    android:text="Balance"
+                    android:textSize="@dimen/_12sdp"
+                    app:layout_constraintBottom_toTopOf="@+id/txt_amount_center"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/txt_amount_center"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/opensans_bold"
+                    android:gravity="center"
+                    android:text=""
+                    android:textSize="@dimen/_14sdp"
+                    app:layout_constraintBottom_toTopOf="@+id/txt_day_center"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/lbl_status_center" />
+
+                <TextView
+                    android:id="@+id/txt_day_center"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/opensans_regular"
+                    android:gravity="center"
+                    android:text="Today"
+                    android:textSize="@dimen/_12sdp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/txt_amount_center" />
+
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </com.google.android.material.card.MaterialCardView>
+        <View
+            android:id="@+id/view_circle"
+            android:layout_width="@dimen/_200sdp"
+            android:layout_height="@dimen/_200sdp"
+            android:elevation="20dp"
+            />
+
+
+        <ImageView
+            android:id="@+id/img_circle_top_center"
+            android:layout_width="@dimen/_20sdp"
+            android:layout_height="@dimen/_13sdp"
+            android:src="@drawable/img_top_arrow"
+            android:layout_gravity="center|top"
+            android:scaleType="fitXY"
+            android:elevation="@dimen/_5sdp"
+            android:layout_marginTop="@dimen/_8sdp"
+            />
+
+
+        <ImageView
+            android:id="@+id/img_circle_left_center"
+            android:layout_width="@dimen/_13sdp"
+            android:layout_height="@dimen/_20sdp"
+            android:scaleType="fitXY"
+            android:src="@drawable/img_left_arrow"
+            android:layout_gravity="left|center"
+            android:elevation="@dimen/_5sdp"
+            android:layout_marginStart="@dimen/_8sdp"
+            />
+
+        <ImageView
+            android:id="@+id/img_circle_right_center"
+            android:layout_width="@dimen/_13sdp"
+            android:layout_height="@dimen/_20sdp"
+            android:src="@drawable/img_right_arrow"
+            android:scaleType="fitXY"
+            android:layout_gravity="right|center"
+            android:elevation="@dimen/_5sdp"
+            android:layout_marginEnd="@dimen/_8sdp"
+            />
+        <ImageView
+            android:id="@+id/img_circle_bottom_center"
+            android:layout_width="@dimen/_20sdp"
+            android:layout_height="@dimen/_13sdp"
+            android:src="@drawable/img_bottom_arrow"
+            android:layout_gravity="bottom|center"
+            android:scaleType="fitXY"
+            android:elevation="@dimen/_5sdp"
+            android:layout_marginBottom="@dimen/_8sdp"
+            />
+    </FrameLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
