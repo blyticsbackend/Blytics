@@ -1,10 +1,8 @@
 package com.nbt.blytics.modules.linkedac.home
 
-import android.animation.Animator
 import android.animation.AnimatorInflater
 import android.animation.AnimatorSet
 import android.content.Context
-import android.content.Intent
 import android.content.res.Configuration
 import android.os.Bundle
 import android.view.View
@@ -19,16 +17,17 @@ import com.nbt.blytics.R
 import com.nbt.blytics.activity.bconfig.BconfigActivity
 import com.nbt.blytics.base.BaseActivity
 import com.nbt.blytics.base.BaseFragment
-import com.nbt.blytics.common.ComingFor
 import com.nbt.blytics.databinding.LinkedAcHomeFragmentBinding
 import com.nbt.blytics.modules.allaccount.AllAccountFragment
 import com.nbt.blytics.modules.linkedac.manageac.ManageLinkedFragment
 import com.nbt.blytics.modules.payment.adapter.TransactionAdapter
 import com.nbt.blytics.modules.signin.model.FailResponse
-import com.nbt.blytics.modules.singletransaction.SingleTransactionFragment
 import com.nbt.blytics.modules.transactionhistory.TransactionRequest
 import com.nbt.blytics.modules.transactionhistory.TransactionResponse
-import com.nbt.blytics.utils.*
+import com.nbt.blytics.utils.Constants
+import com.nbt.blytics.utils.SharePreferences
+import com.nbt.blytics.utils.hide
+import com.nbt.blytics.utils.show
 
 class LinkedAcHomeFragment : BaseFragment<LinkedAcHomeFragmentBinding, LinkedAcHomeViewModel>() {
     private lateinit var adapterTnx: TransactionAdapter
@@ -146,8 +145,7 @@ class LinkedAcHomeFragment : BaseFragment<LinkedAcHomeFragmentBinding, LinkedAcH
             startActivity(intent)*/
             // findNavController().navigate()
         }
-        binding.rvTransaction.layoutManager =
-            LinearLayoutManager(requireContext(), LinearLayoutManager.VERTICAL, false)
+        binding.rvTransaction.layoutManager = LinearLayoutManager(requireContext(), LinearLayoutManager.VERTICAL, false)
         binding.rvTransaction.adapter = adapterTnx
     }
 

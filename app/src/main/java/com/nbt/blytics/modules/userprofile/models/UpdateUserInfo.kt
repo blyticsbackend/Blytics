@@ -16,8 +16,10 @@ data class UpdateName(
 )
 
 data class UpdateDocument(
-    @SerializedName("idproof")
-    val idproof: String
+    @SerializedName("identity_proof_document")
+    val idproof: String,
+    @SerializedName("user_id")
+    val userid: Int,
 )
 
 data class UpdateEmail(
@@ -97,6 +99,11 @@ data class UpdateProfileResponse(
     val status: String,
     @SerializedName("message")
     val message: String,
+
+)
+data class UpdateDocumentResponse(
+    @SerializedName("doc_verified")
+    val status: String,
 
 )
 

@@ -638,8 +638,7 @@
                             android:textColor="@color/blue_500"
                             android:textSize="@dimen/_15sdp"
                             app:layout_constraintEnd_toEndOf="parent"
-                            app:layout_constraintTop_toTopOf="parent" />
-
+                            app:layout_constraintTop_toTopOf="parent"/>
 
                         <androidx.recyclerview.widget.RecyclerView
                             android:id="@+id/rv_transaction"

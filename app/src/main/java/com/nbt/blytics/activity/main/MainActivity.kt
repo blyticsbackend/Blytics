@@ -318,6 +318,7 @@ class MainActivity : BaseActivity() {
             val item: android.view.MenuItem = mBinding.bottomNavigation.menu.get(i)
             item.icon = ContextCompat.getDrawable(this, menuItems[i].image)
         }
+
         val gsonAppsMenu = Gson().toJson(appsMenuItems)
         val gsonMainMenu = Gson().toJson(menuItems)
         pref.setStringValue(SharePreferences.APPS_MENU, gsonAppsMenu)
@@ -625,7 +626,7 @@ class MainActivity : BaseActivity() {
         var isModeChange = false
         var isBioAuth = false
         val appsMenuItems = mutableListOf(
-            MenuItem(
+           /* MenuItem(
                 id = 1,
                 label = "Card",
                 image = R.drawable.icon_menu_card,
@@ -639,10 +640,11 @@ class MainActivity : BaseActivity() {
                 destinationId = R.id.loanFragment,
                 count = 0,
                 name = MenuItem.Name.LONE
-            ), MenuItem(
-                id = 3,
+            ),*/
+            MenuItem(
+                id = 1,
                 label = "Accounts",
-                image = R.drawable.icon_ac_details,
+                image = R.drawable.ac_details,
                 destinationId = R.id.allAcInfoFragment,
                 count = 0,
                 name = MenuItem.Name.ACCOUNT

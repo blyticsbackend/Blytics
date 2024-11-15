@@ -3,7 +3,6 @@ package com.nbt.blytics.modules.newprofile
 import android.app.Application
 import android.util.Log
 import androidx.lifecycle.MutableLiveData
-import androidx.lifecycle.ViewModel
 import com.nbt.blytics.api.RetrofitFactory
 import com.nbt.blytics.base.BaseViewModel
 import com.nbt.blytics.common.CheckFor
@@ -17,6 +16,7 @@ import com.nbt.blytics.modules.profile.UpdateMobileResponse
 import com.nbt.blytics.modules.signin.model.FailResponse
 import com.nbt.blytics.modules.signupprofile.models.AvatarModel
 import com.nbt.blytics.modules.userprofile.models.UpdateAvatarResponse
+import com.nbt.blytics.modules.userprofile.models.UpdateDocumentResponse
 import com.nbt.blytics.modules.userprofile.models.UpdateProfileResponse
 import com.nbt.blytics.utils.Constants
 import okhttp3.MediaType.Companion.toMediaType
@@ -264,43 +264,33 @@ class NewProfileViewModel (application: Application): BaseViewModel(application)
                 val json = JSONObject(res)
                 val status = json.getString("status")
                 val errorCode = json.getInt("error_code")
-
                 if (status.equals(Constants.Status.SUCCESS.name, true)) {
                     val data = json.getJSONObject("data")
                     val userId = data.getString("user_id")
                     val email = data.getString("email")
                     val userName = data.getString("user_name")
-
                     val mobNo = data.getString("mob_no")
                     val walletUUID =data.getString("wallet_uuid")
                     val tpin =data.getInt("tpin")
                     val securityQuestion =data.getInt("security_question")
-
-                    observerResponse.value = CheckExistPhoneResponse(
-                        CheckExistPhoneResponse.Data(email, mobNo, userId,walletUUID,tpin, securityQuestion,userName),
-                        errorCode, status
-                    )
+                    observerResponse.value = CheckExistPhoneResponse(CheckExistPhoneResponse.Data(email, mobNo, userId,walletUUID,tpin, securityQuestion,userName), errorCode, status)
 
                 } else {
-
-                    observerResponse.value = CheckExistPhoneResponse(
-                        null,
-                        errorCode, status, Constants.errorMessage(errorCode)
-                    )
+                    observerResponse.value = CheckExistPhoneResponse(null, errorCode, status, Constants.errorMessage(errorCode))
                 }
             }
-
         })
     }
 
-    fun updateDocument(model:Any){
-        val request = service.updateProfileInfo(model)
+    fun updateDocument(userId: String, identityProof: MultipartBody.Part) {
+        val userIdBody = RequestBody.create("text/plain".toMediaTypeOrNull(), userId)
+        val request = service.updateDocument(userIdBody, identityProof)
         request.enqueue(object : Callback<ResponseBody> {
             override fun onResponse(call: Call<ResponseBody>, response: Response<ResponseBody>) {
-                try{
-                    getProfileUpdateResponse(response.body()!!.string())
-                } catch (ex: Exception) {
-                    observerResponse.value = FailResponse("", ex.message.toString())
+                response.body()?.let {
+                    getDocumentUpdateResponse(it.string())
+                } ?: run {
+                    observerResponse.value = FailResponse("", "Empty response")
                 }
             }
 
@@ -308,19 +298,38 @@ class NewProfileViewModel (application: Application): BaseViewModel(application)
                 observerResponse.value = FailResponse("", t.message.toString())
             }
 
-            fun getProfileUpdateResponse(res:String) {
+            private fun getDocumentUpdateResponse(res: String) {
                 val json = JSONObject(res)
-                val status = json.getString("status")
-                val message = json.getString("message")
-                if (status.equals(Constants.Status.SUCCESS.name, true)) {
-                    observerResponse.value= UpdateProfileResponse(status,message)
-                }else{
-                    observerResponse.value= UpdateProfileResponse(status,message)
+                val status = json.optString("doc_verified", "false")
+                observerResponse.value = UpdateDocumentResponse(status)
+            }
+        })
+    }
+
+    fun updateAddress(userId: String, identityProofDocument: MultipartBody.Part) {
+        val userIdBody = RequestBody.create("text/plain".toMediaTypeOrNull(), userId)
+        val request = service.updateAddress(userIdBody, identityProofDocument)
+        request.enqueue(object : Callback<ResponseBody> {
+            override fun onResponse(call: Call<ResponseBody>, response: Response<ResponseBody>) {
+                response.body()?.let {
+                    getDocumentUpdateResponse(it.string())
+                } ?: run {
+                    observerResponse.value = FailResponse("", "Empty response")
                 }
             }
-        }
-        )
+
+            override fun onFailure(call: Call<ResponseBody>, t: Throwable) {
+                observerResponse.value = FailResponse("", t.message.toString())
+            }
+
+            private fun getDocumentUpdateResponse(res: String) {
+                val json = JSONObject(res)
+                val status = json.optString("doc_verified", "false")
+                observerResponse.value = UpdateDocumentResponse(status)
+            }
+        })
     }
+
     fun updateProfileInfo(model:Any){
         val request = service.updateProfileInfo(model)
         request.enqueue(object : Callback<ResponseBody> {
@@ -346,26 +355,19 @@ class NewProfileViewModel (application: Application): BaseViewModel(application)
                     observerResponse.value= UpdateProfileResponse(status,message)
                 }
             }
-        }
-        )
+        })
     }
 
     fun otpEmail(email:String) {
         val emailOtpRequest = EmailOtpRequest(email)
         val request = service.sendEmailOTP(emailOtpRequest)
         request.enqueue(object : Callback<ResponseBody> {
-            override fun onResponse(
-                call: Call<ResponseBody>,
-                response: Response<ResponseBody>
-            ) {
+            override fun onResponse(call: Call<ResponseBody>, response: Response<ResponseBody>) {
                 try {
-
                     getEmailOtpResponse(response.body()!!.string())
-
                 } catch (ex: Exception) {
                     observerResponse.value = FailResponse("", ex.message.toString())
                 }
-
             }
 
             override fun onFailure(call: Call<ResponseBody>, t: Throwable) {

@@ -92,14 +92,10 @@ class PaymentViewModel(application: Application) : BaseViewModel(application) {
                             accid = acc_id
                         ))
                 }
-                observerResponse.value = AcInfoResponse (
-                    status, list
-                )
-
+                observerResponse.value = AcInfoResponse (status, list)
             }
         })
     }
-
 
     fun getAllAccount(userId: String, token: String, acc_type: String) {
         val sendAccountData = SendAccountData(userId, token, acc_type)
@@ -128,13 +124,7 @@ class PaymentViewModel(application: Application) : BaseViewModel(application) {
                         val uuid = jsonArray.getJSONObject(i).getString("uuid")
                         val active = jsonArray.getJSONObject(i).getBoolean("active")
 
-                        walletAccountList.add(
-                            WalletAccountModel.WalletAccountData(
-                                acc_no,
-                                uuid,
-                                active
-                            )
-                        )
+                        walletAccountList.add(WalletAccountModel.WalletAccountData(acc_no, uuid, active))
                     }
                     observerResponse.value = WalletAccountModel(walletAccountList, status)
 

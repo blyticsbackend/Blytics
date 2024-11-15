@@ -53,6 +53,11 @@ import com.nbt.blytics.modules.signupprofile.models.AvatarModel
 import com.nbt.blytics.modules.userprofile.models.*
 import com.nbt.blytics.utils.*
 import com.nbt.blytics.utils.UtilityHelper.isEmailValid
+import okhttp3.Headers
+import okhttp3.MediaType.Companion.toMediaTypeOrNull
+import okhttp3.MultipartBody
+import okhttp3.RequestBody
+import okhttp3.RequestBody.Companion.asRequestBody
 import java.io.File
 import java.io.FileOutputStream
 import java.io.IOException
@@ -71,7 +76,7 @@ class NewProfileFragment : BaseFragment<NewProfileFragmentBinding, NewProfileVie
     private lateinit var avatarBottomSheet: BottomSheetDialog
     // private lateinit var profileAdapter: ProfileAdapter
     private lateinit var emailDialog: BottomSheetDialog
-    private var isCountryChanged: Boolean = false
+   // private var isCountryChanged: Boolean = false
     private var isStateChanged: Boolean = false
     private lateinit var avatarAdapter: AvatarAdapter
     private var isDoc1Selected = false
@@ -117,6 +122,7 @@ class NewProfileFragment : BaseFragment<NewProfileFragmentBinding, NewProfileVie
            /*  btnDob.setOnClickListener {
                   datePicker()
               }*/
+
             btnEmailSave.setOnClickListener {
                 if (btnEmailSave.text.toString().equals("Verify", true)) {
                     checkUserViaEamil = true
@@ -134,15 +140,20 @@ class NewProfileFragment : BaseFragment<NewProfileFragmentBinding, NewProfileVie
             btnNameSave.setOnClickListener {
                 val firstName = edtFirstName.text.toString().trim()
                 val lastName = edtLastName.text.toString().trim()
+
                 if (firstName.isNotBlank() && lastName.isNotBlank()) {
                     val pattern = Pattern.compile(Constants.SPECIAL_CHAR)
                     if (!pattern.matcher(firstName).matches() && !pattern.matcher(lastName).matches()) {
                         showLoading()
                         profileViewModel.updateProfileInfo(UpdateName(userID, userToken, firstName, lastName))
-                        selectedImageUri?.let { uri ->
-                            val imageUrl = uri.toString()
-                            profileViewModel.updateDocument(UpdateDocument(imageUrl))
-                        } ?: showToast("Please select an Document.")
+
+                        if (selectedImageUri != null) {
+                            val identityProof = prepareFilePart(requireContext() ,selectedImageUri!!,)
+                            val userId = pref().getStringValue(Constants.USER_ID, "")
+                            profileViewModel.updateDocument(userId, identityProof!!)
+                        } else {
+                            showToast("Please select a document.")
+                        }
                     } else {
                         showToast("Special characters are not allowed.")
                     }
@@ -205,20 +216,29 @@ class NewProfileFragment : BaseFragment<NewProfileFragmentBinding, NewProfileVie
                     init()
                 }
             }*/
-
+            /*  btnCountrySave.setOnClickListener {
+                              if (isCountryChanged) {
+                                  if (isStateChanged) {
+                                      isStateChanged = false
+                                      isCountryChanged = false
+                                      showLoading()
+                                      profileViewModel.updateProfileInfo(UpdateCountry(userID, userToken, edtCountry.text.toString().trim(), edtState.text.toString().trim()))
+                                  } else {
+                                      showToast("select state.")
+                                  }
+                              } else {
+                                  showToast("select country.")
+                              }
+                          }*/
             btnAddressSave.setOnClickListener {
-                if (isCountryChanged || isStateChanged || edtAddress.text.toString().isNotBlank()) {
-                    if (isCountryChanged && !isStateChanged) {
+                if (isStateChanged || edtAddress.text.toString().isNotBlank()) {
+                    if (!isStateChanged) {
                         showToast("Please select a state after changing the country.")
                         return@setOnClickListener
                     }
                     showLoading()
-                    if (isCountryChanged) {
-                        profileViewModel.updateProfileInfo(UpdateCountry(userID, userToken, edtCountry.text.toString().trim(), edtState.text.toString().trim()))
-                        isCountryChanged = false
-                    }
 
-                    if (isStateChanged && !isCountryChanged) {
+                    if (isStateChanged) {
                         profileViewModel.updateProfileInfo(UpdateCountry(userID, userToken, edtCountry.text.toString().trim(), edtState.text.toString().trim()))
                         isStateChanged = false
                     }
@@ -230,21 +250,6 @@ class NewProfileFragment : BaseFragment<NewProfileFragmentBinding, NewProfileVie
                     showToast("Please select at least one option to update.")
                 }
             }
-
-            /*  btnCountrySave.setOnClickListener {
-                  if (isCountryChanged) {
-                      if (isStateChanged) {
-                          isStateChanged = false
-                          isCountryChanged = false
-                          showLoading()
-                          profileViewModel.updateProfileInfo(UpdateCountry(userID, userToken, edtCountry.text.toString().trim(), edtState.text.toString().trim()))
-                      } else {
-                          showToast("select state.")
-                      }
-                  } else {
-                      showToast("select country.")
-                  }
-              }*/
 
             btnDobSave.setOnClickListener {
                 showLoading()
@@ -285,6 +290,36 @@ class NewProfileFragment : BaseFragment<NewProfileFragmentBinding, NewProfileVie
                 }
             }
         }
+    }
+
+    private fun prepareFilePart(context: Context, uri: Uri): MultipartBody.Part? {
+        // Convert Uri to absolute file path
+        val filePath = getPathFromUri(context, uri)
+        if (filePath.isNullOrEmpty()) {
+            return null // Return null if path conversion fails
+        }
+
+        val file = File(filePath)
+
+        // Create a RequestBody instance from the file
+        val requestFile = RequestBody.create("image/*".toMediaTypeOrNull(), file)
+
+        return MultipartBody.Part.create(
+            Headers.headersOf("Content-Disposition", "inline; filename=\"${file.name}\""),
+            requestFile
+        )
+    }
+
+    private fun getPathFromUri(context: Context, uri: Uri): String? {
+        var filePath: String? = null
+        val cursor = context.contentResolver.query(uri, arrayOf(MediaStore.Images.Media.DATA), null, null, null)
+        cursor?.use {
+            if (it.moveToFirst()) {
+                val columnIndex = it.getColumnIndexOrThrow(MediaStore.Images.Media.DATA)
+                filePath = it.getString(columnIndex)
+            }
+        }
+        return filePath
     }
 
     fun updateDrawableLeft(editText: EditText, drawableId: Int) {

@@ -92,6 +92,7 @@ class ProfileFragment : BaseFragment<ProfileFragmentBinding, ProfileViewModel>()
         val userID = pref().getStringValue(SharePreferences.USER_ID, "")
         val userToken = pref().getStringValue(SharePreferences.USER_TOKEN, "")
         view.findViewById<CircularProgressBar>(R.id.profile_progress_bar).progress = 30f
+
         binding.btnNameEdit.setOnClickListener {
             pref().apply {
                 binding.apply {
@@ -145,6 +146,7 @@ class ProfileFragment : BaseFragment<ProfileFragmentBinding, ProfileViewModel>()
                 }
             }
         }
+
         binding.btnBvnEdit.setOnClickListener {
             pref().apply {
                 binding.apply {

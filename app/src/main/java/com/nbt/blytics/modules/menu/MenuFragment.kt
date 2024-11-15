@@ -126,8 +126,8 @@ class MenuFragment : BaseFragment<MenuFragmentBinding, MenuViewModel>() {
         val popupMenu: PopupMenu = PopupMenu(requireContext(), view)
         popupMenu.menu.add("Replace With").setEnabled(false)
         popupMenu.menu.add(menuItems[0].label)
-        popupMenu.menu.add(menuItems[0].label)
-        popupMenu.menu.add(menuItems[0].label)
+      //  popupMenu.menu.add(menuItems[0].label)
+      //  popupMenu.menu.add(menuItems[0].label)
         happyThemeChanges(popupMenu.menu)
         popupMenu.setOnMenuItemClickListener(PopupMenu.OnMenuItemClickListener { item ->
             for (i in 0 until popupMenu.menu.size()) {

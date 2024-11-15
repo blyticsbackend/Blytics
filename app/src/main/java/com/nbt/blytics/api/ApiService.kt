@@ -54,13 +54,13 @@ import com.nbt.blytics.modules.signupprofile.models.BvnCheck
 import com.nbt.blytics.modules.signupprofile.models.LInkedAcRequest
 import com.nbt.blytics.modules.squpdate.model.UpdateSqlRequest
 import com.nbt.blytics.modules.sqverify.models.SQVerifyRequest
-import com.nbt.blytics.modules.payment.TransactionHomeResponse
 import com.nbt.blytics.modules.transactionhistory.TransactionRequest
 import okhttp3.MultipartBody
 import okhttp3.RequestBody
 import okhttp3.ResponseBody
 import retrofit2.Call
 import retrofit2.http.*
+import java.io.File
 
 interface ApiService {
     @Headers("Content-Type: application/json")
@@ -371,12 +371,19 @@ interface ApiService {
         @Body body: Any
     ): Call<ResponseBody>
 
-    @Headers("Content-Type: application/json")
+    @Multipart
     @PUT("/user/user_verification/")
     fun updateDocument(
-        @Body body: Any
+        @Part("user_id") userId: RequestBody,
+        @Part identityProofDocument: MultipartBody.Part,
     ): Call<ResponseBody>
 
+    @Multipart
+    @PUT("/user/user_verification/")
+    fun updateAddress(
+        @Part("user_id") userId: RequestBody,
+        @Part addressProofDocument: MultipartBody.Part
+    ): Call<ResponseBody>
 
     @Multipart
     @POST("/user/register-bvn")

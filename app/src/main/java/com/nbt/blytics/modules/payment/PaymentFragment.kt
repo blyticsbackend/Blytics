@@ -2,6 +2,7 @@ package com.nbt.blytics.modules.payment
 
 import android.animation.AnimatorInflater
 import android.animation.AnimatorSet
+import android.annotation.SuppressLint
 import android.app.Dialog
 import android.content.Context
 import android.content.Intent
@@ -180,6 +181,7 @@ class PaymentFragment : BaseFragment<PaymentFragmentBinding, PaymentViewModel>()
         )
     }
 
+    @SuppressLint("NotifyDataSetChanged")
     private fun observer() {
         homeViewModel.observerResponse.observe(viewLifecycleOwner) {
             when (it) {
@@ -239,6 +241,7 @@ class PaymentFragment : BaseFragment<PaymentFragmentBinding, PaymentViewModel>()
                     }
                     homeViewModel.observerResponse.value = null
                 }
+
                 is TransactionResponse -> {
                     hideLoading()
                     if (it.status.equals(Constants.Status.SUCCESS.name, true)) {
