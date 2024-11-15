@@ -406,23 +406,13 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content">
 
-                            <EditText
-                                android:id="@+id/edt_address"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:fontFamily="@font/darker_grotesque_semibold"
-                                android:hint="Address"
-                                android:importantForAutofill="no"
-                                android:inputType="text"
-                                android:textSize="@dimen/_14sdp"
-                                app:layout_constraintTop_toTopOf="parent" />
-
                             <FrameLayout
                                 android:id="@+id/layout_frame_country"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:layout_marginTop="@dimen/_10sdp"
-                                app:layout_constraintTop_toBottomOf="@+id/edt_address">
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toTopOf="parent">
 
                                 <AutoCompleteTextView
                                     android:id="@+id/country_spinner"
@@ -464,6 +454,17 @@
                                     android:layout_width="match_parent"
                                     android:layout_height="match_parent" />
                             </FrameLayout>
+
+                            <EditText
+                                android:id="@+id/edt_address"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:fontFamily="@font/darker_grotesque_semibold"
+                                android:hint="Address"
+                                android:importantForAutofill="no"
+                                android:inputType="text"
+                                android:textSize="@dimen/_14sdp"
+                                app:layout_constraintTop_toBottomOf="@id/layout_frame_state" />
 
                             <EditText
                                 android:id="@+id/edt_pin_code"
